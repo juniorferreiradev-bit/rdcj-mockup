@@ -1,0 +1,53 @@
+.dashboard-grid { display: grid; gap: 24px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.content-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); gap: 24px; align-items: start; }
+.matrix-card, .alerts-card, .portfolio-card { padding: 22px; }
+.matrix-table { width: 100%; border-collapse: separate; border-spacing: 7px; margin: -7px; width: calc(100% + 14px); table-layout: fixed; }
+.matrix-table th { padding: 8px 4px; color: var(--muted); font-size: .67rem; font-weight: 700; text-transform: uppercase; }
+.matrix-table td { height: 104px; padding: 10px; border: 1px solid var(--border); border-radius: 10px; vertical-align: top; background: #fcfbfa; }
+.matrix-table .row-label { width: 54px; border: 0; color: var(--muted); font-size: .7rem; font-weight: 700; text-align: center; text-transform: uppercase; }
+.matrix-cell { display: flex; height: 100%; flex-direction: column; justify-content: space-between; }
+.matrix-cell .badge { align-self: flex-start; }
+.matrix-count { color: var(--bnb-red-dark); font-size: .8rem; font-weight: 700; }
+.matrix-value { color: var(--muted); font-size: .7rem; }
+.alert-list { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.alert-item { display: flex; align-items: center; gap: 11px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.alert-item:last-child { border-bottom: 0; }
+.alert-dot { width: 10px; height: 10px; flex: 0 0 10px; border-radius: 50%; background: var(--n1); box-shadow: 0 0 0 4px #fbe8e8; }
+.alert-dot.high { background: var(--n2); box-shadow: 0 0 0 4px #fff0df; }
+.alert-text { flex: 1; color: var(--ink); font-size: .81rem; }
+.alert-quantity { color: var(--bnb-red-dark); font-size: .85rem; font-weight: 700; }
+.portfolio-card { padding-bottom: 8px; }
+.dashboard-insights { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr); gap: 24px; }
+.insight-card, .prescription-card { padding: 22px; }
+.event-bars { display: grid; gap: 14px; }
+.event-bars > div { display: grid; grid-template-columns: 1fr 42px; gap: 8px; align-items: center; color: var(--muted); font-size: .76rem; }
+.event-bars strong { color: var(--bnb-red-dark); text-align: right; }
+.event-bars i { grid-column: 1 / -1; display: block; height: 8px; border-radius: 99px; background: linear-gradient(90deg, var(--bnb-red), var(--bnb-orange)); }
+.risk-list { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.risk-list li { display: flex; align-items: center; gap: 10px; padding: 14px 0; border-bottom: 1px solid var(--border); color: var(--ink); font-size: .78rem; }
+.risk-list li:last-child { border-bottom: 0; }
+.risk-list li span:nth-child(2) { flex: 1; }
+.risk-list strong { color: var(--bnb-red-dark); font-size: .76rem; }
+.prescription-card { display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: center; border-left: 4px solid var(--n1); }
+.prescription-main { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.prescription-main h2 { margin: 4px 0; color: var(--bnb-red-dark); font-size: 1.7rem; }
+.prescription-main p:last-child { margin: 0; color: var(--muted); font-size: .78rem; }
+.prescription-stats { display: grid; gap: 7px; min-width: 190px; color: var(--muted); font-size: .72rem; }
+.prescription-stats strong { color: var(--bnb-red-dark); }
+
+@media (max-width: 1080px) {
+    .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .content-grid { grid-template-columns: 1fr; }
+    .dashboard-insights { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+    .kpi-grid { grid-template-columns: 1fr; }
+    .kpi-value { font-size: 1.5rem; }
+    .matrix-card, .alerts-card, .portfolio-card { padding: 16px; }
+    .insight-card, .prescription-card { padding: 16px; }
+    .prescription-card, .prescription-main { grid-template-columns: 1fr; flex-direction: column; align-items: flex-start; }
+    .matrix-table td { height: 90px; padding: 7px; }
+    .matrix-count { font-size: .68rem; }
+    .matrix-value { font-size: .62rem; }
+}

@@ -1,0 +1,49 @@
+/* Kanban RDCJ — identidade visual RDCJ sobre padrão de quadro Azure DevOps / Monday / Jira. */
+.kanban-shell { max-width: none; }
+.kanban-board { display: grid; gap: 22px; }
+
+.kanban-lane { border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); box-shadow: var(--shadow-sm); }
+.kanban-lane-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--border); background: #faf7f5; border-radius: var(--radius-md) var(--radius-md) 0 0; }
+.kanban-lane-header h2 { margin: 0; color: var(--bnb-red-dark); font-size: .95rem; letter-spacing: .02em; text-transform: uppercase; }
+.kanban-lane-count { min-width: 28px; padding: 3px 9px; border-radius: 999px; color: #fff; background: var(--bnb-red); font-size: .72rem; font-weight: 700; text-align: center; }
+
+.kanban-columns { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 1fr); gap: 14px; overflow-x: auto; padding: 16px 20px 20px; }
+
+.kanban-column { display: flex; flex-direction: column; min-height: 120px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: #f8f5f2; }
+.kanban-column-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.kanban-column-count { min-width: 22px; padding: 2px 7px; border-radius: 999px; color: var(--bnb-red-dark); background: #fff; font-size: .68rem; text-align: center; }
+
+.kanban-column-body { display: grid; gap: 10px; min-height: 80px; padding: 10px; }
+.kanban-empty { margin: 10px 0; padding: 16px 8px; border: 1px dashed var(--border); border-radius: 8px; color: var(--muted); font-size: .72rem; text-align: center; }
+
+.kanban-card { display: grid; gap: 8px; padding: 12px 12px 10px; border: 1px solid var(--border); border-left: 4px solid var(--muted); border-radius: 10px; background: #fff; box-shadow: var(--shadow-sm); cursor: grab; transition: transform .12s, box-shadow .12s; }
+.kanban-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.kanban-card:active { cursor: grabbing; }
+.kanban-card-ghost { opacity: .45; }
+
+.kanban-card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.kanban-card-cnj { color: var(--bnb-red-dark); font-size: .8rem; font-weight: 700; }
+.kanban-card-cliente { margin: 0; color: var(--ink); font-size: .76rem; line-height: 1.3; }
+.kanban-card-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: var(--muted); font-size: .7rem; }
+.kanban-card-valor { font-weight: 700; color: var(--bnb-red-dark); }
+.kanban-card-timer { display: flex; align-items: center; gap: 6px; padding-top: 8px; border-top: 1px solid var(--border); color: var(--muted); font-size: .68rem; }
+.kanban-timer-icon { font-size: .8rem; }
+.kanban-card-open { margin-left: auto; padding: 2px 6px; border-radius: 6px; color: var(--bnb-red-dark); font-weight: 700; font-size: .78rem; }
+.kanban-card-open:hover { background: #f9e8ed; }
+
+/* Peso — cores solicitadas: P4 vermelho, P3 laranja, P2 amarelo, P1 cinza. */
+.kanban-peso { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; padding: 3px 8px; border-radius: 999px; color: #fff; font-size: .66rem; font-weight: 700; }
+.peso-p4 { background: #c62828; }
+.peso-p3 { background: #f68b1f; }
+.peso-p2 { background: #e0b400; color: #3a2c00; }
+.peso-p1 { background: #8a8a8a; }
+
+.kanban-card[data-processo-id] { border-left-color: var(--muted); }
+.kanban-card:has(.peso-p4) { border-left-color: #c62828; }
+.kanban-card:has(.peso-p3) { border-left-color: #f68b1f; }
+.kanban-card:has(.peso-p2) { border-left-color: #e0b400; }
+.kanban-card:has(.peso-p1) { border-left-color: #8a8a8a; }
+
+@media (max-width: 900px) {
+    .kanban-columns { grid-auto-columns: minmax(200px, 1fr); }
+}

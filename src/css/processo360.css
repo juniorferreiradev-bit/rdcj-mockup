@@ -1,0 +1,26 @@
+/* Processo 360 RDCJ — identidade visual Banco do Nordeste / paleta RDCJ, herdando tokens.css e style.css. */
+.processo360-shell { max-width: 1400px; }
+.processo360-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.p360-card { padding: 22px; }
+.p360-wide { grid-column: 1 / -1; }
+
+.p360-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 20px; margin-top: 12px; }
+.p360-field { display: grid; gap: 4px; padding: 12px; border-radius: 9px; background: #fbf6f2; }
+.p360-field strong { color: var(--bnb-red-dark); font-size: .92rem; }
+
+.p360-linha { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 14px; }
+.p360-stage { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); background: #fff; font-size: .8rem; font-weight: 700; }
+.p360-stage-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--border); }
+.p360-stage.ativo { color: #fff; background: var(--bnb-red); border-color: var(--bnb-red); }
+.p360-stage.ativo .p360-stage-dot { background: var(--bnb-orange); }
+
+.p360-timeline { display: grid; gap: 12px; margin: 12px 0 0; padding: 0; list-style: none; max-height: 420px; overflow-y: auto; }
+.p360-timeline li { padding: 12px 14px; border-left: 3px solid var(--bnb-orange); background: #fffaf7; border-radius: 0 8px 8px 0; font-size: .8rem; }
+.p360-timeline li strong { color: var(--bnb-red-dark); }
+
+.p360-evidencias { margin-top: 8px; }
+
+@media (max-width: 900px) {
+    .processo360-grid { grid-template-columns: 1fr; }
+    .p360-fields { grid-template-columns: 1fr; }
+}

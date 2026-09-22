@@ -1,0 +1,71 @@
+* { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+    margin: 0;
+    min-width: 320px;
+    color: var(--ink);
+    background: var(--bg);
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+button, a, input, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+
+.app-shell { display: flex; min-height: 100vh; }
+
+.sidebar {
+    position: fixed;
+    z-index: 20;
+    inset: 0 auto 0 0;
+    display: flex;
+    flex-direction: column;
+    width: var(--sidebar-width);
+    padding: 26px 18px 20px;
+    color: #fff;
+    background: linear-gradient(180deg, var(--bnb-red-dark), #7c1330 58%, var(--bnb-red));
+}
+
+.brand { display: flex; align-items: center; gap: 12px; padding: 0 12px 30px; }
+.brand-mark { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 12px; color: var(--bnb-red-dark); background: var(--surface); font-size: 1.25rem; font-weight: 700; }
+.brand-name { margin: 0; font-size: 1.2rem; letter-spacing: .04em; }
+.brand-subtitle { margin: 3px 0 0; color: #f7cbd6; font-size: .67rem; line-height: 1.25; }
+
+.nav-label { padding: 0 12px 10px; color: #e8aebd; font-size: .7rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.nav-list { display: grid; gap: 5px; margin: 0; padding: 0; list-style: none; }
+.nav-link { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: var(--radius-sm); color: #f9e7eb; font-size: .9rem; transition: background .2s, color .2s; }
+.nav-link:hover, .nav-link.active { color: #fff; background: rgba(255,255,255,.14); }
+.nav-link.active { box-shadow: inset 3px 0 var(--bnb-orange); font-weight: 700; }
+.nav-icon { width: 22px; color: #f9bdca; text-align: center; font-size: 1.05rem; }
+.nav-alert-count { min-width: 21px; margin-left: auto; padding: 2px 6px; border-radius: 999px; color: #fff; background: var(--bnb-orange); font-size: .65rem; text-align: center; }
+.sidebar-footer { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid rgba(255,255,255,.16); color: #f3c7d1; font-size: .72rem; line-height: 1.5; }
+
+.main-content { width: calc(100% - var(--sidebar-width)); min-width: 0; margin-left: var(--sidebar-width); }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 102px; padding: 26px 42px 22px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,.72); }
+.page-kicker { margin: 0 0 5px; color: var(--bnb-red); font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.page-title { margin: 0; color: var(--bnb-red-dark); font-size: clamp(1.45rem, 2.2vw, 2rem); letter-spacing: -.02em; }
+.page-subtitle { margin: 5px 0 0; color: var(--muted); font-size: .88rem; }
+.topbar-actions { display: flex; align-items: center; gap: 12px; }
+.date-chip { padding: 9px 13px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); background: var(--surface); font-size: .78rem; }
+.user-avatar { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 50%; color: #fff; background: var(--bnb-orange); font-weight: 700; }
+.mobile-menu { display: none; border: 0; color: var(--bnb-red-dark); background: transparent; cursor: pointer; font-size: 1.5rem; }
+.page-content { max-width: 1500px; margin: 0 auto; padding: 34px 42px 48px; }
+
+@media (max-width: 900px) {
+    :root { --sidebar-width: 250px; }
+    .topbar, .page-content { padding-right: 24px; padding-left: 24px; }
+}
+
+@media (max-width: 680px) {
+    .sidebar { transform: translateX(-100%); transition: transform .25s ease; box-shadow: var(--shadow-md); }
+    body.menu-open .sidebar { transform: translateX(0); }
+    body.menu-open::after { position: fixed; z-index: 10; inset: 0; content: ''; background: rgba(20, 9, 12, .42); }
+    .main-content { width: 100%; margin-left: 0; }
+    .topbar { min-height: 86px; padding: 18px 18px; }
+    .mobile-menu { display: block; }
+    .topbar-actions .date-chip { display: none; }
+    .page-content { padding: 24px 18px 36px; }
+}

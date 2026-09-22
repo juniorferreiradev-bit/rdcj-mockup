@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RDCJ | Kanban Operacional</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/kanban.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">R</div>
+        <div>
+          <p class="brand-name">RDCJ</p>
+          <p class="brand-subtitle">Kanban operacional</p>
+        </div>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a class="nav-link" href="dashboard.html">▦ Insights da Carteira</a></li>
+          <li><a class="nav-link" href="matriz.html">⊞ Matriz RDCJ</a></li>
+          <li><a class="nav-link" href="trabalho.html">✓ Caixa de Trabalho</a></li>
+          <li><a class="nav-link active" href="kanban.html">▥ Kanban RDCJ</a></li>
+          <li><a class="nav-link" href="carteira.html">▤ Lista de processos</a></li>
+          <li><a class="nav-link" href="importar-carteira.html">↑ Importar base</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="page-kicker">Camada visual do motor RDCJ</p>
+          <h1 class="page-title">Kanban Operacional RDCJ</h1>
+          <p class="page-subtitle">Arraste os cartões para reorganizar a fila de trabalho. Nenhuma movimentação altera o estado do motor automaticamente.</p>
+        </div>
+        <div class="topbar-actions">
+          <span class="date-chip" data-kanban-total>0 processos</span>
+          <a class="button" href="trabalho.html">Caixa de trabalho</a>
+        </div>
+      </header>
+
+      <div class="page-content kanban-shell">
+        <div class="kanban-board" data-kanban-board></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
+  <script src="../js/matriz-criticidade.js"></script>
+  <script src="../js/matrix-engine.js"></script>
+  <script src="../js/auditoria.js"></script>
+  <script src="../js/base-manager.js"></script>
+  <script src="../js/matrix-ui.js"></script>
+  <script src="../js/motor-atuacao.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/kanban.js"></script>
+</body>
+</html>

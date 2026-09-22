@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RDCJ | Processo 360°</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/processo360.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">R</div>
+        <div>
+          <p class="brand-name">RDCJ</p>
+          <p class="brand-subtitle">Processo 360°</p>
+        </div>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a class="nav-link" href="dashboard.html">▦ Insights da Carteira</a></li>
+          <li><a class="nav-link" href="matriz.html">⊞ Matriz RDCJ</a></li>
+          <li><a class="nav-link" href="trabalho.html">✓ Caixa de Trabalho</a></li>
+          <li><a class="nav-link" href="kanban.html">▥ Kanban RDCJ</a></li>
+          <li><a class="nav-link" href="carteira.html">▤ Lista de processos</a></li>
+          <li><a class="nav-link" href="importar-carteira.html">↑ Importar base</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="page-kicker">Processo 360°</p>
+          <h1 class="page-title" data-title>Processo</h1>
+          <p class="page-subtitle" data-subtitle>Visão consolidada de classificação, atuação e auditoria.</p>
+        </div>
+        <div class="topbar-actions">
+          <a class="button" href="matriz.html">← Voltar à matriz</a>
+        </div>
+      </header>
+
+      <div class="page-content processo360-shell" data-processo360-root>
+        <p class="empty-state" data-nao-encontrado hidden>Processo não encontrado na carteira ativa.</p>
+
+        <div class="processo360-grid" data-processo360-conteudo>
+          <section class="card p360-card" data-secao="identificacao">
+            <h2 class="section-title">1. Identificação</h2>
+            <div class="p360-fields" data-identificacao></div>
+          </section>
+
+          <section class="card p360-card" data-secao="enquadramento">
+            <h2 class="section-title">2. Enquadramento RDCJ</h2>
+            <div class="p360-fields" data-enquadramento></div>
+          </section>
+
+          <section class="card p360-card" data-secao="linha-atuacao">
+            <h2 class="section-title">3. Linha de Atuação</h2>
+            <div class="p360-linha" data-linha-atuacao></div>
+          </section>
+
+          <section class="card p360-card" data-secao="explicabilidade">
+            <h2 class="section-title">4. Explicabilidade</h2>
+            <p class="section-caption">Regras aplicadas pelo motor de enquadramento para chegar a este resultado.</p>
+            <ul class="reason-list" data-explicabilidade></ul>
+          </section>
+
+          <section class="card p360-card p360-wide" data-secao="timeline">
+            <h2 class="section-title">5. Timeline</h2>
+            <ol class="trace-list p360-timeline" data-timeline></ol>
+          </section>
+
+          <section class="card p360-card" data-secao="proxima-acao">
+            <h2 class="section-title">6. Próxima Ação</h2>
+            <div class="p360-fields" data-proxima-acao></div>
+          </section>
+
+          <section class="card p360-card" data-secao="evidencias">
+            <h2 class="section-title">7. Evidências</h2>
+            <div class="p360-evidencias" data-evidencias></div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/matriz-criticidade.js"></script>
+  <script src="../js/matrix-engine.js"></script>
+  <script src="../js/auditoria.js"></script>
+  <script src="../js/base-manager.js"></script>
+  <script src="../js/matrix-ui.js"></script>
+  <script src="../js/motor-atuacao.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/processo360.js"></script>
+</body>
+</html>

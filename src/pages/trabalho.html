@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RDCJ | Motor de Atuação</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/motor-atuacao.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">R</div>
+        <div>
+          <p class="brand-name">RDCJ</p>
+          <p class="brand-subtitle">Motor de atuação</p>
+        </div>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a class="nav-link" href="dashboard.html">▦ Insights da Carteira</a></li>
+          <li><a class="nav-link" href="matriz.html">⊞ Matriz RDCJ</a></li>
+          <li><a class="nav-link active" href="trabalho.html">✓ Caixa de Trabalho</a></li>
+          <li><a class="nav-link" href="carteira.html">▤ Lista de processos</a></li>
+          <li><a class="nav-link" href="importar-carteira.html">↑ Importar base</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="page-kicker">Fase 2</p>
+          <h1 class="page-title">Caixa de Trabalho RDCJ</h1>
+          <p class="page-subtitle">Tudo que exige ação, com responsável, prazo, evidência e revisão.</p>
+        </div>
+        <div class="topbar-actions">
+          <a class="button" href="matriz.html">Voltar à matriz</a>
+        </div>
+      </header>
+
+      <div class="page-content motor-shell">
+        <section class="motor-summary">
+          <article class="card kpi-card">
+            <p class="kpi-label">Processos em atuação</p>
+            <h2 class="kpi-value" data-kpi-total>0</h2>
+          </article>
+          <article class="card kpi-card">
+            <p class="kpi-label">Pendentes</p>
+            <h2 class="kpi-value" data-kpi-pendentes>0</h2>
+          </article>
+          <article class="card kpi-card">
+            <p class="kpi-label">Em execução</p>
+            <h2 class="kpi-value" data-kpi-execucao>0</h2>
+          </article>
+          <article class="card kpi-card">
+            <p class="kpi-label">Concluídas</p>
+            <h2 class="kpi-value" data-kpi-concluidas>0</h2>
+          </article>
+          <article class="card kpi-card">
+            <p class="kpi-label">Sem evidência</p>
+            <h2 class="kpi-value" data-kpi-evidencia>0</h2>
+          </article>
+        </section>
+
+        <section class="card" style="padding: 22px;">
+          <div class="motor-tabs" data-tabs>
+            <button type="button" class="motor-tab active" data-tab="caixa">Caixa de trabalho</button>
+            <button type="button" class="motor-tab" data-tab="filas">Filas operacionais</button>
+            <button type="button" class="motor-tab" data-tab="timeline">Timeline RDCJ</button>
+          </div>
+        </section>
+
+        <section class="motor-panel active" data-panel="caixa">
+          <div class="card" style="padding: 22px;">
+            <div class="section-heading">
+              <div>
+                <h2 class="section-title">Lista de processos</h2>
+                <p class="section-caption">Mostra tudo que exige ação com peso, linha, responsável, prazo e revisão.</p>
+              </div>
+            </div>
+            <div class="motor-table-wrap">
+              <table class="motor-table">
+                <thead>
+                  <tr>
+                    <th>Processo</th>
+                    <th>Peso</th>
+                    <th>Linha</th>
+                    <th>Responsável</th>
+                    <th>Status</th>
+                    <th>Prazo</th>
+                    <th>Última Ação</th>
+                    <th>Próxima Revisão</th>
+                  </tr>
+                </thead>
+                <tbody data-caixa-body></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="motor-panel" data-panel="filas">
+          <div class="workflow-grid">
+            <article class="workflow-card">
+              <header>
+                <div>
+                  <h3>Fila do Advogado</h3>
+                  <span class="muted">[ Existe oportunidade processual ]</span>
+                </div>
+                <span class="tag tag-line">ADVOGADO</span>
+              </header>
+              <div class="workflow-actions">
+                <button type="button" class="primary" data-action="advogado-sim">Sim</button>
+                <button type="button" data-action="advogado-nao">Não</button>
+              </div>
+              <ul class="timeline-list" data-fila-advogado></ul>
+            </article>
+
+            <article class="workflow-card">
+              <header>
+                <div>
+                  <h3>Fila da Agência</h3>
+                  <span class="muted">[ Informação relevante localizada ]</span>
+                </div>
+                <span class="tag tag-line">AGENCIA</span>
+              </header>
+              <div class="workflow-actions">
+                <button type="button" class="primary" data-action="agencia-sim">Sim</button>
+                <button type="button" data-action="agencia-nao">Não</button>
+              </div>
+              <ul class="timeline-list" data-fila-agencia></ul>
+            </article>
+
+            <article class="workflow-card">
+              <header>
+                <div>
+                  <h3>Fila da Retaguarda</h3>
+                  <span class="muted">[ Ativo localizado ]</span>
+                </div>
+                <span class="tag tag-line">RETAGUARDA</span>
+              </header>
+              <div class="workflow-actions">
+                <button type="button" class="primary" data-action="retaguarda-sim">Sim</button>
+                <button type="button" data-action="retaguarda-nao">Não</button>
+              </div>
+              <ul class="timeline-list" data-fila-retaguarda></ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="motor-panel" data-panel="timeline">
+          <div class="card" style="padding: 22px;">
+            <div class="section-heading">
+              <div>
+                <h2 class="section-title">Timeline RDCJ</h2>
+                <p class="section-caption">Classificação, mudanças de quadrante, peso, linha, tarefas e evidências.</p>
+              </div>
+            </div>
+            <ul class="timeline-list" data-timeline-body></ul>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/matriz-criticidade.js"></script>
+  <script src="../js/matrix-engine.js"></script>
+  <script src="../js/auditoria.js"></script>
+  <script src="../js/base-manager.js"></script>
+  <script src="../js/matrix-ui.js"></script>
+  <script src="../js/motor-atuacao.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    (() => {
+      const render = () => {
+        const portfolio = (rdcjMatrixUI && rdcjMatrixUI.getPortfolio ? rdcjMatrixUI.getPortfolio() : []);
+        if (Array.isArray(portfolio) && portfolio.length) {
+          rdcjMotorAtuacao.sincronizarFluxos();
+        }
+        const processoList = rdcjMotorAtuacao.listarFluxos();
+
+        document.querySelector('[data-kpi-total]').textContent = processoList.length;
+        document.querySelector('[data-kpi-pendentes]').textContent = processoList.filter((item) => ['REVISAO_JURIDICA', 'PETICIONAMENTO', 'AGUARDANDO_RESULTADO', 'INVESTIGACAO_AGENCIA', 'INVESTIGACAO_RETAGUARDA'].includes(item.statusAtual)).length;
+        document.querySelector('[data-kpi-execucao]').textContent = processoList.filter((item) => item.statusAtual === 'PETICIONAMENTO' || item.statusAtual === 'INVESTIGACAO_AGENCIA' || item.statusAtual === 'INVESTIGACAO_RETAGUARDA').length;
+        document.querySelector('[data-kpi-concluidas]').textContent = processoList.filter((item) => item.statusAtual === 'MONITORAMENTO' || item.statusAtual === 'ENCERRADO').length;
+        document.querySelector('[data-kpi-evidencia]').textContent = processoList.filter((item) => !item.ultimoResultado || item.ultimoResultado === 'Fluxo inicializado').length;
+
+        const caixaBody = document.querySelector('[data-caixa-body]');
+        caixaBody.innerHTML = processoList.length ? processoList.map((item) => `
+          <tr>
+            <td><strong>${item.cnj || item.processoId}</strong><br><span class="muted">${item.cliente || 'Cliente não informado'}</span></td>
+            <td><span class="tag tag-${String(item.peso || 'P2').toLowerCase()}">${item.peso || 'P2'}</span></td>
+            <td><span class="tag tag-line">${item.linhaAtual || 'ADVOGADO'}</span></td>
+            <td>${item.responsavelAtual || item.responsavel || 'Sem responsável'}</td>
+            <td><span class="tag tag-status">${item.statusAtual || 'REVISAO_JURIDICA'}</span></td>
+            <td>${item.proximaRevisao ? new Date(item.proximaRevisao).toLocaleDateString('pt-BR') : '—'}</td>
+            <td>${item.ultimoResultado || 'Sem ação registrada'}</td>
+            <td>${item.proximaRevisao ? new Date(item.proximaRevisao).toLocaleDateString('pt-BR') : 'Sem revisão'}</td>
+          </tr>
+        `).join('') : '<tr><td colspan="8"><div class="empty-state">Nenhum processo em atuação. Importe uma base para iniciar a caixa de trabalho.</div></td></tr>';
+
+        const timelineBody = document.querySelector('[data-timeline-body]');
+        const timeline = processoList.flatMap((item) => {
+          const eventos = rdcjMotorAtuacao.timelineDoProcesso(item.processoId || item.cnj) || [];
+          return eventos.length ? eventos.map((evento) => ({ ...evento, processo: item.cnj || item.processoId })) : [{ tipo: 'Mudança de Estado', titulo: `Processo ${item.cnj || item.processoId}`, data: new Date().toISOString(), detalhe: `${item.statusAtual || 'REVISAO_JURIDICA'} · ${item.linhaAtual || 'ADVOGADO'}` }];
+        });
+        timelineBody.innerHTML = timeline.length ? timeline.slice(0, 20).map((evento) => `
+          <li class="timeline-item">
+            <strong>${evento.tipo} · ${evento.processo || 'Sistema'}</strong>
+            <span>${evento.titulo || 'Movimentação RDCJ'}</span>
+            <span>${new Date(evento.data || Date.now()).toLocaleString('pt-BR')}</span>
+            <span>${evento.detalhe || 'Sem detalhe'}</span>
+          </li>
+        `).join('') : '<li class="empty-state">Sem eventos registrados.</li>';
+
+        const montarFila = (selector, status) => {
+          const body = document.querySelector(selector);
+          const items = processoList.filter((item) => item.statusAtual === status);
+          body.innerHTML = items.length ? items.map((item) => `
+            <li class="timeline-item">
+              <strong>${item.cnj || item.processoId}</strong>
+              <span>${item.responsavelAtual || 'Sem responsável'}</span>
+              <span>${item.statusAtual || 'REVISAO_JURIDICA'}</span>
+            </li>
+          `).join('') : '<li class="empty-state">Sem processos nesta fila.</li>';
+        };
+
+        montarFila('[data-fila-advogado]', 'REVISAO_JURIDICA');
+        montarFila('[data-fila-agencia]', 'INVESTIGACAO_AGENCIA');
+        montarFila('[data-fila-retaguarda]', 'INVESTIGACAO_RETAGUARDA');
+
+        document.querySelectorAll('[data-action]').forEach((button) => {
+          button.addEventListener('click', () => {
+            const processo = processoList[0];
+            if (!processo) return;
+            const processoId = processo.processoId || processo.cnj;
+            const action = button.dataset.action;
+            const mapa = {
+              'advogado-sim': 'Existe oportunidade processual',
+              'advogado-nao': 'Não existe oportunidade',
+              'agencia-sim': 'Informação relevante localizada',
+              'agencia-nao': 'Nada localizado',
+              'retaguarda-sim': 'Ativo localizado',
+              'retaguarda-nao': 'Busca negativa'
+            };
+            const decisao = mapa[action];
+            if (!decisao) return;
+            rdcjMotorAtuacao.aplicarTransicao(processoId, decisao, 'usuário local', decisao);
+            render();
+          });
+        });
+      };
+
+      document.querySelectorAll('[data-tab]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const tab = button.dataset.tab;
+          document.querySelectorAll('.motor-tab').forEach((item) => item.classList.toggle('active', item === button));
+          document.querySelectorAll('.motor-panel').forEach((panel) => panel.classList.toggle('active', panel.dataset.panel === tab));
+        });
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>
+
