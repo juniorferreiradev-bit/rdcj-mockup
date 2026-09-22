@@ -19,8 +19,8 @@ Se o projeto já estiver clonado/copiado localmente (ex.: `C:\dev\RDCJ-MOCKUP`),
 Caso esteja vindo de um backup/pacote `.zip` ou de um repositório Git:
 
 ```powershell
-# Clonar do GitHub (ajuste a URL do repositório)
-git clone https://github.com/<organizacao>/<repositorio>.git RDCJ-MOCKUP
+# Clonar do GitHub (repositório privado)
+git clone https://github.com/juniorferreiradev-bit/rdcj-mockup.git RDCJ-MOCKUP
 cd RDCJ-MOCKUP
 ```
 
