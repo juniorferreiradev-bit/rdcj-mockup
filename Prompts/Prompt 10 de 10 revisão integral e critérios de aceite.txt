@@ -1,0 +1,133 @@
+Realize uma revisão integral da aplicação RDCJ construída nas etapas anteriores.
+
+Não adicione novas funcionalidades. Corrija apenas inconsistências em relação aos requisitos abaixo.
+
+ESCOPO
+
+A experiência deve conter exatamente:
+
+1. Dashboard
+2. Matriz
+3. Kanban
+4. Carteira de Processos
+
+MODELO DE DADOS
+
+Confirme:
+
+- existência da tabela principal de Processos;
+- existência da tabela de Controle do Kanban;
+- relacionamento entre ambas;
+- apenas um campo nr_var;
+- ausência de campo “inconsistências”;
+- ausência de campos persistidos de quadrante, peso e faixas na tabela de Processos;
+- ausência de tabela própria de auditoria;
+- ausência de tabela de importação.
+
+CLASSIFICAÇÃO
+
+Valide:
+
+- DataCadastroDaFaseAtual como data da decisão;
+- ValorAcaoMoedaCorrente como valor da classificação;
+- T1, T2 e T3;
+- V1, V2 e V3;
+- N1 a N9;
+- P1 a P4;
+- valores exatos dos limites;
+- datas exatas dos limites;
+- tratamento de dados vazios e inválidos.
+
+MATRIZ
+
+Confirme visualmente:
+
+- N7, N8 e N9 na linha superior;
+- N9 no canto superior direito;
+- N4, N5 e N6 na linha intermediária;
+- N1, N2 e N3 na linha inferior;
+- eixo vertical denominado Tempo da decisão;
+- faixas de tempo descritas;
+- eixo horizontal denominado Valor da ação;
+- faixas monetárias descritas;
+- clique nos quadrantes abrindo a Carteira filtrada.
+
+KANBAN
+
+Confirme:
+
+- seis raias;
+- 24 colunas;
+- movimentações limitadas às transições permitidas;
+- bloqueio de movimentos incompatíveis;
+- atualização de estado, etapa, responsável, coluna e ordem;
+- cálculo de próxima revisão;
+- abertura dos detalhes do processo;
+- ausência de movimentação livre para Concluídos.
+
+DASHBOARD
+
+Confirme:
+
+- três indicadores principais;
+- seis distribuições;
+- quatro rankings Top 10;
+- filtros globais;
+- navegação analítica para a Carteira;
+- abertura do detalhe pelo ranking de processos.
+
+CARTEIRA
+
+Confirme:
+
+- CNJ;
+- cliente;
+- quadrante;
+- valor;
+- próxima revisão;
+- ausência da coluna inconsistências;
+- filtros aprovados;
+- pesquisa por CNJ e cliente;
+- abertura dos detalhes.
+
+SEGURANÇA
+
+Confirme que somente a role administrativa RDCJ tem acesso à experiência e às tabelas nesta versão.
+
+IDENTIDADE VISUAL
+
+Confirme a aplicação coerente das seguintes cores:
+
+- #A6193C
+- #650F27
+- #F68B1F
+- #646464
+- #F6F4F2
+- #FFFFFF
+- #2B2928
+- #77716E
+- #E5E0DD
+
+TESTES
+
+Execute testes funcionais sem criar dados permanentes desnecessários.
+
+Caso sejam necessários registros temporários de teste:
+
+- identifique-os claramente;
+- remova-os após os testes;
+- confirme a remoção ao final.
+
+RELATÓRIO FINAL
+
+Apresente:
+
+1. Artefatos criados.
+2. Tabelas e respectivos nomes técnicos.
+3. Páginas da experiência.
+4. Regras implementadas.
+5. Testes realizados.
+6. Resultado de cada critério de aceite.
+7. Limitações técnicas remanescentes.
+8. Itens não implementados por estarem fora do escopo.
+9. Confirmação de que nenhum requisito adicional foi criado sem autorização.

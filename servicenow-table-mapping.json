@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "status": "design-only",
+  "scope": "x_825936_rdcj",
+  "tables": [
+    {"domain":"Processo","table":"x_825936_rdcj_processo","status":"existing","key":"sys_id"},
+    {"domain":"Kanban","table":"x_825936_rdcj_kanban","status":"existing","key":"sys_id","relation":"processo -> x_825936_rdcj_processo"},
+    {"domain":"Auditoria","table":"x_825936_rdcj_auditoria_future","status":"proposed","key":"event_id"},
+    {"domain":"Memória","table":"x_825936_rdcj_memory_future","status":"proposed","key":"memory_id"},
+    {"domain":"Contexto","table":"x_825936_rdcj_context_future","status":"proposed","key":"context_id"},
+    {"domain":"Documentação","table":"x_825936_rdcj_documentation_future","status":"proposed","key":"document_id"},
+    {"domain":"Agentes","table":"x_825936_rdcj_agent_future","status":"proposed","key":"agent_id"},
+    {"domain":"Governança","table":"x_825936_rdcj_governance_future","status":"proposed","key":"governance_id"}
+  ],
+  "creationPolicy": "nenhuma tabela real criada nesta sprint"
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0",
+  "artifacts": [
+    { "artifact": "Architecture", "responsible": "Chief Architect", "approver": "Architecture Board", "auditor": "Compliance" },
+    { "artifact": "Memory", "responsible": "Memory Agent", "approver": "Memory Governance", "auditor": "Compliance" },
+    { "artifact": "Documentation", "responsible": "Documentation Architect", "approver": "Domain Owner", "auditor": "Documentation Auditor" },
+    { "artifact": "Providers", "responsible": "Solution Architect", "approver": "Security/Architecture", "auditor": "Platform Audit" },
+    { "artifact": "Agents", "responsible": "AI Governance", "approver": "Security/Domain Owner", "auditor": "AI Audit" },
+    { "artifact": "Releases", "responsible": "Release Owner", "approver": "Change Board", "auditor": "QA/Compliance" },
+    { "artifact": "ServiceNow", "responsible": "Platform Architect", "approver": "ServiceNow Owner", "auditor": "Platform Audit" }
+  ]
+}

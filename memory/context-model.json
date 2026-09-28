@@ -1,0 +1,20 @@
+{
+  "project": {
+    "name": "RDCJ 2.0",
+    "version": "0.1-memory-layer",
+    "sources": ["README.md", "CHANGELOG.md", "src/memory/backlog.md", "src/memory/decisions-log.md", "src/memory/feedback-log.md", "src/memory/product-memory.md", "architecture-current.md", "architecture-target.md", "gap-analysis.md", "migration-roadmap.md"]
+  },
+  "architecture": {
+    "current": "architecture-current.md",
+    "target": "architecture-target.md",
+    "gaps": "gap-analysis.md",
+    "roadmap": "migration-roadmap.md"
+  },
+  "modules": [],
+  "features": [],
+  "decisions": [],
+  "releases": [],
+  "backlog": [],
+  "documentation": [],
+  "memory": [{ "source": "memory/project-memory.json", "version": "0.1-memory-layer" }]
+}

@@ -1,0 +1,3 @@
+const { AgentBase } = require('./agent-base');
+class ArchitectAgent extends AgentBase { constructor() { super({ id: 'architect', name: 'Architect Agent', type: 'architect', capabilities: ['architecture','dependencies','layers','patterns','technical-roadmap'], dependencies: ['context-snapshot','knowledge-index','documentation-snapshot'] }); } run(request, context) { return { objective: request.objective || 'architecture-context', architecture: context.context?.architecture || {}, modules: context.context?.modules || [], recommendation: 'requires-human-approval' }; } }
+module.exports = { ArchitectAgent };

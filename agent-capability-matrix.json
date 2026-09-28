@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0",
+  "agents": [
+    { "agent": "product-owner", "permissions": ["read-context","read-memory","propose-priority"], "inputs": ["Context Snapshot","Knowledge Index","Project Memory"], "outputs": ["roadmap-summary","backlog-priorities"], "approval": "required" },
+    { "agent": "architect", "permissions": ["read-context","read-documentation","analyze-dependencies"], "inputs": ["Context Snapshot","Knowledge Index","Documentation Snapshot"], "outputs": ["architecture-analysis","technical-roadmap"], "approval": "required" },
+    { "agent": "memory", "permissions": ["read-memory","read-history","propose-memory-change"], "inputs": ["Project Memory","Memory History"], "outputs": ["memory-report","proposed-change"], "approval": "required" },
+    { "agent": "documentation", "permissions": ["read-documentation","read-traceability","propose-documentation"], "inputs": ["Documentation Snapshot","Knowledge Index"], "outputs": ["coverage-report","documentation-proposal"], "approval": "required" },
+    { "agent": "development", "permissions": ["read-architecture","read-dependencies","analyze-impact"], "inputs": ["Architecture Target","Dependency Matrix"], "outputs": ["technical-impact"], "approval": "required" },
+    { "agent": "qa", "permissions": ["read-snapshots","read-test-results","validate-integrity"], "inputs": ["Context Snapshot","Documentation Snapshot","Test Results"], "outputs": ["quality-report","issues"], "approval": "required" },
+    { "agent": "release", "permissions": ["read-releases","read-changelog","assess-readiness"], "inputs": ["Changelog","Documentation Snapshot","Traceability Matrix"], "outputs": ["release-readiness"], "approval": "required" }
+  ]
+}

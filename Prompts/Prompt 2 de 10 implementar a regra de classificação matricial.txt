@@ -1,0 +1,90 @@
+Continue a construção da aplicação RDCJ criada anteriormente.
+
+Antes de alterar qualquer artefato, verifique a aplicação, as tabelas e os campos existentes. Não recrie tabelas ou campos. Reutilize os nomes técnicos efetivamente definidos na etapa anterior.
+
+Implemente a lógica de classificação matricial dos processos sem adicionar campos de classificação à tabela principal de Processos.
+
+A classificação deverá ser calculada a partir de:
+
+- Data da decisão: campo DataCadastroDaFaseAtual
+- Valor da ação: campo ValorAcaoMoedaCorrente
+- Data de referência: data atual da instância no momento do cálculo
+
+REGRAS DE TEMPO
+
+- T1: menos de 1 ano desde DataCadastroDaFaseAtual
+- T2: de 1 ano até 2 anos, inclusive
+- T3: acima de 2 anos
+
+REGRAS DE VALOR
+
+- V1: valor menor ou igual a R$ 64.840,00
+- V2: valor maior que R$ 64.840,00 e menor ou igual a R$ 485.040,04
+- V3: valor maior que R$ 485.040,04
+
+CRUZAMENTO DA MATRIZ
+
+- T1 + V1 = N1
+- T1 + V2 = N2
+- T1 + V3 = N3
+- T2 + V1 = N4
+- T2 + V2 = N5
+- T2 + V3 = N6
+- T3 + V1 = N7
+- T3 + V2 = N8
+- T3 + V3 = N9
+
+PESOS
+
+- N1, N2 e N4 = P1
+- N3, N5 e N7 = P2
+- N6 e N8 = P3
+- N9 = P4
+
+Implemente uma função reutilizável no escopo RDCJ que, ao receber um registro de processo, devolva:
+
+- faixa de tempo;
+- faixa de valor;
+- quadrante;
+- peso.
+
+A função deverá ser reutilizável pelo Dashboard, Matriz, Kanban e Carteira.
+
+Não persista quadrante, peso ou faixas na tabela de Processos. Calcule esses valores dinamicamente.
+
+TRATAMENTO DE DADOS
+
+- Não classifique silenciosamente uma data vazia ou inválida como data atual.
+- Não converta valor vazio ou inválido em zero para fins de classificação.
+- Quando DataCadastroDaFaseAtual ou ValorAcaoMoedaCorrente estiver ausente ou inválido, retorne classificação “Não classificado”.
+- Não crie registros de inconsistência.
+- Não altere os dados originais do processo.
+
+PRÓXIMA REVISÃO
+
+Implemente também uma função para cálculo da próxima revisão aplicável ao controle do Kanban:
+
+- P4: 90 dias
+- P3: 180 dias
+- P2: 240 dias
+- P1: sem revisão automática
+
+Não crie ainda os registros de controle do Kanban e não insira dados fictícios.
+
+Crie testes controlados da lógica que cubram:
+
+- todos os nove quadrantes;
+- valores exatamente nos limites de R$ 64.840,00 e R$ 485.040,04;
+- datas exatamente nos limites de 1 e 2 anos;
+- data vazia;
+- data inválida;
+- valor vazio;
+- valor inválido.
+
+Ao concluir:
+
+1. Informe os artefatos criados ou alterados.
+2. Mostre os resultados dos testes dos nove quadrantes.
+3. Confirme que nenhuma classificação foi persistida na tabela de Processos.
+4. Confirme que nenhum dado real ou fictício foi inserido.
+5. Não prossiga para a criação da interface.

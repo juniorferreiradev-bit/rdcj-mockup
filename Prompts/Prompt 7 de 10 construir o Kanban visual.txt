@@ -1,0 +1,74 @@
+Continue a aplicação RDCJ e implemente a página visual “Kanban” no Workspace/UI Builder.
+
+Antes de iniciar, valide a tabela de Controle do Kanban, a inicialização dos controles, os estados, as colunas e as transições implementadas anteriormente.
+
+O quadro deverá conter exatamente seis raias e 24 colunas, conforme a configuração já criada.
+
+Não crie raias ou colunas adicionais.
+
+CARTÃO DO PROCESSO
+
+Cada cartão deve apresentar:
+
+- num_cnj;
+- nm_lit;
+- ValorAcaoMoedaCorrente em formato monetário brasileiro;
+- peso P1, P2, P3 ou P4;
+- responsável atual;
+- próxima revisão.
+
+Use as seguintes cores para o peso:
+
+- P4: vermelho
+- P3: laranja
+- P2: amarelo
+- P1: cinza
+
+MOVIMENTAÇÃO
+
+Implemente movimentação por arrastar e soltar somente se o componente e a arquitetura escolhidos suportarem a aplicação das validações obrigatórias.
+
+Antes de confirmar uma movimentação entre estados:
+
+1. valide se o destino é compatível;
+2. apresente somente as decisões oficiais permitidas para o estado de origem;
+3. exija a escolha da decisão correspondente;
+4. atualize estado, linha de atuação, raia, coluna, ordem, responsável, entrada na etapa, última atualização, próxima revisão e último resultado;
+5. recarregue o cartão na posição correta.
+
+Se a movimentação for incompatível:
+
+- cancele a alteração;
+- mantenha o cartão na posição original;
+- informe objetivamente que a transição não é permitida.
+
+Movimentos dentro do mesmo estado e entre colunas compatíveis podem atualizar somente raia, coluna e ordem, sem alterar o estado.
+
+Não permita que o simples arraste ignore as regras do motor operacional.
+
+NAVEGAÇÃO
+
+Ao clicar no número CNJ ou na ação de abertura do cartão, abra os detalhes do processo no Workspace.
+
+ESTADOS VAZIOS
+
+Exiba “Sem processos” em colunas vazias.
+
+Exiba nas raias e colunas a quantidade de cartões correspondente.
+
+RESPONSIVIDADE
+
+Em telas menores, mantenha as raias identificadas e permita navegação horizontal nas colunas, sem ocultar informações essenciais do cartão.
+
+Não utilize SortableJS por CDN nem outra dependência externa sem aprovação. Priorize recursos nativos e componentes compatíveis com Workspace/UI Builder.
+
+Não insira dados fictícios.
+
+Ao concluir:
+
+1. Confirme a existência das seis raias e 24 colunas.
+2. Confirme quais movimentos são aceitos.
+3. Demonstre o bloqueio de uma transição incompatível.
+4. Confirme a atualização automática do responsável.
+5. Confirme a abertura dos detalhes do processo.
+6. Informe eventual limitação técnica do componente utilizado, sem substituir silenciosamente o requisito.

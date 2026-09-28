@@ -1,0 +1,118 @@
+Continue a aplicação RDCJ e implemente a página “Matriz” no Workspace/UI Builder.
+
+Antes de começar, valide a função de classificação e a navegação para a Carteira de Processos. Não recrie cálculos ou tabelas.
+
+Crie uma matriz visual 3 por 3 que consolide os processos da tabela principal.
+
+A matriz deverá utilizar:
+
+- eixo vertical: TEMPO DA DECISÃO
+- eixo horizontal: VALOR DA AÇÃO
+
+ORDEM VISUAL OBRIGATÓRIA
+
+A linha superior deverá representar processos mais antigos, colocando N9 no canto superior direito.
+
+Use exatamente esta disposição:
+
+Linha superior:
+
+- T3 + V1 = N7
+- T3 + V2 = N8
+- T3 + V3 = N9
+
+Linha intermediária:
+
+- T2 + V1 = N4
+- T2 + V2 = N5
+- T2 + V3 = N6
+
+Linha inferior:
+
+- T1 + V1 = N1
+- T1 + V2 = N2
+- T1 + V3 = N3
+
+RÓTULOS DO EIXO VERTICAL
+
+Exiba o nome e a descrição de cada faixa:
+
+- T3: Acima de 2 anos
+- T2: De 1 a 2 anos
+- T1: Menos de 1 ano
+
+RÓTULOS DO EIXO HORIZONTAL
+
+Exiba o nome e a descrição monetária de cada faixa:
+
+- V1: Até R$ 64.840,00
+- V2: Acima de R$ 64.840,00 até R$ 485.040,04
+- V3: Acima de R$ 485.040,04
+
+Não use na interface os limites monetários presentes na imagem de referência anterior. Use exclusivamente os limites desta regra.
+
+CONTEÚDO DAS CÉLULAS
+
+Cada célula deve apresentar:
+
+- quadrante N1 a N9;
+- peso P1 a P4;
+- quantidade de processos;
+- soma de ValorAcaoMoedaCorrente;
+- percentual do valor total da carteira.
+
+CORES DOS PESOS
+
+- P1: cinza ou verde de baixa prioridade, mantendo boa legibilidade
+- P2: amarelo
+- P3: laranja
+- P4: vermelho
+
+Garanta contraste, acessibilidade e legibilidade.
+
+INDICADORES SUPERIORES
+
+Acima da matriz, apresente:
+
+- Total de Processos
+- Valor Total
+- Total N9
+- Total N8
+- Total N7
+- Valor em N9
+
+FILTROS
+
+Inclua filtros para:
+
+- quadrante;
+- peso;
+- município;
+- advogado;
+- responsável;
+- faixa de valor.
+
+Os indicadores e as nove células devem ser recalculados de acordo com os filtros aplicados.
+
+NAVEGAÇÃO
+
+Ao clicar em uma célula da Matriz, abra a página Carteira de Processos com o quadrante correspondente aplicado como filtro.
+
+O usuário deverá conseguir remover ou alterar o filtro na Carteira.
+
+DADOS INCOMPLETOS
+
+Processos sem DataCadastroDaFaseAtual válida ou sem ValorAcaoMoedaCorrente válido não devem ser colocados em N1 a N9.
+
+Mostre a quantidade de processos “Não classificados” separadamente, sem criar um décimo quadrante.
+
+Não insira registros fictícios.
+
+Ao concluir:
+
+1. Confirme a posição de N9 no canto superior direito.
+2. Confirme a descrição das faixas nos dois eixos.
+3. Confirme as regras de cada quadrante.
+4. Confirme a navegação da célula para a Carteira filtrada.
+5. Confirme que os dados não classificados não entram nos nove quadrantes.
+6. Não implemente ainda o Kanban ou o Dashboard.

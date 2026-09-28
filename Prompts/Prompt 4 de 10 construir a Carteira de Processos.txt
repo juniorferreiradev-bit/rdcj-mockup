@@ -1,0 +1,72 @@
+Continue a aplicação RDCJ e implemente a página “Carteira de Processos” no Workspace/UI Builder.
+
+Antes de iniciar, valide a existência da tabela principal de Processos, da função de classificação matricial e da página provisória Carteira de Processos.
+
+Não crie uma nova tabela e não adicione campos à tabela principal.
+
+A página deverá consultar exclusivamente a tabela principal de Processos.
+
+LISTA PRINCIPAL
+
+Apresente uma lista ou grade responsiva com estas colunas:
+
+- CNJ, usando num_cnj
+- Cliente, usando nm_lit
+- Quadrante, calculado dinamicamente
+- Valor, usando ValorAcaoMoedaCorrente em formato monetário brasileiro
+- Próxima revisão, obtida do registro relacionado da tabela de Controle do Kanban
+
+Não exiba coluna de inconsistências.
+
+Quando ainda não existir registro de Controle do Kanban para o processo, apresente Próxima revisão como “Não definida”.
+
+FILTROS
+
+Inclua filtros para:
+
+- Quadrante N1 a N9, calculado dinamicamente
+- Peso P1 a P4, calculado dinamicamente
+- Comarca ou município, usando nm_mun
+- Advogado, usando nm_adv
+- Responsável, usando responsavel
+- Faixa de valor V1 a V3, calculada dinamicamente
+
+Inclua pesquisa textual por:
+
+- num_cnj
+- nm_lit
+
+NAVEGAÇÃO
+
+Ao selecionar ou clicar em um processo, abra os detalhes do registro da tabela de Processos no Workspace.
+
+O formulário de detalhes deverá exibir todos os campos da tabela principal de Processos, organizados em seções lógicas, sem criar novos campos.
+
+Sugestão de organização visual:
+
+- Identificação processual
+- Partes e responsáveis
+- Órgão, município e domínio
+- Datas e revisão
+- Natureza e classificação de origem
+- Contrato
+- Valores
+- Contingência
+- Códigos e referências externas
+
+Essa organização é apenas visual. Não altere os nomes nem os dados dos campos.
+
+ESTADOS VAZIOS
+
+Se não houver processos, apresente mensagem informando que a carteira ainda não possui registros e que a carga será realizada posteriormente diretamente na tabela.
+
+Não crie botão de importação e não insira dados fictícios.
+
+Ao concluir:
+
+1. Confirme as colunas exibidas.
+2. Confirme os filtros disponíveis.
+3. Confirme que quadrante, peso e faixas são calculados dinamicamente.
+4. Confirme que o clique abre os detalhes do processo.
+5. Confirme que nenhum campo novo foi criado na tabela principal.
+6. Não implemente ainda Dashboard, Matriz ou Kanban.

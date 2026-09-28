@@ -1,0 +1,12 @@
+{
+  "name": "IKanbanOperationalProvider",
+  "version": "2.0.0",
+  "operations": ["listCards", "getMovements", "appendMovement", "getHistory", "appendHistory", "appendAudit", "getSLA", "getWIP"],
+  "providers": {
+    "LocalStorageProvider": {"status":"preparado", "runtime":"nao conectado"},
+    "ServiceNowProvider": {"status":"stub", "runtime":"nao conectado"},
+    "FutureDatabaseProvider": {"status":"futuro", "runtime":"nao conectado"}
+  },
+  "consistency": "append-only para movimento, auditoria e histórico",
+  "legacyIsolation": true
+}

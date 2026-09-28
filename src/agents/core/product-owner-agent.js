@@ -1,0 +1,3 @@
+const { AgentBase } = require('./agent-base');
+class ProductOwnerAgent extends AgentBase { constructor(deps = {}) { super({ id: 'product-owner', name: 'Product Owner Agent', type: 'product-owner', capabilities: ['roadmap','backlog','features','epics','prioritization'], dependencies: ['context-snapshot','knowledge-index','project-memory'] }); } run(request, context) { return { objective: request.objective || 'product-context', roadmap: context.context?.architecture?.roadmap || 'migration-roadmap.md', features: context.context?.features || [], backlog: context.context?.backlog || [], prioritization: 'requires-human-approval' }; } }
+module.exports = { ProductOwnerAgent };

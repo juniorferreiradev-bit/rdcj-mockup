@@ -1,0 +1,10 @@
+# Governance ownership
+/architecture*.md @rdcj/architecture
+/memory/ @rdcj/memory
+/src/core/memory/ @rdcj/memory
+/src/core/context/ @rdcj/architecture
+/src/core/documentation/ @rdcj/documentation
+/src/providers/ @rdcj/architecture
+/src/agents/ @rdcj/agents
+/servicenow*.md @rdcj/servicenow
+/servicenow-*.json @rdcj/servicenow

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-27T00:00:00.000Z",
+  "categories": {
+    "arquitetura": ["architecture-current.md", "architecture-target.md", "gap-analysis.md"],
+    "produto": ["README.md", "src/memory/product-memory.md", "src/memory/feedback-log.md", "memory/project-memory.json"],
+    "backlog": ["src/memory/backlog.md"],
+    "decisões": ["src/memory/decisions-log.md", "src/memory/product-memory.md"],
+    "releases": ["CHANGELOG.md", "RELEASE-v0.1.md"],
+    "manuais": ["MANUAL-OPERADOR.md", "GUIA-DEMONSTRACAO.md"],
+    "roadmap": ["src/memory/backlog.md", "migration-roadmap.md"],
+    "integrações": ["Servicenow.md"],
+    "serviceNow": ["Servicenow.md"]
+  }
+}

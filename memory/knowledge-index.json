@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-27T00:00:00.000Z",
+  "categories": {
+    "modules": [
+      { "id": "module-navigation", "type": "memory", "category": "modules", "name": "Navegação", "source": "src/js/navigation.js" },
+      { "id": "module-base", "type": "memory", "category": "modules", "name": "Gestão da carteira", "source": "src/js/base-manager.js" },
+      { "id": "module-classification", "type": "memory", "category": "modules", "name": "Classificação matricial", "source": "src/js/matriz-criticidade.js" },
+      { "id": "module-operation", "type": "memory", "category": "modules", "name": "Motor de Atuação", "source": "src/js/motor-atuacao.js" },
+      { "id": "module-audit", "type": "memory", "category": "modules", "name": "Auditoria", "source": "src/js/auditoria.js" }
+    ],
+    "features": [
+      { "id": "feature-matrix", "type": "memory", "category": "features", "name": "Matriz RDCJ", "status": "existing" },
+      { "id": "feature-process-360", "type": "memory", "category": "features", "name": "Processo 360", "status": "existing" },
+      { "id": "feature-dashboard", "type": "memory", "category": "features", "name": "Dashboard", "status": "existing" },
+      { "id": "feature-motor", "type": "memory", "category": "features", "name": "Motor de Atuação", "status": "existing" },
+      { "id": "feature-kanban", "type": "memory", "category": "features", "name": "Kanban RDCJ", "status": "existing" },
+      { "id": "feature-memory", "type": "memory", "category": "features", "name": "Memória Persistente", "status": "in-progress" }
+    ],
+    "decisions": [
+      { "id": "document:src/memory/decisions-log.md", "type": "document", "category": "decisions", "path": "src/memory/decisions-log.md" },
+      { "id": "document:src/memory/product-memory.md", "type": "document", "category": "decisions", "path": "src/memory/product-memory.md" }
+    ],
+    "releases": [
+      { "id": "release-v0.1", "type": "memory", "category": "releases", "version": "v0.1", "status": "baseline" },
+      { "id": "document:CHANGELOG.md", "type": "document", "category": "releases", "path": "CHANGELOG.md" }
+    ],
+    "backlog": [
+      { "id": "document:src/memory/backlog.md", "type": "document", "category": "backlog", "path": "src/memory/backlog.md" }
+    ],
+    "documentation": [
+      { "id": "document:README.md", "type": "document", "category": "documentation", "path": "README.md" },
+      { "id": "document:architecture-current.md", "type": "document", "category": "documentation", "path": "architecture-current.md" },
+      { "id": "document:architecture-target.md", "type": "document", "category": "documentation", "path": "architecture-target.md" },
+      { "id": "document:gap-analysis.md", "type": "document", "category": "documentation", "path": "gap-analysis.md" },
+      { "id": "document:migration-roadmap.md", "type": "document", "category": "documentation", "path": "migration-roadmap.md" }
+    ],
+    "architecture": [
+      { "id": "document:architecture-current.md", "path": "architecture-current.md" },
+      { "id": "document:architecture-target.md", "path": "architecture-target.md" },
+      { "id": "document:gap-analysis.md", "path": "gap-analysis.md" }
+    ],
+    "roadmap": [
+      { "id": "document:migration-roadmap.md", "path": "migration-roadmap.md" }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "rows": [
+    {"coluna":"CLASSIFICACAO_NOVA_ENTRADA","responsavel":"ADVOGADO","slaHoras":24,"wip":10,"escalonamento":"Gestor jurídico"},
+    {"coluna":"CLASSIFICACAO_P4","responsavel":"ADVOGADO","slaHoras":24,"wip":10,"escalonamento":"Gestor jurídico"},
+    {"coluna":"CLASSIFICACAO_P3","responsavel":"ADVOGADO","slaHoras":48,"wip":20,"escalonamento":"Gestor jurídico"},
+    {"coluna":"CLASSIFICACAO_P2","responsavel":"ADVOGADO","slaHoras":72,"wip":30,"escalonamento":"Gestor jurídico"},
+    {"coluna":"CLASSIFICACAO_P1","responsavel":"ADVOGADO","slaHoras":120,"wip":50,"escalonamento":"Gestor jurídico"},
+    {"coluna":"ADVOGADO_PETICIONAR","responsavel":"ADVOGADO","slaHoras":48,"wip":30,"escalonamento":"Coordenação jurídica"},
+    {"coluna":"AGENCIA_INVESTIGACAO","responsavel":"AGENCIA","slaHoras":120,"wip":30,"escalonamento":"Coordenação de agência"},
+    {"coluna":"RETAGUARDA_BUSCA","responsavel":"CENTRAL_RETAGUARDA","slaHoras":120,"wip":30,"escalonamento":"Coordenação de retaguarda"},
+    {"coluna":"MONITORAMENTO_P4","responsavel":"SISTEMA","slaHoras":2160,"wip":null,"escalonamento":"Gestor da carteira"}
+  ],
+  "defaultPolicy": {"motivoObrigatorio": true, "wipSemLimite": false}
+}

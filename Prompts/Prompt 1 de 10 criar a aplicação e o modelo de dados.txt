@@ -1,0 +1,146 @@
+Crie uma nova aplicação no ServiceNow denominada “RDCJ”, com a descrição curta “Regime Diferenciado de Cobrança Judicial”.
+
+Deixe que o ServiceNow defina automaticamente o escopo técnico da aplicação.
+
+Antes de criar qualquer artefato, verifique se já existem componentes, tabelas, experiências ou páginas com o nome RDCJ no escopo atual. Não duplique artefatos existentes. Caso encontre algum componente já criado nesta sequência, reutilize-o e informe o que foi reaproveitado.
+
+A aplicação deverá ser construída para Workspace/UI Builder e terá, ao final, somente estes quatro módulos funcionais:
+
+1. Dashboard
+2. Matriz
+3. Kanban
+4. Carteira de Processos
+
+Nesta etapa, crie somente a aplicação, as tabelas, os campos e os relacionamentos. Não crie ainda páginas completas, dashboards, gráficos, matriz visual ou quadro Kanban.
+
+Crie duas tabelas próprias:
+
+1. Tabela principal de Processos
+2. Tabela de Controle do Kanban
+
+Não crie tabela própria de auditoria. Não crie tabela de importação. Não crie tabela de inconsistências. Não crie tabela separada para classificação matricial.
+
+TABELA PRINCIPAL DE PROCESSOS
+
+Crie um campo para cada um dos campos abaixo. Preserve os rótulos informados e gere nomes técnicos compatíveis com o padrão ServiceNow:
+
+- Cpj
+- Dig
+- codigoPosicaoBnb
+- nr_prc_jst
+- nr_var
+- nm_tp_aco
+- nm_lit
+- nm_adv
+- nm_mun
+- nc_mun
+- nm_dom
+- cd_cnj_dom
+- nm_org
+- hoje
+- responsavel
+- cd_trl
+- tp_cam_trm
+- nm_crt
+- especial
+- valorDaAcao
+- dt_pos_vr
+- nm_con
+- de_tp_prc
+- PosicaoBnb
+- modalidadeDeContrato
+- DataCadastroProcesso
+- DataCadastroDaFaseAtual
+- DataFaseEncerramento
+- DataCadastroFaseEncerramento
+- revisado
+- dataRevisao
+- de_cau_ped
+- nm_gp_aco
+- id_dmn_prc
+- cd_com
+- id_nat_prc
+- de_nat_prc
+- id_seg
+- de_seg
+- NR_SQ_PRC_ORI
+- DV_SQ_PRC_ORI
+- AA_AJZ_PRC
+- ID_ORG_POD_JUD
+- ID_TRL_POD_JUD
+- ID_UND_ORI_PRC
+- num_cnj
+- vr_pon_prc
+- de_cau_rai
+- ID_GED
+- PosicaoUltimaContingencia
+- SomaValorPosicaoContingencia
+- SomaValorPosicaoContingenciaProvavel
+- SomaValorPosicaoContingenciaPossivel
+- SomaValorPosicaoContingenciaRemoto
+- SG_UF_MUN
+- Contrato
+- ValorAcaoMoedaCorrente
+- ValorAcaoFinsTerceirizacao
+
+O cabeçalho nr_var aparecia duas vezes na planilha de origem. Crie apenas um campo nr_var.
+
+Não adicione à tabela de Processos campos de inconsistência, quadrante, peso, faixa de tempo, faixa de valor, raia, coluna, ordem, estado ou auditoria.
+
+Use tipos coerentes com os dados:
+
+- datas sem horário como Date;
+- o campo hoje como Date/Time;
+- valores monetários como Currency ou Decimal adequado a BRL;
+- campos de “Sim/Não” como Boolean, quando compatível com os dados;
+- códigos que possam conter zeros à esquerda como String;
+- números processuais e CNJ como String;
+- descrições e nomes como String com comprimento suficiente.
+
+Defina num_cnj como a identificação processual principal para exibição, sem criar uma regra de unicidade que possa impedir carga inicial antes da validação dos dados.
+
+Considere DataCadastroDaFaseAtual como a “Data da decisão” para fins de classificação matricial, mas preserve o rótulo original do campo na tabela.
+
+Considere ValorAcaoMoedaCorrente como o valor utilizado na classificação matricial.
+
+TABELA DE CONTROLE DO KANBAN
+
+Crie uma tabela de controle operacional relacionada à tabela de Processos por um campo Reference obrigatório.
+
+Crie nela somente os campos necessários para persistir:
+
+- Processo, como referência à tabela de Processos
+- Estado atual
+- Linha de atuação atual
+- Raia atual
+- Coluna atual
+- Ordem na coluna
+- Responsável atual
+- Data de entrada no fluxo
+- Data de entrada na etapa
+- Última atualização operacional
+- Próxima revisão
+- Último resultado
+
+Garanta que cada processo tenha no máximo um registro ativo de controle do Kanban.
+
+Não implemente nesta etapa histórico próprio, auditoria própria, importação Excel, dados fictícios ou inserções automáticas.
+
+SEGURANÇA INICIAL
+
+Crie uma role administrativa própria para a aplicação RDCJ.
+
+Neste momento, somente usuários com essa role administrativa podem acessar as tabelas e a futura experiência RDCJ.
+
+Não crie outros perfis, grupos ou regras de segmentação.
+
+Ao concluir:
+
+1. Liste os artefatos criados.
+2. Apresente o nome técnico definido automaticamente para o escopo.
+3. Apresente os nomes técnicos das duas tabelas.
+4. Apresente a relação completa entre rótulos e nomes técnicos dos campos.
+5. Confirme que existe apenas um campo nr_var.
+6. Confirme que nenhum dado fictício foi inserido.
+7. Confirme que nenhuma página funcional foi criada nesta etapa.
+8. Informe qualquer limitação encontrada, sem criar solução alternativa não solicitada.

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0",
+  "roles": ["Responsible", "Accountable", "Consulted", "Informed"],
+  "activities": [
+    { "activity": "Arquitetura", "responsible": ["Chief Architect"], "accountable": "Architecture Board", "consulted": ["Security", "Product Owner"], "informed": ["Release Owner"] },
+    { "activity": "Memória", "responsible": ["Memory Agent"], "accountable": "Memory Governance", "consulted": ["Domain Owner"], "informed": ["Documentation Architect"] },
+    { "activity": "Documentação", "responsible": ["Documentation Architect"], "accountable": "Domain Owner", "consulted": ["Architect"], "informed": ["Release Owner"] },
+    { "activity": "Agentes", "responsible": ["AI Governance"], "accountable": "Security/Domain Owner", "consulted": ["Architect"], "informed": ["Compliance"] },
+    { "activity": "Providers", "responsible": ["Solution Architect"], "accountable": "Architecture Board", "consulted": ["Platform Owner"], "informed": ["Security"] },
+    { "activity": "Releases", "responsible": ["Release Owner"], "accountable": "Change Board", "consulted": ["QA","Architecture"], "informed": ["Product Owner"] }
+  ]
+}
