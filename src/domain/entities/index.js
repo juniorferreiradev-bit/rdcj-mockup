@@ -1,0 +1,1 @@
+module.exports = { ...require('./processo'), ...require('./fluxo-operacional'), ...require('./kanban-card'), ...require('./matriz-classificacao'), ...require('./auditoria'), ...require('./memory-project'), ...require('./snapshots'), ...require('../kanban/entities') };

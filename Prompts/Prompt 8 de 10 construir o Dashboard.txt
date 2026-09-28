@@ -1,0 +1,79 @@
+Continue a aplicação RDCJ e implemente a página “Dashboard” no Workspace/UI Builder.
+
+Antes de iniciar, valide as tabelas, a função de classificação, a Carteira, a Matriz e o Controle do Kanban.
+
+Todos os indicadores devem ser calculados a partir dos registros reais da tabela de Processos e, quando necessário, da tabela de Controle do Kanban.
+
+Não insira dados fictícios.
+
+INDICADORES PRINCIPAIS
+
+Apresente:
+
+- Valor total da carteira, somando ValorAcaoMoedaCorrente
+- Valor para terceirização, somando ValorAcaoFinsTerceirizacao
+- Total de processos
+
+DISTRIBUIÇÕES
+
+Apresente quantidade e percentual por:
+
+- quadrante;
+- faixa de valor;
+- faixa de tempo;
+- advogado, usando nm_adv;
+- responsável, usando responsavel;
+- comarca ou município, usando nm_mun.
+
+RANKINGS
+
+Apresente Top 10:
+
+- processos por ValorAcaoMoedaCorrente;
+- clientes por soma de ValorAcaoMoedaCorrente;
+- comarcas ou municípios por soma de ValorAcaoMoedaCorrente;
+- advogados por soma de ValorAcaoMoedaCorrente.
+
+Utilize num_cnj como identificação do processo e nm_lit como identificação do cliente.
+
+FILTROS GLOBAIS
+
+Inclua filtros que possam recalcular os indicadores, distribuições e rankings:
+
+- quadrante;
+- peso;
+- faixa de tempo;
+- faixa de valor;
+- município;
+- advogado;
+- responsável.
+
+NAVEGAÇÃO ANALÍTICA
+
+Quando tecnicamente aplicável:
+
+- clique em um quadrante, faixa, advogado, responsável ou comarca deve abrir a Carteira de Processos com o filtro correspondente;
+- clique em um processo do Top 10 deve abrir os detalhes do processo;
+- clique em um cliente deve abrir a Carteira filtrada por nm_lit.
+
+ESTILO
+
+Use cartões, gráficos e listas com a identidade visual RDCJ já configurada.
+
+Evite gráficos decorativos sem valor analítico.
+
+Apresente valores no padrão monetário brasileiro e percentuais com uma casa decimal.
+
+DADOS NÃO CLASSIFICADOS
+
+Não inclua processos “Não classificados” em quadrantes N1 a N9.
+
+Apresente separadamente a quantidade de processos não classificados quando houver.
+
+Ao concluir:
+
+1. Liste os indicadores e gráficos criados.
+2. Confirme os quatro rankings Top 10.
+3. Confirme que os filtros recalculam os componentes.
+4. Confirme a navegação para Carteira e detalhes.
+5. Confirme que os cálculos usam apenas dados reais das tabelas.

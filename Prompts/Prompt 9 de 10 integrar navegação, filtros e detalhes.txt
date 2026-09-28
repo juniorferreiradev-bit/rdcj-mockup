@@ -1,0 +1,88 @@
+Continue a aplicação RDCJ.
+
+Nesta etapa, revise e integre as quatro páginas já construídas:
+
+1. Dashboard
+2. Matriz
+3. Kanban
+4. Carteira de Processos
+
+Não crie novos módulos.
+
+Implemente e valide os seguintes fluxos:
+
+FLUXO 1
+
+Dashboard → Carteira de Processos filtrada
+
+- Quadrante
+- Peso
+- Faixa de tempo
+- Faixa de valor
+- Município
+- Advogado
+- Responsável
+- Cliente
+
+FLUXO 2
+
+Dashboard → Detalhes do processo
+
+- Clique em processo do Top 10
+
+FLUXO 3
+
+Matriz → Carteira de Processos filtrada
+
+- Clique em N1 a N9
+
+FLUXO 4
+
+Carteira de Processos → Detalhes do processo
+
+- Clique em num_cnj ou na linha
+
+FLUXO 5
+
+Kanban → Detalhes do processo
+
+- Clique no número CNJ ou na ação de abertura
+
+PERSISTÊNCIA DE FILTROS
+
+Ao abrir a Carteira a partir do Dashboard ou da Matriz:
+
+- aplique o filtro recebido;
+- mostre visualmente qual filtro está ativo;
+- permita alterá-lo;
+- permita removê-lo;
+- não mantenha filtros antigos incompatíveis.
+
+DETALHES DO PROCESSO
+
+No formulário do processo:
+
+- exiba todos os campos da tabela principal em seções lógicas;
+- mostre, em área relacionada, o registro ativo do Controle do Kanban, se existente;
+- permita retornar à página de origem quando o Workspace suportar esse comportamento;
+- não crie uma página denominada Processo 360;
+- não adicione campos à tabela principal.
+
+MENU
+
+Confirme que o menu principal continua contendo somente:
+
+- Dashboard
+- Matriz
+- Kanban
+- Carteira de Processos
+
+Não inclua módulos administrativos no menu funcional do Workspace.
+
+Ao concluir:
+
+1. Teste os cinco fluxos de navegação.
+2. Informe quais filtros são transmitidos entre páginas.
+3. Confirme a remoção e alteração dos filtros.
+4. Confirme que nenhum quinto módulo foi adicionado.
+5. Confirme que os detalhes usam o registro real da tabela de Processos.

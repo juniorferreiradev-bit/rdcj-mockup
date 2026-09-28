@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "1.0",
+  "activities": [
+    { "activity": "Definir roadmap", "responsible": ["product-owner"], "accountable": "Product Owner", "consulted": ["architect"], "informed": ["release","documentation"] },
+    { "activity": "Alterar arquitetura", "responsible": ["architect"], "accountable": "Chief Architect", "consulted": ["development","qa"], "informed": ["product-owner","release"] },
+    { "activity": "Alterar memória", "responsible": ["memory"], "accountable": "Memory Governance", "consulted": ["documentation"], "informed": ["architect"] },
+    { "activity": "Atualizar documentação", "responsible": ["documentation"], "accountable": "Documentation Architect", "consulted": ["architect","product-owner"], "informed": ["release"] },
+    { "activity": "Validar release", "responsible": ["qa","release"], "accountable": "Release Owner", "consulted": ["architect","documentation"], "informed": ["product-owner"] }
+  ]
+}

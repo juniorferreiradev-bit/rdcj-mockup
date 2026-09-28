@@ -1,0 +1,67 @@
+Continue a aplicação RDCJ.
+
+Primeiro, verifique se as duas tabelas e a função de classificação das etapas anteriores existem e estão operacionais. Não recrie artefatos existentes.
+
+Crie uma experiência em Workspace/UI Builder para a aplicação RDCJ.
+
+A navegação principal deverá conter somente quatro itens, nesta ordem:
+
+1. Dashboard
+2. Matriz
+3. Kanban
+4. Carteira de Processos
+
+Não inclua:
+
+- Caixa de Trabalho
+- Radar
+- Importação
+- Configuração
+- Alertas
+- Regras
+- Auditoria
+- Processo 360
+- qualquer outro módulo não aprovado
+
+Crie a estrutura básica das quatro páginas, mas não implemente ainda seus conteúdos funcionais completos.
+
+IDENTIDADE VISUAL
+
+A experiência deverá preservar a identidade visual definida para o RDCJ:
+
+- vermelho principal: #A6193C
+- vermelho escuro: #650F27
+- laranja de destaque: #F68B1F
+- cinza: #646464
+- fundo geral: #F6F4F2
+- superfícies e cartões: #FFFFFF
+- texto principal: #2B2928
+- texto secundário: #77716E
+- bordas: #E5E0DD
+
+Use menu lateral quando a experiência e os componentes nativos permitirem. Em telas menores, utilize comportamento responsivo compatível com Workspace/UI Builder.
+
+O cabeçalho ou identificação da experiência deve apresentar:
+
+- RDCJ
+- Regime Diferenciado de Cobrança Judicial
+
+Use componentes nativos do Workspace/UI Builder sempre que atenderem ao requisito. Evite dependências externas e não carregue bibliotecas por CDN.
+
+SEGURANÇA
+
+Restrinja a experiência à role administrativa RDCJ criada anteriormente.
+
+ESTRUTURA INICIAL
+
+Em cada página, exiba apenas um título provisório e uma indicação de que o conteúdo será construído nas próximas etapas.
+
+Não carregue dados fictícios. Não gere registros.
+
+Ao concluir:
+
+1. Liste a experiência e as quatro páginas criadas.
+2. Confirme que o menu contém exatamente quatro itens.
+3. Confirme a aplicação da identidade visual.
+4. Confirme que a experiência está restrita à role administrativa RDCJ.
+5. Não implemente ainda Dashboard, Matriz, Kanban ou Carteira.

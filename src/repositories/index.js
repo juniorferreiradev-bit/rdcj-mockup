@@ -1,0 +1,9 @@
+const { ProcessRepository } = require('./process-repository');
+const { KanbanRepository } = require('./kanban-repository');
+const { AuditRepository } = require('./audit-repository');
+const { MemoryRepositoryAdapter } = require('./memory-repository-adapter');
+const { ContextRepositoryAdapter } = require('./context-repository-adapter');
+const { DocumentationRepositoryAdapter } = require('./documentation-repository-adapter');
+const { RepositoryRegistry } = require('./repository-registry');
+const adapters = require('./local-storage-adapters');
+module.exports = { ProcessRepository, KanbanRepository, AuditRepository, MemoryRepositoryAdapter, ContextRepositoryAdapter, DocumentationRepositoryAdapter, RepositoryRegistry, ...adapters };

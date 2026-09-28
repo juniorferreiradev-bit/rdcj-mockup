@@ -1,0 +1,134 @@
+Continue a aplicação RDCJ.
+
+Nesta etapa, implemente o motor operacional que alimentará o Kanban, utilizando a tabela de Controle do Kanban já criada.
+
+Não construa ainda o quadro visual. Implemente somente regras, inicialização, estados, raias, colunas e transições permitidas.
+
+ESTADOS
+
+Utilize estes estados:
+
+- REVISAO_JURIDICA
+- PETICIONAMENTO
+- AGUARDANDO_RESULTADO
+- INVESTIGACAO_AGENCIA
+- INVESTIGACAO_RETAGUARDA
+- MONITORAMENTO
+- ENCERRADO
+
+LINHAS DE ATUAÇÃO
+
+- REVISAO_JURIDICA = ADVOGADO
+- PETICIONAMENTO = ADVOGADO
+- AGUARDANDO_RESULTADO = ADVOGADO
+- INVESTIGACAO_AGENCIA = AGENCIA
+- INVESTIGACAO_RETAGUARDA = CENTRAL_RETAGUARDA
+- MONITORAMENTO = SISTEMA
+- ENCERRADO = SISTEMA
+
+TRANSIÇÕES PERMITIDAS
+
+- REVISAO_JURIDICA + “Existe oportunidade processual” = PETICIONAMENTO
+- REVISAO_JURIDICA + “Não existe oportunidade” = INVESTIGACAO_AGENCIA
+- INVESTIGACAO_AGENCIA + “Informação relevante localizada” = INVESTIGACAO_RETAGUARDA
+- INVESTIGACAO_AGENCIA + “Nada localizado” = MONITORAMENTO
+- INVESTIGACAO_RETAGUARDA + “Ativo localizado” = PETICIONAMENTO
+- INVESTIGACAO_RETAGUARDA + “Busca negativa” = MONITORAMENTO
+- PETICIONAMENTO + “Petição protocolada” = AGUARDANDO_RESULTADO
+- AGUARDANDO_RESULTADO + “Encerrar diligência” = MONITORAMENTO
+
+Não permita transições fora dessa relação.
+
+RAIAS E COLUNAS
+
+Raia CLASSIFICAÇÃO:
+
+- Nova Entrada
+- P4
+- P3
+- P2
+- P1
+
+Raia ADVOGADO:
+
+- Novos Processos
+- Em Revisão Jurídica
+- Peticionar
+- Aguardando Resultado Judicial
+- Retorno para Revisão
+- Retorno Ativo Localizado
+
+Raia AGÊNCIA:
+
+- Recebidos
+- Em Investigação
+- Achados
+- Sem Achados
+
+Raia CENTRAL RETAGUARDA:
+
+- Recebidos
+- Busca Patrimonial
+- Busca Frutífera
+- Busca Negativa
+
+Raia MONITORAMENTO:
+
+- P4 · 90 dias
+- P3 · 180 dias
+- P2 · 240 dias
+- P1 · Reativo
+
+Raia CONCLUÍDOS:
+
+- Concluídos
+
+INICIALIZAÇÃO DO CONTROLE
+
+Implemente uma ação administrativa capaz de criar o registro de Controle do Kanban para processos que ainda não possuam controle.
+
+Nunca crie mais de um controle ativo para o mesmo processo.
+
+Na inicialização:
+
+- estado inicial = REVISAO_JURIDICA;
+- linha inicial = ADVOGADO;
+- raia inicial = CLASSIFICAÇÃO;
+- coluna inicial = P1, P2, P3 ou P4 conforme o peso calculado;
+- responsável atual = valor do campo responsavel; se vazio, usar nm_adv;
+- próxima revisão conforme o peso;
+- ordem = próxima posição disponível na coluna.
+
+RESPONSÁVEL AUTOMÁTICO POR RAIA OU ESTADO
+
+Ao mudar o estado:
+
+- estados jurídicos: usar responsavel; se vazio, usar nm_adv;
+- INVESTIGACAO_AGENCIA: responsável atual = “Agência”;
+- INVESTIGACAO_RETAGUARDA: responsável atual = “Retaguarda”;
+- MONITORAMENTO: responsável atual = “Sistema”;
+- ENCERRADO: responsável atual = “Sistema”.
+
+Esses valores são rótulos operacionais nesta versão. Não crie grupos, usuários ou referências adicionais.
+
+REGRAS DE MOVIMENTAÇÃO
+
+Permita movimentação somente para colunas compatíveis com o estado e com as transições oficiais.
+
+Movimentos meramente organizacionais dentro de colunas compatíveis com o mesmo estado podem alterar coluna e ordem.
+
+Movimentos que representem mudança de estado devem exigir a seleção de uma das decisões oficiais correspondentes ao estado de origem.
+
+Não permita arrastar diretamente para uma coluna incompatível, pular estados ou mover livremente para Concluídos.
+
+Não crie tabela própria de histórico ou auditoria.
+
+Ao concluir:
+
+1. Liste todos os estados, raias e colunas configurados.
+2. Mostre o mapeamento entre colunas e estados.
+3. Mostre as transições permitidas.
+4. Confirme o bloqueio das transições não permitidas.
+5. Confirme a atualização automática do responsável.
+6. Confirme que a tabela de Processos não recebeu campos operacionais.
+7. Não construa ainda o quadro visual.

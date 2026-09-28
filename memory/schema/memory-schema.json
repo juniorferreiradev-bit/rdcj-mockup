@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rdcj.local/schema/memory-schema.json",
+  "title": "RDCJ Persistent Memory",
+  "description": "Schema base da memória persistente do RDCJ 2.0.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project", "version", "createdAt", "updatedAt", "features", "modules", "decisions", "tasks", "agents", "documentation", "releases", "audit"],
+  "properties": {
+    "project": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "minLength": 1 },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "features": { "type": "array", "items": { "$ref": "#/$defs/memoryItem" } },
+    "modules": { "type": "array", "items": { "$ref": "#/$defs/memoryItem" } },
+    "decisions": { "type": "array", "items": { "$ref": "#/$defs/memoryItem" } },
+    "tasks": { "type": "array", "items": { "$ref": "#/$defs/memoryItem" } },
+    "agents": { "type": "array", "items": { "$ref": "#/$defs/memoryItem" } },
+    "documentation": { "type": "array", "items": { "$ref": "#/$defs/memoryItem" } },
+    "releases": { "type": "array", "items": { "$ref": "#/$defs/memoryItem" } },
+    "audit": { "type": "array", "items": { "$ref": "#/$defs/auditEntry" } }
+  },
+  "$defs": {
+    "memoryItem": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string" },
+        "title": { "type": "string" },
+        "status": { "type": "string" },
+        "source": { "type": "string" },
+        "path": { "type": "string" },
+        "author": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "metadata": { "type": "object" }
+      },
+      "additionalProperties": true
+    },
+    "auditEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "date", "type", "origin", "module", "author", "impact"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "date": { "type": "string", "format": "date-time" },
+        "type": { "type": "string", "minLength": 1 },
+        "origin": { "type": "string", "minLength": 1 },
+        "module": { "type": "string", "minLength": 1 },
+        "author": { "type": "string", "minLength": 1 },
+        "impact": { "type": "string", "minLength": 1 },
+        "entityId": { "type": "string" },
+        "details": { "type": "object" }
+      }
+    }
+  }
+}

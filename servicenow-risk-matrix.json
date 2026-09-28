@@ -1,0 +1,12 @@
+{
+  "version":"1.0.0",
+  "risks":[
+    {"id":"SN-001","title":"Mudança de classificação","category":"negocio","level":"Crítico","mitigation":"testes de borda e homologação jurídica"},
+    {"id":"SN-002","title":"Carga de dados incompleta","category":"dados","level":"Alto","mitigation":"contagem, checksum e reconciliação"},
+    {"id":"SN-003","title":"ACL excessiva","category":"seguranca","level":"Alto","mitigation":"deny-by-default e segregação"},
+    {"id":"SN-004","title":"Perda de histórico","category":"auditoria","level":"Alto","mitigation":"carga append-only e trace_id"},
+    {"id":"SN-005","title":"Performance de APIs agregadas","category":"operacao","level":"Médio","mitigation":"teste de volume e observabilidade"},
+    {"id":"SN-006","title":"Falha de documentação/contrato","category":"governanca","level":"Baixo","mitigation":"health service e gates automatizados"}
+  ],
+  "levels":["Baixo","Médio","Alto","Crítico"]
+}

@@ -1,0 +1,2 @@
+class AgentHealthService { constructor(registry) { this.registry = registry; } check(id) { const agent = this.registry.resolve(id); const health = agent.health(); return { registered: true, configured: Boolean(agent.capabilities.length), contextReady: true, capabilitiesReady: health.status === 'ready', dependenciesReady: true, health }; } checkAll() { return Object.fromEntries(this.registry.list().map((agent) => [agent.id, this.check(agent.id)])); } }
+module.exports = { AgentHealthService };

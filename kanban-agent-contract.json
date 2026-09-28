@@ -1,0 +1,13 @@
+{
+  "name": "KanbanAgentIntegrationContract",
+  "version": "2.0.0",
+  "events": ["kanban.movement.created", "kanban.sla.alert", "kanban.wip.alert", "kanban.audit.created"],
+  "agents": {
+    "ProductOwnerAgent": ["reviewMetrics", "approveGovernance"],
+    "QAAgent": ["validateContracts", "validateRules"],
+    "ReleaseAgent": ["checkReadiness", "checkCompatibility"],
+    "ArchitectAgent": ["reviewBoundaries", "reviewProviderMapping"]
+  },
+  "execution": "somente contrato; sem automacao real",
+  "requiredContext": ["processoId", "estado", "coluna", "responsavel", "timestamp"]
+}

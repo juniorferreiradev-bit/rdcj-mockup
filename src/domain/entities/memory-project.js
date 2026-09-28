@@ -1,0 +1,2 @@
+class MemoriaProjeto { constructor(data = {}) { this.project = data.project || 'RDCJ 2.0'; this.version = data.version || 'unknown'; this.features = data.features || []; this.modules = data.modules || []; this.decisions = data.decisions || []; } toJSON() { return { project: this.project, version: this.version, features: this.features, modules: this.modules, decisions: this.decisions }; } }
+module.exports = { MemoriaProjeto };

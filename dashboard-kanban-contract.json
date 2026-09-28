@@ -1,0 +1,11 @@
+{
+  "name": "dashboard-kanban-contract",
+  "version": "2.0.0",
+  "status": "preparacao",
+  "source": "src/domain/kanban",
+  "readOnlyAgainstLegacy": true,
+  "metrics": ["volume", "backlog", "sla", "wip", "leadTime", "cycleTime", "produtividade"],
+  "filters": ["estado", "coluna", "responsavel", "criticidade", "quadrante"],
+  "response": {"executive": "KanbanExecutiveMetrics", "alerts": "KanbanAlertService"},
+  "integration": {"dashboardAtual": "nao alterar", "runtime": "nao conectado"}
+}

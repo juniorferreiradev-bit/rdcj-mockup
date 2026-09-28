@@ -55,6 +55,8 @@ Com o servidor rodando na porta `8000` (opções A/B), acesse:
 - `http://localhost:8000/src/pages/matriz.html` — Matriz RDCJ diretamente; ou
 - `http://localhost:8000/src/pages/dashboard.html` — Dashboard executivo.
 
+> **Atenção ao diretório onde o servidor foi iniciado.** As URLs acima assumem que o comando `python -m http.server 8000` foi executado na **raiz do projeto** (`C:\dev\RDCJ-MOCKUP`). Se o servidor for iniciado de dentro de `src/`, remova o prefixo `/src` das URLs (ex.: `http://localhost:8000/index.html`), pois nesse caso a pasta `src/` já é a raiz servida. Um erro `404` ao acessar `/src/index.html` normalmente indica esse desalinhamento de diretório.
+
 Se estiver usando Live Server, a URL será exibida automaticamente pela extensão (geralmente porta `5500`).
 
 ## 5. Carregar uma carteira de teste
@@ -75,6 +77,7 @@ No terminal onde o servidor está rodando, pressione `Ctrl + C`.
 | Sintoma | Causa provável | Solução |
 |---|---|---|
 | Tela em branco ou erro no console sobre `fetch`/`XMLHttpRequest` | Arquivo aberto via `file://` em vez de `http://` | Reinicie pelo servidor HTTP (passo 3) |
+| `404 File not found` ao acessar `/src/index.html` | Servidor iniciado dentro da pasta `src/`, não na raiz do projeto | Acesse sem o prefixo `/src` (ex.: `http://localhost:8000/index.html`) ou reinicie o servidor a partir de `C:\dev\RDCJ-MOCKUP` |
 | Menu lateral não aparece | Cache do navegador desatualizado | `Ctrl + F5` para recarregar sem cache |
 | Importação não reconhece colunas | Planilha sem os campos mínimos (CNJ, cliente, valor, data da decisão) | Ajuste manualmente o mapeamento na tela de importação |
 | Dados de uma demonstração anterior aparecem misturados | Base antiga ainda salva no navegador | Vá em **Configuração** → **Limpar Base**, ou restaure um backup específico (ver `MANUAL-OPERADOR.md`) |

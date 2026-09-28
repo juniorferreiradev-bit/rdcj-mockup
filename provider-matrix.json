@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "mappings": [
+    { "repository": "ProcessRepository", "provider": "LocalStorageProvider", "storage": "rdcj-processos", "future": ["ServiceNowProvider", "FutureDatabaseProvider"] },
+    { "repository": "KanbanRepository", "provider": "LocalStorageProvider", "storage": "rdcj-motor-atuacao", "future": ["ServiceNowProvider", "FutureDatabaseProvider"] },
+    { "repository": "AuditRepository", "provider": "LocalStorageProvider", "storage": "rdcj-auditoria", "future": ["ServiceNowProvider", "FutureDatabaseProvider"] },
+    { "repository": "MemoryRepositoryAdapter", "provider": "MemoryProvider", "storage": "MemoryRepository" },
+    { "repository": "ContextRepositoryAdapter", "provider": "ContextProvider", "storage": "ContextRepository" },
+    { "repository": "DocumentationRepositoryAdapter", "provider": "DocumentationProvider", "storage": "DocumentationRepository" }
+  ]
+}
