@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T22:00:38.760Z",
+  "generatedAt": "2026-09-29T22:11:56.041Z",
   "categories": {
     "arquitetura": [
       {
@@ -8,7 +8,7 @@
         "path": "memory/context-snapshot.json",
         "title": "context-snapshot.json",
         "headings": [],
-        "hash": "b5a983935edbc05e8f226f9e763524ea8c60b147a057f67c8aa324d4c6ddd765",
+        "hash": "e1d45fcba9fd9a5b0f9e3cf7dda2b918a20acf3467fafceae1df1653de3a08ed",
         "missing": false
       }
     ],
@@ -19,19 +19,23 @@
         "title": "RDCJ 2.1",
         "headings": [
           "RDCJ 2.1",
-          "Estado real do projeto",
-          "Executar localmente",
-          "Arquitetura e runtime atual",
-          "Telas existentes",
-          "Camadas e módulos existentes",
-          "Persistência atual",
-          "Documentação, decisões e governança",
-          "ServiceNow Readiness",
-          "Releases",
-          "Backlog — não implementado",
-          "Testes e validação"
+          "1. Visão Geral",
+          "2. Objetivo do RDCJ",
+          "3. Funcionalidades Implementadas",
+          "Estado por capacidade",
+          "4. Estrutura Atual do Projeto",
+          "5. Arquitetura Atual",
+          "6. Governança",
+          "7. Documentação",
+          "8. Releases",
+          "9. ServiceNow Readiness",
+          "10. Roadmap",
+          "Implementado",
+          "Em Evolução",
+          "Planejado",
+          "Executar e validar"
         ],
-        "hash": "02acdcaf82dd452a66d611762aee82a3a76e7bf850809d6d17eac8902d7071a8",
+        "hash": "803aadbb768e4664c237100b9b935530506239cfa3e33d722b814c0dc9f70c70",
         "missing": false
       },
       {
@@ -81,7 +85,7 @@
         "path": "memory/knowledge-index.json",
         "title": "knowledge-index.json",
         "headings": [],
-        "hash": "7a4e04d7e5e1899492600ccb5994d205bb39315f2ee7aeb215983a054cce3671",
+        "hash": "9ff83c1235f636a48d7d65dcf1d695d4b92fee89ad4e470185ca0505d3335afa",
         "missing": false
       }
     ],

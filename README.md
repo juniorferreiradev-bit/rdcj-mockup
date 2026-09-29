@@ -1,116 +1,133 @@
 # RDCJ 2.1
 
-RDCJ significa **Risco, Decisão, Criticidade e Justiça**. O repositório contém uma aplicação demonstrativa estática para importar uma carteira judicial, classificar processos por Tempo × Valor e visualizar sua atuação operacional.
+## 1. Visão Geral
 
-## Estado real do projeto
+RDCJ significa **Risco, Decisão, Criticidade e Justiça**. O repositório contém uma aplicação demonstrativa para importar e analisar uma carteira judicial, visualizar os processos numa Matriz RDCJ e acompanhar fluxos operacionais locais.
 
-- Aplicação web em HTML/CSS/JavaScript, sem framework frontend, bundler ou backend.
-- A execução de páginas depende de um servidor HTTP; `src/index.html` encaminha para a Matriz.
-- A carteira, a auditoria local e os fluxos do Motor de Atuação usam `localStorage` no navegador.
-- A classificação atualmente implementada é **Tempo da decisão × Valor da ação**. A matriz futura de Risco × Recuperação e IRP está no backlog e **não está implementada**.
-- As camadas Memory, Context, Documentation, Domain, Repository, Provider, Agents e Governance existem como módulos/contratos locais e têm testes; não substituem o runtime da aplicação estática nem constituem um backend integrado.
-- Kanban 2.0 é uma extensão de domínio sem conexão ao Kanban visual legado.
-- ServiceNow está em preparação documental; não existe conexão, migração nem runtime integrado.
+A aplicação atual é estática: HTML, CSS e JavaScript executados no navegador, sem backend, autenticação ou sincronização entre usuários.
 
-## Executar localmente
+## 2. Objetivo do RDCJ
 
-Na raiz do repositório:
+A experiência ajuda o operador a responder:
 
-```powershell
-python -m http.server 8000
+1. Onde está cada processo e como foi classificado?
+2. Qual estado e responsável operacional estão registrados localmente?
+
+A classificação executável no código é **Tempo da decisão × Valor da ação**. A visão Risco × Recuperação/IRP é uma direção futura do produto, não o algoritmo disponível.
+
+## 3. Funcionalidades Implementadas
+
+- **Dashboard:** indicadores e distribuições calculados sobre a carteira local.
+- **Matriz RDCJ:** classificação T1–T3 × V1–V3, quadrantes N1–N9, pesos P1–P4, filtros e navegação para a carteira. A apresentação usa paleta suave por peso; cores não alteram cálculos.
+- **Processo 360°:** identificação, enquadramento, explicabilidade, timeline e próxima ação com dados locais. A área de evidências é apenas estrutura; upload não está implementado.
+- **Kanban:** seis raias e 24 colunas. Drag-and-drop reorganiza coluna/ordem visual e não substitui as transições do Motor de Atuação.
+- **Importação XLS/XLSX/CSV:** leitura, mapeamento e persistência local no navegador. O XLSX é carregado por CDN.
+- **Backup e Restore:** exportação/importação JSON da sessão local; não é backup de servidor.
+- **Carteira, Caixa de Trabalho, Radar e Configuração:** telas locais existentes descritas no Manual do Operador.
+
+### Estado por capacidade
+
+- **Implementado:** telas listadas acima, classificador Tempo × Valor, Motor de Atuação local, `localStorage`, backup/restore e suítes Node.
+- **Em evolução:** RDCJ 2.1 consolida a documentação/estrutura; serviços de Kanban 2.0 existem como extensão de domínio isolada, sem integração com o Kanban visual.
+- **Planejado:** Risco × Recuperação, IRP, persistência corporativa, autenticação/autorização, backend, evidências gerenciadas e integração ServiceNow.
+
+## 4. Estrutura Atual do Projeto
+
+```text
+/
+├── README.md, CHANGELOG.md, MANUAL-OPERADOR.md, CONTRIBUTING.md
+├── PROJECT-STRUCTURE.md, RELEASE-v2.1.md, SERVICENOW.md
+├── .github/                         # CODEOWNERS e templates
+├── docs/
+│   ├── architecture/                # arquitetura e estrutura
+│   ├── governance/                  # políticas, matrizes e auditoria documental
+│   ├── decisions/                   # ADRs e decisões
+│   ├── releases/                    # releases e readiness
+│   ├── servicenow/                  # mappings e readiness documental
+│   └── guides/                      # guias e snapshots históricos
+├── assets/{css,js,images,icons}/    # estilos, scripts e recursos web
+├── src/
+│   ├── index.html
+│   ├── ui/{pages,components}/        # telas e componente visual
+│   ├── core/{context,documentation,memory}/
+│   ├── domain/                      # entidades, políticas e serviços
+│   ├── repositories/                # repositories/adapters locais
+│   ├── providers/                   # providers locais/stubs
+│   ├── agents/                      # framework e agents locais
+│   ├── governance/                  # health service
+│   ├── services/                    # ServiceNow readiness health
+│   └── memory/                      # memória e decisões do produto
+├── prompts/                         # prompts históricos
+├── tests/                           # suítes Node
+├── scripts/                         # validador de referências
+├── memory/                          # memória/índices/snapshots derivados
+└── governance/                      # artefatos documentais de governança
 ```
 
-Acesse `http://localhost:8000/src/index.html`. A Matriz também pode ser aberta em `http://localhost:8000/src/ui/pages/matriz.html`.
+A árvore detalhada e o inventário estão em [`PROJECT-STRUCTURE.md`](PROJECT-STRUCTURE.md) e [`docs/architecture/PROJECT-STRUCTURE.md`](docs/architecture/PROJECT-STRUCTURE.md).
 
-## Arquitetura e runtime atual
+## 5. Arquitetura Atual
 
-O frontend servido pelo navegador usa `src/ui/pages/`, `assets/js/` e `assets/css/`. A navegação lateral é definida em `assets/js/navigation.js`. Cada página carrega scripts globais e utiliza a carteira local.
+- **UI runtime:** `src/ui/pages/` + `assets/js/` + `assets/css/`; páginas carregam scripts globais no navegador.
+- **Runtime de negócio legado:** classificador em `assets/js/matriz-criticidade.js`, adaptador `assets/js/matrix-engine.js`, motor em `assets/js/motor-atuacao.js`, auditoria local e repositories do frontend.
+- **Core local:** Memory, Context/Knowledge e Documentation com serviços, índices, snapshots e health checks.
+- **Domain:** entidades, value objects, policies, contratos e serviços JavaScript; arquivos TypeScript históricos não são compilados no frontend.
+- **Repositories/Providers:** adapters locais, LocalStorageProvider e stubs futuros; não constituem uma API de backend integrada.
+- **Agents/Governance:** framework determinístico, registry/orchestration e health/governance documental/local; sem execução remota nem enforcement corporativo.
+- **Kanban 2.0:** serviços locais de métricas, SLA, WIP, movimento, auditoria, histórico e alertas, isolados do Kanban visual legado.
 
-A classificação está em `assets/js/matriz-criticidade.js` e o adaptador de domínio/runtime em `assets/js/matrix-engine.js`. Os quadrantes mantêm a disposição N7–N9 no topo, N4–N6 no meio e N1–N3 na base. Pesos atuais: P1 = N1/N2/N4; P2 = N3/N5/N7; P3 = N6/N8; P4 = N9. A Matriz usa fundos pastéis por peso (P1 verde, P2 amarelo, P3 laranja, P4 vermelho suave); cores não alteram o classificador.
+Não há bundler ou build frontend. Importação Excel e drag-and-drop usam dependências carregadas por CDN.
 
-O Motor de Atuação em `assets/js/motor-atuacao.js` define sete estados e oito transições. `assets/js/kanban.js` apresenta seis raias e 24 colunas; o arraste reorganiza a posição visual e não substitui a transição formal do motor.
+## 6. Governança
 
-Importação Excel depende de XLSX carregado por CDN; o drag-and-drop do Kanban depende de SortableJS via CDN. Essas bibliotecas não estão empacotadas localmente.
+A governança está representada por documentos, matrizes, templates, `GovernanceHealthService`, contracts e templates GitHub em `.github/`. Aprovações e regras documentadas não são workflow automaticamente aplicado pela aplicação. Consulte [`docs/governance/DOCUMENTATION-AUDIT.md`](docs/governance/DOCUMENTATION-AUDIT.md) e [`docs/decisions/ADR-0002-Reestruturacao-Repositorio.md`](docs/decisions/ADR-0002-Reestruturacao-Repositorio.md).
 
-### Telas existentes
+## 7. Documentação
 
-| Tela | Arquivo | Estado |
-|---|---|---|
-| Entrada | `src/index.html` | Redireciona para a Matriz. |
-| Dashboard | `src/ui/pages/dashboard.html` | Indicadores e distribuições locais. |
-| Matriz RDCJ | `src/ui/pages/matriz.html` | Classificação T/V, filtros e quadrantes N1–N9. |
-| Caixa de Trabalho | `src/ui/pages/trabalho.html` | Filas, decisões e timeline do motor local. |
-| Kanban | `src/ui/pages/kanban.html` | Quadro visual ligado ao Motor de Atuação local. |
-| Radar | `src/ui/pages/radar-carteira.html` | Distribuições da carteira. |
-| Importação | `src/ui/pages/importar-carteira.html` | Importa CSV/XLS/XLSX no navegador. |
-| Carteira | `src/ui/pages/carteira.html` | Lista filtrável de processos. |
-| Processo 360° atual | `src/ui/pages/processo360.html` | Consolida dados locais do processo. |
-| Processo legado | `src/ui/pages/processo.html` | Tela antiga, mantida para acesso direto. |
-| Edição | `src/ui/pages/editar-processo.html` | Edição local legada. |
-| Configuração | `src/ui/pages/configuracao-base.html` | Gestão e backup local da carteira. |
-| Alertas | `src/ui/pages/alertas.html` | Placeholder. |
-| Regras | `src/ui/pages/motor-rdcj.html` | Explica a classificação atual. |
+- Operação: [`MANUAL-OPERADOR.md`](MANUAL-OPERADOR.md) e `docs/guides/`.
+- Arquitetura/estrutura: `docs/architecture/` e `PROJECT-STRUCTURE.md`.
+- Decisões: `docs/decisions/` e `src/memory/decisions-log.md`.
+- Produto/feedback/backlog: `src/memory/product-memory.md`, `feedback-log.md` e `backlog.md`.
+- Governança: `docs/governance/` e `governance/`.
+- Auditoria de consistência: [`docs/governance/DOCUMENTATION-AUDIT.md`](docs/governance/DOCUMENTATION-AUDIT.md).
 
-O menu atual é montado em `assets/js/navigation.js` e contém oito itens: Dashboard, Matriz, Caixa de Trabalho, Kanban, Radar, Importar base, Lista de processos e Gestão da carteira. Processo 360°, edição, Alertas e Regras são acessados por URL ou links contextuais.
+Snapshots, índices e fingerprints derivados ficam em `memory/`; são regeneráveis a partir das fontes configuradas nos engines.
 
-## Camadas e módulos existentes
+## 8. Releases
 
-- `src/core/memory/`: MemoryRepository, MemoryEngine e MemoryService.
-- `src/core/context/`: contexto de projeto/arquitetura, KnowledgeIndex, KnowledgeEngine e cache.
-- `src/core/documentation/`: indexação, geração, snapshots e health documental.
-- `src/domain/`: entidades, value objects, contratos, políticas e serviços; contém também arquivos TypeScript históricos sem compilação frontend.
-- `src/repositories/`: repositories e adapters locais.
-- `src/providers/`: LocalStorage, Memory, Context, Documentation, ServiceNow stub e database stub.
-- `src/agents/`: sete agents determinísticos, registry, factory, orchestrator e health service.
-- `src/governance/` e `governance/`: health service e artefatos documentais de governança.
-- `src/domain/kanban/`: métricas, SLA, WIP, movement, audit, history, executive metrics e alert services, sem integração com o runtime legado.
-- `src/services/ServiceNowReadinessHealthService.js`: verificador local de readiness, sem conexão externa.
+- **v0.1:** baseline do mockup em `docs/releases/RELEASE-v0.1.md`.
+- **RDCJ 2.0:** registro histórico em `docs/releases/RDCJ-2.0-RELEASE.md`; descreve a conclusão das sprints, não uma integração corporativa.
+- **RDCJ 2.1:** reorganização documental/estrutural e apresentação visual da Matriz em [`RELEASE-v2.1.md`](RELEASE-v2.1.md).
+- O histórico acumulado está em [`CHANGELOG.md`](CHANGELOG.md).
 
-## Persistência atual
+## 9. ServiceNow Readiness
 
-| Chave `localStorage` | Uso |
-|---|---|
-| `rdcj-processos` | Carteira importada/editada. |
-| `rdcj-base-metadata` | Metadados da carga. |
-| `rdcj-auditoria` | Eventos locais de auditoria. |
-| `rdcj-motor-atuacao` | Fluxos, histórico e timers operacionais. |
-| `rdcj-sessao-status` | Estado do backup/restauração local. |
+ServiceNow está em **readiness documental**, não integrado. `SERVICENOW.md` e `docs/servicenow/` contêm mappings, contracts, workspace blueprint, estratégia ACL/security, planos de migração e runbook. `ServiceNowProvider` é stub: `connected: false`, `realCalls: false`. Não há chamadas REST, migração, tabelas ou ACLs reais criadas por este repositório.
 
-Não há sincronização entre usuários ou navegadores, autenticação nem autorização.
+## 10. Roadmap
 
-## Documentação, decisões e governança
+### Implementado
 
-- Estrutura real e movimentos: [`PROJECT-STRUCTURE.md`](PROJECT-STRUCTURE.md) e [`docs/architecture/PROJECT-STRUCTURE.md`](docs/architecture/PROJECT-STRUCTURE.md).
-- Arquitetura em camadas: [`docs/architecture/ARCHITECTURE.md`](docs/architecture/ARCHITECTURE.md); arquitetura-alvo está identificada separadamente.
-- Decisão da reorganização: [`docs/decisions/ADR-0002-Reestruturacao-Repositorio.md`](docs/decisions/ADR-0002-Reestruturacao-Repositorio.md).
-- Governança: `docs/governance/`, `governance/` e `src/governance/`.
-- Auditoria de consistência documental: [`docs/governance/DOCUMENTATION-AUDIT.md`](docs/governance/DOCUMENTATION-AUDIT.md).
-- Histórico: `src/memory/decisions-log.md`, `src/memory/feedback-log.md` e `src/memory/product-memory.md`.
-- Backlog: `src/memory/backlog.md`; itens planejados estão separados das capacidades atuais.
-- Manual: [`MANUAL-OPERADOR.md`](MANUAL-OPERADOR.md); instalação: `docs/guides/INSTALACAO-RAPIDA.md`.
-- Releases: `docs/releases/RELEASE-v0.1.md`, `docs/releases/RDCJ-2.0-RELEASE.md` e [`RELEASE-v2.1.md`](RELEASE-v2.1.md).
+Telas e funcionalidades locais da seção 3; módulos e testes locais descritos nas seções 4–5.
 
-Arquivos de entrada na raiz incluem `README.md`, `CHANGELOG.md`, `MANUAL-OPERADOR.md`, `CONTRIBUTING.md`, `LICENSE-INTERNA.md`, `PROJECT-STRUCTURE.md`, `RELEASE-v2.1.md` e `SERVICENOW.md`. `.github/` contém `CODEOWNERS` e templates; prompts ficam em `prompts/`.
+### Em Evolução
 
-## ServiceNow Readiness
+Homologação da divergência entre a visão-alvo Risco × Recuperação e o classificador Tempo × Valor; aperfeiçoamento de documentação, contratos e extensão Kanban 2.0 sem ligação ao runtime legado.
 
-A documentação em [`SERVICENOW.md`](SERVICENOW.md) e `docs/servicenow/` descreve tabelas mapeadas/propostas, contratos, workspace blueprint, estratégia de segurança, migração e runbook. Os contratos e mappings são planejamento, não evidência de implementação na instância. `ServiceNowProvider.health()` informa `connected: false` e `realCalls: false`.
+### Planejado
 
-## Releases
+- Regras homologadas de Risco de Perda, Potencial de Recuperação e IRP.
+- Persistência server-side, identidade, autorização e auditoria corporativa.
+- Gestão real de evidências e APIs.
+- Integração ServiceNow após aprovação e testes em sandbox.
 
-- `RELEASE-v0.1.md` em `docs/releases/`: baseline funcional do mockup.
-- `RDCJ-2.0-RELEASE.md` em `docs/releases/`: consolidação das camadas e preparação do RDCJ 2.0.
-- [`RELEASE-v2.1.md`](RELEASE-v2.1.md): hardening do repositório e modernização visual da Matriz; sem alteração dos cálculos de classificação.
+Não iniciar esses itens como capacidades atuais; dependem de validação de negócio, segurança e arquitetura.
 
-## Backlog — não implementado
+## Executar e validar
 
-A memória de produto registra Risco de Perda, Potencial de Recuperação e IRP como evolução. O backlog também contempla versionamento das regras, importação mais robusta e evidências. Esses itens são planejamento e não devem ser apresentados como capacidades atuais.
-
-## Testes e validação
+Na raiz, execute `python -m http.server 8000` e abra `http://localhost:8000/src/index.html`.
 
 ```powershell
 node scripts/validate-repository.mjs
 Get-ChildItem tests -Recurse -Filter *.test.js | ForEach-Object { node $_.FullName }
 ```
-
-As suítes cobrem Memory, Context, Documentation, Domain, Repository, Provider, Agents, Governance, Kanban 2.0 e ServiceNow readiness. Não há build frontend.

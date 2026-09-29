@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T22:00:38.754Z",
+  "generatedAt": "2026-09-29T22:11:56.035Z",
   "categories": {
     "modules": [
       {
@@ -11,19 +11,23 @@
         "title": "RDCJ 2.1",
         "headings": [
           "RDCJ 2.1",
-          "Estado real do projeto",
-          "Executar localmente",
-          "Arquitetura e runtime atual",
-          "Telas existentes",
-          "Camadas e módulos existentes",
-          "Persistência atual",
-          "Documentação, decisões e governança",
-          "ServiceNow Readiness",
-          "Releases",
-          "Backlog — não implementado",
-          "Testes e validação"
+          "1. Visão Geral",
+          "2. Objetivo do RDCJ",
+          "3. Funcionalidades Implementadas",
+          "Estado por capacidade",
+          "4. Estrutura Atual do Projeto",
+          "5. Arquitetura Atual",
+          "6. Governança",
+          "7. Documentação",
+          "8. Releases",
+          "9. ServiceNow Readiness",
+          "10. Roadmap",
+          "Implementado",
+          "Em Evolução",
+          "Planejado",
+          "Executar e validar"
         ],
-        "hash": "02acdcaf82dd452a66d611762aee82a3a76e7bf850809d6d17eac8902d7071a8"
+        "hash": "803aadbb768e4664c237100b9b935530506239cfa3e33d722b814c0dc9f70c70"
       },
       {
         "id": "module-navigation",
@@ -70,19 +74,23 @@
         "title": "RDCJ 2.1",
         "headings": [
           "RDCJ 2.1",
-          "Estado real do projeto",
-          "Executar localmente",
-          "Arquitetura e runtime atual",
-          "Telas existentes",
-          "Camadas e módulos existentes",
-          "Persistência atual",
-          "Documentação, decisões e governança",
-          "ServiceNow Readiness",
-          "Releases",
-          "Backlog — não implementado",
-          "Testes e validação"
+          "1. Visão Geral",
+          "2. Objetivo do RDCJ",
+          "3. Funcionalidades Implementadas",
+          "Estado por capacidade",
+          "4. Estrutura Atual do Projeto",
+          "5. Arquitetura Atual",
+          "6. Governança",
+          "7. Documentação",
+          "8. Releases",
+          "9. ServiceNow Readiness",
+          "10. Roadmap",
+          "Implementado",
+          "Em Evolução",
+          "Planejado",
+          "Executar e validar"
         ],
-        "hash": "02acdcaf82dd452a66d611762aee82a3a76e7bf850809d6d17eac8902d7071a8"
+        "hash": "803aadbb768e4664c237100b9b935530506239cfa3e33d722b814c0dc9f70c70"
       },
       {
         "id": "features:src/memory/decisions-log.md",
@@ -277,19 +285,23 @@
         "title": "RDCJ 2.1",
         "headings": [
           "RDCJ 2.1",
-          "Estado real do projeto",
-          "Executar localmente",
-          "Arquitetura e runtime atual",
-          "Telas existentes",
-          "Camadas e módulos existentes",
-          "Persistência atual",
-          "Documentação, decisões e governança",
-          "ServiceNow Readiness",
-          "Releases",
-          "Backlog — não implementado",
-          "Testes e validação"
+          "1. Visão Geral",
+          "2. Objetivo do RDCJ",
+          "3. Funcionalidades Implementadas",
+          "Estado por capacidade",
+          "4. Estrutura Atual do Projeto",
+          "5. Arquitetura Atual",
+          "6. Governança",
+          "7. Documentação",
+          "8. Releases",
+          "9. ServiceNow Readiness",
+          "10. Roadmap",
+          "Implementado",
+          "Em Evolução",
+          "Planejado",
+          "Executar e validar"
         ],
-        "hash": "02acdcaf82dd452a66d611762aee82a3a76e7bf850809d6d17eac8902d7071a8"
+        "hash": "803aadbb768e4664c237100b9b935530506239cfa3e33d722b814c0dc9f70c70"
       },
       {
         "id": "documentation:CHANGELOG.md",
