@@ -11,4 +11,4 @@ Cada entrada contém:
 - `author`
 - `impact`
 
-A pasta existe como ponto de extensão para exportações, snapshots e futura persistência server-side. O mecanismo atual não altera a auditoria existente do mockup (`src/js/auditoria.js`).
+A pasta existe como ponto de extensão para exportações, snapshots e futura persistência server-side. O mecanismo atual não altera a auditoria existente do mockup (`assets/js/auditoria.js`).

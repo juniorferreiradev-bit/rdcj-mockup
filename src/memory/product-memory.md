@@ -1,19 +1,24 @@
 # Memória do Produto — RDCJ
 
-## Decisão oficial
-**O RDCJ passa a ser um visualizador matricial de carteira judicial orientado a enquadramento de processos em quadrantes operacionais.**
+## Visão de produto
 
-O produto responde visualmente: **“Onde está cada processo da carteira e por que ele está ali?”** A matriz é a entidade visual e a primeira experiência do MVP; o processo é a entidade exibida; a planilha é a principal entrada.
+O RDCJ deve ajudar o usuário a responder: **“Onde está cada processo da carteira e por que ele está ali?”** A Matriz é a experiência central, o processo é a unidade analisada e a planilha é uma das entradas do mockup.
 
-## Fluxo do MVP
-1. Importar Excel ou CSV. 2. Mapear colunas. 3. Enquadrar cada processo automaticamente. 4. Posicionar uma bolha na Matriz RDCJ. 5. Abrir Processo 360° ao selecionar a bolha.
+## Estado funcional implementado
 
-## Matriz RDCJ
-- Eixo Y: **Risco de Perda** — Baixo, Médio, Alto, Crítico; derivado de prescrição, suspensão, tempo sem impulso, prazo revisional e eventos críticos.
-- Eixo X: **Potencial de Recuperação** — Baixo, Médio, Alto, Muito Alto; derivado de ativos, garantias, empresa ativa, grupo econômico e pesquisas patrimoniais.
-- Quadrantes: Prioridade Máxima; Decisão Estratégica; Oportunidade Operacional; Monitoramento.
+O código executável em `assets/js/matriz-criticidade.js` classifica por **Tempo da decisão × Valor da ação**:
 
-Cada bolha representa processo, tamanho proporcional ao valor atualizado e cor N1–N4. Tooltip e Processo 360° exibem processo, valor, cliente, último evento, próxima revisão e motivo do enquadramento.
+- Eixo temporal: T1 (<1 ano), T2 (1–2 anos), T3 (>2 anos).
+- Eixo de valor: V1 (até R$ 64.840,00), V2 (até R$ 485.040,04), V3 (acima).
+- Quadrantes: T1 → N1/N2/N3; T2 → N4/N5/N6; T3 → N7/N8/N9.
+- Pesos: P1 = N1/N2/N4; P2 = N3/N5/N7; P3 = N6/N8; P4 = N9.
 
-## Papel do score e dos KPIs
-Score é variável técnica de ordenação/desempate e não deve conduzir a experiência. KPIs são camada secundária. Prioridade: **Matriz → Processos → Filtros → KPIs**.
+O fluxo disponível é importar uma planilha, mapear campos, classificar localmente, consultar a Matriz/Carteira e abrir Processo 360°. A Matriz usa uma paleta suave de apresentação por peso: P1 `#F4FAF6`/`#D6E8DA`/`#2E6B45`, P2 `#FFFBEF`/`#F1E3B5`/`#8A6D1D`, P3 `#FFF4EC`/`#F4D2B8`/`#A35B1F`, P4 `#FFF1F3`/`#E8B9C0`/`#A12A3A` (fundo/borda/texto). Essa camada visual não participa do algoritmo de classificação.
+
+## Visão Risco × Recuperação — não implementada
+
+A orientação de produto de evoluir para Risco de Perda × Potencial de Recuperação permanece uma **visão-alvo no backlog**, pendente de homologação de critérios jurídicos e operacionais. Não é o classificador executado atualmente. IRP, fatores de risco e ativos também não estão implementados como critérios ativos.
+
+## Score e KPIs
+
+Score não deve conduzir a experiência do produto. A ordem de prioridade da visão é **Matriz → Processos → Filtros → KPIs**; isso descreve a intenção de produto, enquanto as telas/KPIs efetivamente existentes estão listados no README.

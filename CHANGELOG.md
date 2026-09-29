@@ -1,6 +1,24 @@
 # Changelog — RDCJ Mockup
 
-Registro das entregas do mockup, em ordem cronológica decrescente. Este projeto ainda não segue versionamento semântico formal (ver `README.md`, seção "Estrutura recomendada para GitHub"); as datas abaixo refletem o momento da entrega funcional.
+Registro das entregas RDCJ, em ordem cronológica decrescente. A release de hardening do repositório é RDCJ 2.1; datas anteriores refletem entregas funcionais do mockup.
+
+## 2026-09-29 — RDCJ 2.1 Repository hardening
+
+### Adicionado
+- Documentação categorizada em `docs/architecture`, `docs/governance`, `docs/decisions`, `docs/releases`, `docs/servicenow` e `docs/guides`.
+- Frontend organizado em `assets/css`, `assets/js`, `src/ui/pages` e `src/ui/components`.
+- Interface da Matriz atualizada com cards/KPIs e paleta suave por peso; a ordem dos quadrantes e os cálculos existentes foram preservados.
+- Serviço `ServiceNowReadinessHealthService` em `src/services/`.
+- `docs/architecture/PROJECT-STRUCTURE.md`, `docs/decisions/ADR-0002-Reestruturacao-Repositorio.md` e `docs/releases/RELEASE-v2.1.md`.
+- Validador de referências HTML, Markdown e CSS em `scripts/validate-repository.mjs`.
+- Documentation AutoSync: README/manual/release e memória de produto alinhados ao runtime real; índices, fingerprints e snapshots regenerados.
+- Visão-alvo Risco × Recuperação separada do classificador Tempo × Valor atualmente executado.
+
+### Mantido
+- Nenhum algoritmo, peso, classificação, fluxo operacional ou posição matricial foi intencionalmente modificado.
+- A atualização visual da Matriz não altera o classificador T/V → N → P nem a máquina de estados do Motor de Atuação.
+- ServiceNow continua desconectado; nenhuma migração ou chamada externa foi executada.
+- A aplicação continua estática, sem bundler frontend.
 
 ## 2026-09-21 — Persistência de demonstração (Sessão RDCJ)
 
@@ -10,7 +28,7 @@ Registro das entregas do mockup, em ordem cronológica decrescente. Este projeto
 - Painel **Status da Sessão** na tela de Configuração: última importação, último backup, total de processos, total de fluxos, total de movimentações e total de eventos.
 - Aviso **"Backup ainda não realizado"** quando nenhum backup foi gerado ainda.
 - Novos eventos de auditoria: `BACKUP_GERADO` e `BACKUP_RESTAURADO`.
-- Novo arquivo `src/js/sessao-rdcj.js` e nova chave de persistência `rdcj-sessao-status`.
+- Novo arquivo `assets/js/sessao-rdcj.js` e nova chave de persistência `rdcj-sessao-status`.
 
 ### Não alterado
 - Nenhuma regra de classificação, estado, transição ou timer foi modificada. O backup/restauração lê e grava diretamente as chaves existentes de `localStorage`, sem recalcular nada.
@@ -18,21 +36,21 @@ Registro das entregas do mockup, em ordem cronológica decrescente. Este projeto
 ## 2026-09-21 — Processo 360° (nova versão)
 
 ### Adicionado
-- Nova tela `src/pages/processo360.html` com sete seções: Identificação, Enquadramento RDCJ, Linha de Atuação, Explicabilidade, Timeline, Próxima Ação e Evidências (estrutura preparada para anexos futuros).
+- Nova tela `src/ui/pages/processo360.html` com sete seções: Identificação, Enquadramento RDCJ, Linha de Atuação, Explicabilidade, Timeline, Próxima Ação e Evidências (estrutura preparada para anexos futuros).
 - Abertura do Processo 360° a partir de um clique na lista de processos da Matriz e a partir do ícone de atalho em cada cartão do Kanban.
 - Timeline combinando eventos do motor de atuação (`historicos`) e da auditoria (`rdcjAuditoria`).
 
 ### Mantido
-- A tela anterior (`src/pages/processo.html`) permanece disponível, sem alterações, para compatibilidade.
+- A tela anterior (`src/ui/pages/processo.html`) permanece disponível, sem alterações, para compatibilidade.
 - Nenhuma regra de enquadramento, matriz ou motor foi alterada — a tela apenas consolida dados já existentes.
 
 ### Observação registrada na auditoria de entrega (v0.1)
-- Como o link de CNJ na lista da Matriz passou a apontar para `processo360.html`, a tela legada `processo.html` (e, por consequência, `editar-processo.html`, só alcançável a partir dela) deixou de ser atingida pela navegação normal da aplicação. Ambas continuam funcionando por URL direta. Ver `CHECKLIST-ENTREGA.md`.
+- Como o link de CNJ na lista da Matriz passou a apontar para `processo360.html`, a tela legada `processo.html` (e, por consequência, `editar-processo.html`, só alcançável a partir dela) deixou de ser atingida pela navegação normal da aplicação. Ambas continuam funcionando por URL direta. Ver `docs/releases/CHECKLIST-ENTREGA.md`.
 
 ## 2026-09-21 — Kanban RDCJ
 
 ### Adicionado
-- Nova tela `src/pages/kanban.html` com 6 raias (Classificação, Advogado, Agência, Central Retaguarda, Monitoramento, Concluídos) e 24 colunas.
+- Nova tela `src/ui/pages/kanban.html` com 6 raias (Classificação, Advogado, Agência, Central Retaguarda, Monitoramento, Concluídos) e 24 colunas.
 - Drag-and-drop com SortableJS para reorganização visual dos cartões.
 - Cartões exibindo CNJ, cliente, peso (cores: P4 vermelho, P3 laranja, P2 amarelo, P1 cinza), valor, responsável e próxima revisão/timer.
 - Novos campos `coluna` e `ordem` no objeto de fluxo (`rdcj-motor-atuacao`), com migração automática dos fluxos existentes (`migrarColunasFluxos`).
@@ -60,6 +78,6 @@ Registro das entregas do mockup, em ordem cronológica decrescente. Este projeto
 
 - Sem autenticação, autorização ou identidade real de usuário.
 - Sem backend, API, banco de dados ou sincronização entre usuários/máquinas fora do backup manual em `.json`.
-- Sem testes automatizados, lint ou pipeline de CI configurados.
+- Suítes automatizadas são executadas localmente por Node; não há build frontend.
 - Critérios de Risco de Perda, Potencial de Recuperação e IRP ainda não implementados (ver `src/memory/backlog.md`).
 - Módulo de Evidências do Processo 360° é apenas uma estrutura preparada, sem upload real.

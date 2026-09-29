@@ -3,7 +3,7 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 
 const DEFAULT_SOURCES = Object.freeze([
-    'README.md', 'CHANGELOG.md', 'MANUAL-OPERADOR.md', 'GUIA-DEMONSTRACAO.md',
+    'README.md', 'CHANGELOG.md', 'MANUAL-OPERADOR.md', 'docs/guides/GUIA-DEMONSTRACAO.md',
     'src/memory/backlog.md', 'src/memory/decisions-log.md', 'src/memory/feedback-log.md',
     'src/memory/product-memory.md', 'memory/project-memory.json',
     'memory/knowledge-index.json', 'memory/context-snapshot.json'

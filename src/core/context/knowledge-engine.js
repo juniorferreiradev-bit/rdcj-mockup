@@ -12,7 +12,7 @@ class KnowledgeEngine {
 function modelFrom(knowledgeIndex, documents, memory) {
     return {
         project: { name: memory.project, version: memory.version, sources: documents.map((document) => document.path) },
-        architecture: { current: 'architecture-current.md', target: 'architecture-target.md', gaps: 'gap-analysis.md', roadmap: 'migration-roadmap.md' },
+        architecture: { current: 'docs/architecture/architecture-current.md', target: 'docs/architecture/architecture-target.md', gaps: 'docs/architecture/gap-analysis.md', roadmap: 'docs/servicenow/migration-roadmap.md' },
         modules: uniqueBy([...memory.modules, ...knowledgeIndex.categories.modules], 'id'),
         features: uniqueBy([...memory.features, ...knowledgeIndex.categories.features], 'id'),
         decisions: uniqueBy([...memory.decisions, ...knowledgeIndex.categories.decisions], 'id'),

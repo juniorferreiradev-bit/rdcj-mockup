@@ -10,10 +10,10 @@ const DEFAULT_SOURCES = Object.freeze([
     'src/memory/decisions-log.md',
     'src/memory/feedback-log.md',
     'src/memory/product-memory.md',
-    'architecture-current.md',
-    'architecture-target.md',
-    'gap-analysis.md',
-    'migration-roadmap.md'
+    'docs/architecture/architecture-current.md',
+    'docs/architecture/architecture-target.md',
+    'docs/architecture/gap-analysis.md',
+    'docs/servicenow/migration-roadmap.md'
 ]);
 
 class ContextRepository {
