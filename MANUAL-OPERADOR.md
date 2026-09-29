@@ -1,117 +1,107 @@
-# Manual do Operador — RDCJ Mockup
+# Manual do Operador — RDCJ 2.1
 
-Guia de uso tela a tela do mockup do RDCJ, incluindo os passos de backup e restauração da sessão de demonstração.
+Este manual descreve o comportamento atualmente implementado no mockup. A aplicação usa dados locais no navegador e não possui autenticação, autorização ou sincronização entre usuários.
 
-> Este manual descreve o comportamento atual do mockup. Não há autenticação: qualquer pessoa com acesso ao navegador vê e opera a mesma base carregada localmente.
+## Iniciar a aplicação
 
-> Os caminhos foram reorganizados: páginas em `src/ui/pages/`, JavaScript em `assets/js/` e CSS em `assets/css/`. A entrada local permanece `src/index.html`.
+1. Na raiz do repositório, execute `python -m http.server 8000`.
+2. Acesse `http://localhost:8000/src/index.html`.
+3. A entrada encaminha para `src/ui/pages/matriz.html`.
+4. A estrutura atual usa `src/ui/pages/`, `assets/js/` e `assets/css/`.
 
-Para iniciar a aplicação localmente, siga [`docs/guides/INSTALACAO-RAPIDA.md`](docs/guides/INSTALACAO-RAPIDA.md) e use `http://localhost:8000/src/index.html`.
+O passo a passo está em [`docs/guides/INSTALACAO-RAPIDA.md`](docs/guides/INSTALACAO-RAPIDA.md).
 
-## Visão geral do menu lateral
+## Menu e telas
 
-| Item do menu | Tela | Para que serve |
+O menu de `assets/js/navigation.js` contém oito itens:
+
+| Item | Tela | Função implementada |
 |---|---|---|
-| Insights da Carteira | Dashboard | KPIs executivos e distribuições da carteira. |
-| Matriz RDCJ | Matriz | Posição de cada processo no cruzamento tempo × valor (N1–N9). |
-| Caixa de Trabalho | Trabalho | Lista operacional com estado, linha, responsável e prazos. |
-| Kanban RDCJ | Kanban | Quadro visual com 6 raias e 24 colunas, arrastar-e-soltar. |
-| Radar da Carteira | Radar | Leitura consolidada de indicadores da carteira. |
-| Importar base | Importação | Carregar uma nova planilha (CSV/XLS/XLSX). |
-| Lista de processos | Carteira | Lista filtrável de todos os processos importados. |
-| Gestão da carteira | Configuração | Importar, substituir, limpar a base e gerenciar backups (Sessão RDCJ). |
+| Insights da Carteira | Dashboard | Indicadores e distribuições calculados da carteira local. |
+| Matriz RDCJ | Matriz | Classificação atual Tempo × Valor, filtros, KPIs e acesso à carteira filtrada. |
+| Caixa de Trabalho | Trabalho | Filas e decisões do Motor de Atuação local. |
+| Kanban RDCJ | Kanban | Organização visual de cartões em raias e colunas. |
+| Radar da Carteira | Radar | Distribuições/indicadores da carteira. |
+| Importar base | Importação | Leitura, mapeamento e carga no navegador. |
+| Lista de processos | Carteira | Consulta e filtros de processos. |
+| Gestão da carteira | Configuração | Gestão, limpeza e backup/restauração da base local. |
 
-## 1. Importar uma carteira
+Processo 360° é aberto por links contextuais. Processo legado, edição, Alertas e Regras continuam disponíveis por URL; Alertas é placeholder.
+
+## Carregar a carteira
 
 1. Acesse **Importar base**.
-2. Selecione o arquivo (`.csv`, `.xls` ou `.xlsx`).
-3. Confira o mapeamento automático de colunas (CNJ, cliente, valor, data da decisão são obrigatórios).
-4. Escolha o modo de carga:
-   - **Aditivo**: mescla com a base já existente (por CNJ).
-   - **Substituir**: apaga a base atual e carrega somente a nova planilha.
-5. Clique em **Classificar e carregar base**.
+2. Selecione CSV, XLS ou XLSX. A tela inclui a biblioteca XLSX por CDN para formatos Excel.
+3. Confira o mapeamento. CNJ, cliente (`nm_lit`), valor e data da decisão são necessários para a carga.
+4. Escolha entre adicionar/atualizar por CNJ ou substituir a base.
+5. Selecione **Classificar e carregar base**.
 
-Cada processo é automaticamente classificado (quadrante N1–N9 e peso P1–P4) no momento da importação.
+O processamento e a persistência são locais no navegador. Não há upload para backend.
 
-## 2. Consultar a Matriz RDCJ
+## Matriz RDCJ
 
-1. Acesse **Matriz RDCJ**.
-2. Use os filtros (quadrante, peso, comarca, advogado, responsável, faixa de valor) para restringir a visão.
-3. Clique em um quadrante para abrir a lista de processos daquele quadrante.
-4. Na lista, clique no número do CNJ para abrir o **Processo 360°**.
+A implementação atual classifica por:
 
-Os cards usam a paleta suave por peso: P1 verde, P2 amarelo, P3 laranja e P4 vermelho suave. A cor é apenas sinalização visual; a regra de classificação permanece a definida pelo domínio.
+- Tempo da decisão: T1 (<1 ano), T2 (1–2 anos), T3 (>2 anos).
+- Valor: V1 (até R$ 64.840,00), V2 (até R$ 485.040,04), V3 (acima).
+- Posição: T3 → N7/N8/N9; T2 → N4/N5/N6; T1 → N1/N2/N3.
+- Pesos: P1 = N1/N2/N4; P2 = N3/N5/N7; P3 = N6/N8; P4 = N9.
 
-## 3. Trabalhar na Caixa de Trabalho
+A camada visual atual aplica paleta suave por peso: P1 verde, P2 amarelo, P3 laranja e P4 vermelho suave. Isso não altera a regra nem o cálculo. Os filtros reduzem os processos e valores usados nos indicadores; selecionar um quadrante abre a carteira com o filtro correspondente.
 
-1. Acesse **Caixa de Trabalho**.
-2. A aba **Caixa de trabalho** mostra todos os processos com peso, linha, responsável e próxima revisão.
-3. A aba **Filas operacionais** permite registrar decisões (Sim/Não) que movem o processo entre estados do motor (ex.: "Existe oportunidade processual?").
-4. A aba **Timeline RDCJ** mostra o histórico consolidado de mudanças de estado, linha, responsável e timers.
+## Dashboard e Carteira
 
-## 4. Operar o Kanban RDCJ
+O Dashboard resume a base local em indicadores e distribuições. A Carteira lista e filtra processos. Selecionar o CNJ abre Processo 360°. Não há dados fictícios gerados automaticamente; as telas podem aparecer vazias até a importação de uma carteira.
 
-1. Acesse **Kanban RDCJ**.
-2. O quadro está organizado em 6 raias: **Classificação, Advogado, Agência, Central Retaguarda, Monitoramento e Concluídos**, com colunas específicas em cada uma.
-3. Cada cartão mostra: CNJ, Cliente, Peso (cor: P4 vermelho, P3 laranja, P2 amarelo, P1 cinza), Valor, Responsável e Próxima Revisão.
-4. Arraste um cartão entre colunas para reorganizar a fila de trabalho visualmente.
-   - **Importante:** mover um cartão no Kanban é **apenas organização visual** — não altera o estado real do processo no motor RDCJ. Para mudar o estado de fato (ex.: decidir que uma diligência terminou), use a Caixa de Trabalho.
-5. Clique no ícone **↗** no rodapé do cartão para abrir o Processo 360° daquele processo.
+## Caixa de Trabalho e Motor de Atuação
 
-## 5. Consultar o Processo 360°
+O Motor de Atuação persiste em `localStorage` sob `rdcj-motor-atuacao`. Estados implementados:
 
-Aberto a partir de um clique na Matriz (lista de processos) ou no Kanban (ícone ↗). Contém:
+- `REVISAO_JURIDICA`
+- `PETICIONAMENTO`
+- `AGUARDANDO_RESULTADO`
+- `INVESTIGACAO_AGENCIA`
+- `INVESTIGACAO_RETAGUARDA`
+- `MONITORAMENTO`
+- `ENCERRADO`
 
-1. **Identificação** — CNJ, cliente, peso, valor, advogado, agência/comarca, quadrante.
-2. **Enquadramento RDCJ** — quadrante, peso, criticidade e critérios utilizados (data da decisão, faixa de tempo, faixa de valor).
-3. **Linha de Atuação** — destaque visual da linha atual (Advogado, Agência, Retaguarda ou Monitoramento/Concluído).
-4. **Explicabilidade** — lista das regras que resultaram no enquadramento atual.
-5. **Timeline** — eventos combinados do motor de atuação e da auditoria.
-6. **Próxima Ação** — responsável atual, linha atual, próxima revisão e timer.
-7. **Evidências** — painel preparado para uma futura funcionalidade de anexos (ainda não implementada).
+Transições implementadas:
 
-## 6. Backup da sessão — "Salvar Sessão"
+- Revisão Jurídica → Peticionamento ou Investigação Agência.
+- Investigação Agência → Investigação Retaguarda ou Monitoramento.
+- Investigação Retaguarda → Peticionamento ou Monitoramento.
+- Peticionamento → Aguardando Resultado.
+- Aguardando Resultado → Monitoramento.
 
-Use antes de encerrar uma demonstração, trocar de computador ou finalizar o dia.
+A Caixa de Trabalho registra as decisões disponíveis no motor. `ENCERRADO` existe como estado, mas não tem transição de entrada configurada.
 
-1. Acesse **Gestão da carteira** (item **Configuração** no menu).
-2. Na seção **Sessão RDCJ**, clique em **Salvar Sessão**.
-3. O navegador baixa automaticamente um arquivo chamado:
-   ```
-   RDCJ-Backup-AAAAMMDD-HHMM.json
-   ```
-4. Guarde esse arquivo (ex.: em uma pasta de backups ou pendrive) — ele contém processos, fluxos, histórico, timers e auditoria da sessão atual.
-5. O painel **Status da Sessão** é atualizado com a data/hora do último backup.
+Timers atuais: P4 90 dias, P3 180 dias, P2 240 dias, P1 sem revisão automática.
 
-> Se nenhum backup foi realizado ainda, o painel exibe o aviso **"Backup ainda não realizado"**.
+## Kanban RDCJ
 
-## 7. Restauração da sessão — "Restaurar Sessão"
+O quadro tem seis raias e 24 colunas. Arrastar um cartão reorganiza coluna/ordem visual e não muda o estado formal do motor. Para mudar o estado, use as decisões disponíveis na Caixa de Trabalho. Os badges visuais do Kanban são definidos em `assets/css/kanban.css`; a paleta pastel da Matriz não é a paleta do Kanban.
 
-Use para retomar uma demonstração anterior ou levar uma base pronta para outro computador.
+## Processo 360°
 
-1. Acesse **Gestão da carteira** → seção **Sessão RDCJ**.
-2. Clique em **Restaurar Sessão**.
-3. Selecione o arquivo `RDCJ-Backup-*.json` desejado.
-4. Confirme na pergunta exibida: **"Deseja substituir a sessão atual?"**
-   - **OK/Sim** → a sessão atual é completamente substituída pelo conteúdo do backup.
-   - **Cancelar/Não** → nada é alterado.
-5. Após a confirmação, a página recarrega automaticamente e todas as telas (Matriz, Kanban, Caixa de Trabalho, Processo 360°) já refletem os dados restaurados.
+A tela atual apresenta identificação, enquadramento, linha de atuação, explicabilidade, timeline, próxima ação e uma área de evidências preparada. Upload/gestão de evidências não está implementado. Processo 360° agrega dados locais e não consulta um sistema externo.
 
-> A restauração sobrescreve processos, fluxos, histórico, timers e auditoria da base local. Faça um backup da sessão atual antes de restaurar, caso quiera preservá-la.
+## Auditoria local
 
-## 8. Painel "Status da Sessão"
+`assets/js/auditoria.js` registra eventos no `localStorage` (`rdcj-auditoria`). Isso é histórico local do mockup, não trilha de auditoria corporativa imutável.
 
-Disponível na tela **Gestão da carteira**, mostra:
+## Backup e restauração
 
-- **Última Importação** — data/hora da última planilha carregada.
-- **Último Backup** — data/hora do último "Salvar Sessão".
-- **Total de Processos** — quantidade de processos na base ativa.
-- **Total de Fluxos** — quantidade de fluxos operacionais registrados no motor.
-- **Total de Movimentações** — quantidade de mudanças de estado registradas no histórico do motor.
-- **Total de Eventos** — quantidade de eventos registrados na auditoria (importações, backups, restaurações, mudanças de estado).
+1. Acesse **Gestão da carteira** e use **Salvar Sessão** para baixar o JSON.
+2. Para restaurar, selecione um backup e confirme a substituição da sessão local.
+3. A restauração substitui dados locais da carteira e operação; mantenha cópia do arquivo antes de restaurar.
 
-## 9. Boas práticas para demonstração
+O backup não transfere dados para servidor nem substitui uma estratégia corporativa de retenção.
 
-- Sempre gere um **Salvar Sessão** ao final de uma demonstração importante, para não depender do `localStorage` do computador usado.
-- Antes de uma nova demonstração, se quiser começar "do zero", use **Limpar Base** (tela de Configuração) ou restaure um backup específico preparado para esse fim.
-- Para alternar entre "carteira cheia" e "carteira vazia" rapidamente durante uma reunião, mantenha dois arquivos de backup prontos (ex.: `RDCJ-Backup-cenario-cheio.json` e `RDCJ-Backup-cenario-vazio.json`) e apenas renomeie/restaure o desejado.
+## Limitações atuais
+
+- Sem login, autorização, backend, API de negócio ou banco central.
+- Dados locais pertencem ao navegador/dispositivo.
+- Regras atuais são Tempo × Valor; Risco × Recuperação e IRP permanecem no backlog.
+- ServiceNow não está conectado; readiness e mappings são documentais.
+- Agentes e camadas arquiteturais possuem módulos/contratos locais, mas não operam como serviço corporativo integrado.
+- Limpar a base é destrutivo para os dados locais. Use backup antes.

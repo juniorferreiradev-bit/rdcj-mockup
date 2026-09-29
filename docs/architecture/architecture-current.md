@@ -1,14 +1,14 @@
-# Arquitetura Atual — RDCJ Mockup v0.1
+# Baseline Arquitetural Histórico — RDCJ Mockup v0.1
 
-> Documento arquitetural factual, elaborado somente por inspeção do repositório existente. Não representa uma implementação nova.
+> Este documento registra o snapshot v0.1 de 21/09/2026. Não deve ser interpretado como inventário atual do RDCJ 2.1. Para o estado atual, consulte `../../README.md` e `PROJECT-STRUCTURE.md`.
 
 ## 1. Escopo e fonte de verdade
 
 - Repositório analisado: `RDCJ-MOCKUP`.
-- Versão documentada: `RDCJ v0.1 — MVP Demonstração`, datada de 21/09/2026.
+- Versão deste snapshot: `RDCJ v0.1 — MVP Demonstração`, datada de 21/09/2026.
 - Runtime efetivo: HTML/CSS/JavaScript servido diretamente pelo navegador.
-- Contratos TypeScript em `src/domain/`: paralelos e não compilados; não participam do runtime atual.
-- Backend, API, banco de dados, autenticação, autorização, sincronização multiusuário, testes automatizados e CI não existem no repositório.
+- Arquivos TypeScript em `src/domain/` eram contratos paralelos não compilados pelo navegador nesse snapshot. O estado atual também contém módulos JavaScript de domínio testados por Node; eles não são carregados pelo frontend estático.
+- Backend, API de negócio, banco de dados, autenticação, autorização e sincronização multiusuário não existem no runtime atual. O repositório atual possui suítes Node em `tests/` e um validador de referências; não possui build frontend.
 
 ## 2. Contexto funcional atual
 
@@ -91,9 +91,9 @@ Auditoria e sessão
 | `decision-engine.js` | Score legado/experimental | Órfão, não carregado pelas páginas |
 | `base-info-card.js` | Card de base | Há duplicata em `src/ui/components/` |
 
-### 4.3 TypeScript paralelo
+### 4.3 Domínio e contratos (baseline)
 
-`src/domain/` contém contratos para base, auditoria, insights, repositório e classificação. Eles não são compilados, não possuem pipeline de build e alguns são stubs ou mantêm estado apenas em memória. Portanto, não podem ser considerados a fonte de verdade do comportamento atual.
+No baseline v0.1, `src/domain/` continha principalmente contratos TypeScript paralelos, não compilados pelo frontend. No RDCJ 2.1 existem também entidades/serviços JavaScript testados por Node em `src/domain/`; ainda assim, as páginas HTML continuam usando os módulos em `assets/js/` como runtime de UI e negócio legado.
 
 ### 4.4 CSS e identidade
 
@@ -103,7 +103,7 @@ Auditoria e sessão
 - `dashboard.css`, `kanban.css`, `motor-atuacao.css`, `motor-rdcj.css`, `processo360.css`.
 - `style.css`: ponto de importação global.
 
-Paleta preservada no runtime: `#A6193C`, `#650F27`, `#F68B1F`, `#646464`, `#F6F4F2`, `#FFFFFF`, `#2B2928`, `#77716E`, `#E5E0DD`.
+Paleta de marca do runtime: `#A6193C`, `#650F27`, `#F68B1F`, `#646464`, `#F6F4F2`, `#FFFFFF`, `#2B2928`, `#77716E`, `#E5E0DD`. A Matriz recebeu também paleta visual suave por peso na release 2.1; consulte `../../RELEASE-v2.1.md`.
 
 ## 5. Fluxo de dados atual
 
@@ -158,7 +158,7 @@ Existe risco de duplicação: algumas páginas já contêm sidebar em HTML e tam
 - XLSX via CDN em `importar-carteira.html`.
 - SortableJS via CDN em `kanban.html`.
 
-Não há `package.json`, bundler, build, lockfile, testes, lint ou pipeline CI no repositório atual.
+Não há `package.json`, bundler, build frontend, lockfile ou lint no repositório. Existem suítes Node em `tests/`; `.github/` contém templates/ownership, sem workflow de CI.
 
 ## 10. Memória, documentação e agentes existentes
 
@@ -193,6 +193,6 @@ Esses artefatos já formam uma base inicial de documentação viva, mas não exi
 - Importação sem registro de arquivo original em repositório corporativo.
 - Evidências, alertas, integrações e critérios Risco × Recuperação ainda não implementados.
 
-## 12. Conclusão do baseline
+## 12. Conclusão do snapshot v0.1
 
 O RDCJ v0.1 deve ser tratado como **referência funcional e visual**, não como plataforma reaproveitável diretamente em produção. A migração precisa preservar os comportamentos homologados, mas substituir a infraestrutura local por serviços persistentes, governados, auditáveis e compatíveis com ServiceNow.

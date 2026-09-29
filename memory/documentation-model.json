@@ -1,11 +1,160 @@
 {
-  "project": { "name": "RDCJ 2.0", "version": "0.1-memory-layer" },
-  "architecture": { "documents": ["docs/architecture/architecture-current.md", "docs/architecture/architecture-target.md", "docs/architecture/gap-analysis.md"] },
-  "modules": [],
-  "features": [],
+  "project": {
+    "name": "RDCJ 2.0",
+    "version": "0.1-memory-layer"
+  },
+  "architecture": {
+    "documents": [
+      {
+        "id": "arquitetura:memory/context-snapshot.json",
+        "path": "memory/context-snapshot.json",
+        "title": "context-snapshot.json",
+        "headings": [],
+        "hash": "5f00b6c7b564af7f4a8d933493471c5633eb83e2c3e73b2265682e7cd239e40f",
+        "missing": false
+      }
+    ]
+  },
+  "modules": [
+    {
+      "id": "module-navigation",
+      "name": "Navegação",
+      "source": "assets/js/navigation.js"
+    },
+    {
+      "id": "module-base",
+      "name": "Gestão da carteira",
+      "source": "assets/js/base-manager.js"
+    },
+    {
+      "id": "module-classification",
+      "name": "Classificação matricial",
+      "source": "assets/js/matriz-criticidade.js"
+    },
+    {
+      "id": "module-operation",
+      "name": "Motor de Atuação",
+      "source": "assets/js/motor-atuacao.js"
+    },
+    {
+      "id": "module-audit",
+      "name": "Auditoria",
+      "source": "assets/js/auditoria.js"
+    }
+  ],
+  "features": [
+    {
+      "id": "feature-matrix",
+      "name": "Matriz RDCJ",
+      "status": "existing",
+      "source": "src/memory/product-memory.md"
+    },
+    {
+      "id": "feature-process-360",
+      "name": "Processo 360",
+      "status": "existing",
+      "source": "CHANGELOG.md"
+    },
+    {
+      "id": "feature-dashboard",
+      "name": "Dashboard",
+      "status": "existing",
+      "source": "README.md"
+    },
+    {
+      "id": "feature-motor",
+      "name": "Motor de Atuação",
+      "status": "existing",
+      "source": "README.md"
+    },
+    {
+      "id": "feature-kanban",
+      "name": "Kanban RDCJ",
+      "status": "existing",
+      "source": "CHANGELOG.md"
+    },
+    {
+      "id": "feature-memory",
+      "name": "Memória Persistente",
+      "status": "in-progress",
+      "source": "docs/architecture/architecture-target.md"
+    }
+  ],
   "decisions": [],
-  "releases": [],
-  "manuals": ["MANUAL-OPERADOR.md", "docs/guides/GUIA-DEMONSTRACAO.md"],
-  "roadmap": ["src/memory/backlog.md", "docs/servicenow/migration-roadmap.md"],
-  "integrations": ["docs/servicenow/SERVICENOW.md"]
+  "releases": [
+    {
+      "id": "release-v0.1",
+      "version": "v0.1",
+      "status": "baseline",
+      "source": "docs/releases/RELEASE-v0.1.md"
+    }
+  ],
+  "manuals": [
+    {
+      "id": "manuais:MANUAL-OPERADOR.md",
+      "path": "MANUAL-OPERADOR.md",
+      "title": "Manual do Operador — RDCJ 2.1",
+      "headings": [
+        "Manual do Operador — RDCJ 2.1",
+        "Iniciar a aplicação",
+        "Menu e telas",
+        "Carregar a carteira",
+        "Matriz RDCJ",
+        "Dashboard e Carteira",
+        "Caixa de Trabalho e Motor de Atuação",
+        "Kanban RDCJ",
+        "Processo 360°",
+        "Auditoria local",
+        "Backup e restauração",
+        "Limitações atuais"
+      ],
+      "hash": "f50cd4249fb5cd7f170b0880f5cd8b5ff1ba3edd6e5866cb9e378f4389229c9b",
+      "missing": false
+    },
+    {
+      "id": "manuais:docs/guides/GUIA-DEMONSTRACAO.md",
+      "path": "docs/guides/GUIA-DEMONSTRACAO.md",
+      "title": "Guia de Demonstração Executiva — RDCJ (15 minutos)",
+      "headings": [
+        "Guia de Demonstração Executiva — RDCJ (15 minutos)",
+        "Preparação (antes da reunião)",
+        "Roteiro (15 minutos)",
+        "1. Abertura e contexto (0:00 – 1:30)",
+        "2. Dashboard executivo (1:30 – 3:00)",
+        "3. Matriz RDCJ (3:00 – 6:00)",
+        "4. Processo 360° (6:00 – 8:30)",
+        "5. Caixa de Trabalho — o motor por trás do produto (8:30 – 10:30)",
+        "6. Kanban RDCJ — visão de fila operacional (10:30 – 13:00)",
+        "7. Backup e continuidade da demonstração (13:00 – 14:00)",
+        "8. Fechamento (14:00 – 15:00)",
+        "Perguntas frequentes durante a demonstração",
+        "Tempo alternativo (versão curta de 7–8 minutos)"
+      ],
+      "hash": "c558e08c663c6109645dfb9452d0cc21c05033b7d3385221e4cf8695eebee6b6",
+      "missing": false
+    }
+  ],
+  "roadmap": [
+    {
+      "id": "roadmap:src/memory/backlog.md",
+      "path": "src/memory/backlog.md",
+      "title": "Backlog oficial — RDCJ",
+      "headings": [
+        "Backlog oficial — RDCJ",
+        "EPIC 01 — Importação de carteira",
+        "EPIC 02 — Motor de enquadramento matricial",
+        "EPIC 03 — Matriz RDCJ operacional",
+        "EPIC 04 — Processo 360° matricial",
+        "EPIC 05 — Governança de classificação",
+        "EPIC — Motor de Recuperação RDCJ",
+        "FEATURE 01 — Risco de Perda",
+        "FEATURE 02 — Potencial de Recuperação",
+        "FEATURE 03 — IRP (Índice de Recuperação Potencial)",
+        "Dependências"
+      ],
+      "hash": "76c0feb978c8c440e594a1a255f10e750ca72d1925dbd3395a39547dcacce365",
+      "missing": false
+    }
+  ],
+  "integrations": []
 }

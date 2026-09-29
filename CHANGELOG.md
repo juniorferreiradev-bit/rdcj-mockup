@@ -7,12 +7,14 @@ Registro das entregas RDCJ, em ordem cronológica decrescente. A release de hard
 ### Adicionado
 - Documentação categorizada em `docs/architecture`, `docs/governance`, `docs/decisions`, `docs/releases`, `docs/servicenow` e `docs/guides`.
 - Frontend organizado em `assets/css`, `assets/js`, `src/ui/pages` e `src/ui/components`.
+- Interface da Matriz atualizada com cards/KPIs e paleta suave por peso; a ordem dos quadrantes e os cálculos existentes foram preservados.
 - Serviço `ServiceNowReadinessHealthService` em `src/services/`.
 - `docs/architecture/PROJECT-STRUCTURE.md`, `docs/decisions/ADR-0002-Reestruturacao-Repositorio.md` e `docs/releases/RELEASE-v2.1.md`.
 - Validador de referências HTML, Markdown e CSS em `scripts/validate-repository.mjs`.
 
 ### Mantido
 - Nenhum algoritmo, peso, classificação, fluxo operacional ou posição matricial foi intencionalmente modificado.
+- A atualização visual da Matriz não altera o classificador T/V → N → P nem a máquina de estados do Motor de Atuação.
 - ServiceNow continua desconectado; nenhuma migração ou chamada externa foi executada.
 - A aplicação continua estática, sem bundler frontend.
 

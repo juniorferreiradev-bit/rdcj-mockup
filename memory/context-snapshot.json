@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T21:29:40.767Z",
-  "fingerprint": "594fd366a2256ee45ea0fcaf35c5e0a613eb70c00cccb51bf99617664ef23fc2",
+  "generatedAt": "2026-09-29T21:49:32.535Z",
+  "fingerprint": "89d30da8c700afc10ad0b3a0b4e063a3c66098fe6f0b76be7a840582c9884171",
   "context": {
     "project": {
       "name": "RDCJ 2.0",
@@ -66,30 +66,22 @@
         "type": "document",
         "category": "modules",
         "path": "README.md",
-        "title": "RDCJ Mockup",
+        "title": "RDCJ 2.1",
         "headings": [
-          "RDCJ Mockup",
-          "Status atual",
+          "RDCJ 2.1",
+          "Estado real do projeto",
           "Executar localmente",
-          "Documentação complementar",
-          "Organização no GitHub",
-          "Estrutura do projeto",
-          "Fonte de verdade em runtime",
-          "Arquitetura de alto nível",
-          "Páginas",
-          "Fluxo da carteira",
-          "Campos de importação",
-          "Classificação da Matriz RDCJ",
-          "Motor de Atuação",
-          "Estados",
-          "Linhas de atuação",
-          "Transições oficiais",
-          "Timers",
-          "Convenções para manutenção",
-          "Limitações conhecidas",
-          "Próximas evoluções registradas"
+          "Arquitetura e runtime atual",
+          "Telas existentes",
+          "Camadas e módulos existentes",
+          "Persistência atual",
+          "Documentação, decisões e governança",
+          "ServiceNow Readiness",
+          "Releases",
+          "Backlog — não implementado",
+          "Testes e validação"
         ],
-        "hash": "9b369e2aaaf0189c201f98155664e0154f7724530e747efcbdccb952094a2f98"
+        "hash": "aec0366e5a88870b2ea18370dda7f77fb9cda3ddd8b1ecc97e7d78e6de824015"
       }
     ],
     "features": [
@@ -146,30 +138,22 @@
         "type": "document",
         "category": "features",
         "path": "README.md",
-        "title": "RDCJ Mockup",
+        "title": "RDCJ 2.1",
         "headings": [
-          "RDCJ Mockup",
-          "Status atual",
+          "RDCJ 2.1",
+          "Estado real do projeto",
           "Executar localmente",
-          "Documentação complementar",
-          "Organização no GitHub",
-          "Estrutura do projeto",
-          "Fonte de verdade em runtime",
-          "Arquitetura de alto nível",
-          "Páginas",
-          "Fluxo da carteira",
-          "Campos de importação",
-          "Classificação da Matriz RDCJ",
-          "Motor de Atuação",
-          "Estados",
-          "Linhas de atuação",
-          "Transições oficiais",
-          "Timers",
-          "Convenções para manutenção",
-          "Limitações conhecidas",
-          "Próximas evoluções registradas"
+          "Arquitetura e runtime atual",
+          "Telas existentes",
+          "Camadas e módulos existentes",
+          "Persistência atual",
+          "Documentação, decisões e governança",
+          "ServiceNow Readiness",
+          "Releases",
+          "Backlog — não implementado",
+          "Testes e validação"
         ],
-        "hash": "9b369e2aaaf0189c201f98155664e0154f7724530e747efcbdccb952094a2f98"
+        "hash": "aec0366e5a88870b2ea18370dda7f77fb9cda3ddd8b1ecc97e7d78e6de824015"
       },
       {
         "id": "features:src/memory/decisions-log.md",
@@ -180,7 +164,7 @@
         "headings": [
           "Registro de decisões"
         ],
-        "hash": "e176d3bf519582ca8a15402728875ce0570542ca0ca2fc965ada8c2e6471a383"
+        "hash": "72981c893efb29fbff8e5fc48f39c9bab5071854f5263d13672ca582f149f616"
       },
       {
         "id": "features:src/memory/feedback-log.md",
@@ -201,12 +185,12 @@
         "title": "Memória do Produto — RDCJ",
         "headings": [
           "Memória do Produto — RDCJ",
-          "Decisão oficial",
-          "Fluxo do MVP",
-          "Matriz RDCJ",
-          "Papel do score e dos KPIs"
+          "Visão de produto",
+          "Estado funcional implementado",
+          "Visão Risco × Recuperação — não implementada",
+          "Score e KPIs"
         ],
-        "hash": "c5742d2b8309457c1c25529ffd2ead44d3311fba0423408a0d2c3a6a0ded6859"
+        "hash": "932690631fa6612c94e6fdbc1f116643e0f4a140d508d68078b3699c6f3d8021"
       }
     ],
     "decisions": [
@@ -219,7 +203,7 @@
         "headings": [
           "Registro de decisões"
         ],
-        "hash": "e176d3bf519582ca8a15402728875ce0570542ca0ca2fc965ada8c2e6471a383"
+        "hash": "72981c893efb29fbff8e5fc48f39c9bab5071854f5263d13672ca582f149f616"
       },
       {
         "id": "decisions:src/memory/feedback-log.md",
@@ -240,12 +224,12 @@
         "title": "Memória do Produto — RDCJ",
         "headings": [
           "Memória do Produto — RDCJ",
-          "Decisão oficial",
-          "Fluxo do MVP",
-          "Matriz RDCJ",
-          "Papel do score e dos KPIs"
+          "Visão de produto",
+          "Estado funcional implementado",
+          "Visão Risco × Recuperação — não implementada",
+          "Score e KPIs"
         ],
-        "hash": "c5742d2b8309457c1c25529ffd2ead44d3311fba0423408a0d2c3a6a0ded6859"
+        "hash": "932690631fa6612c94e6fdbc1f116643e0f4a140d508d68078b3699c6f3d8021"
       }
     ],
     "releases": [
@@ -282,7 +266,7 @@
           "Adicionado",
           "Limitações conhecidas (acumuladas)"
         ],
-        "hash": "03e62942e9a7f5bdbf8c5fd02f27ccf943c57e726e3f1f3d235683b69133a380"
+        "hash": "eb740a1b53ca86b1bb09bb2e14ab83ecbf64b73285ccc5df7dfd76b52db97716"
       }
     ],
     "backlog": [
@@ -305,7 +289,7 @@
           "FEATURE 03 — IRP (Índice de Recuperação Potencial)",
           "Dependências"
         ],
-        "hash": "4d6c88cf20b0df926270f47c9e210566d13014857fbdbbd9abe79788466b1a8c"
+        "hash": "76c0feb978c8c440e594a1a255f10e750ca72d1925dbd3395a39547dcacce365"
       }
     ],
     "documentation": [
@@ -342,30 +326,22 @@
         "type": "document",
         "category": "documentation",
         "path": "README.md",
-        "title": "RDCJ Mockup",
+        "title": "RDCJ 2.1",
         "headings": [
-          "RDCJ Mockup",
-          "Status atual",
+          "RDCJ 2.1",
+          "Estado real do projeto",
           "Executar localmente",
-          "Documentação complementar",
-          "Organização no GitHub",
-          "Estrutura do projeto",
-          "Fonte de verdade em runtime",
-          "Arquitetura de alto nível",
-          "Páginas",
-          "Fluxo da carteira",
-          "Campos de importação",
-          "Classificação da Matriz RDCJ",
-          "Motor de Atuação",
-          "Estados",
-          "Linhas de atuação",
-          "Transições oficiais",
-          "Timers",
-          "Convenções para manutenção",
-          "Limitações conhecidas",
-          "Próximas evoluções registradas"
+          "Arquitetura e runtime atual",
+          "Telas existentes",
+          "Camadas e módulos existentes",
+          "Persistência atual",
+          "Documentação, decisões e governança",
+          "ServiceNow Readiness",
+          "Releases",
+          "Backlog — não implementado",
+          "Testes e validação"
         ],
-        "hash": "9b369e2aaaf0189c201f98155664e0154f7724530e747efcbdccb952094a2f98"
+        "hash": "aec0366e5a88870b2ea18370dda7f77fb9cda3ddd8b1ecc97e7d78e6de824015"
       },
       {
         "id": "documentation:CHANGELOG.md",
@@ -392,23 +368,23 @@
           "Adicionado",
           "Limitações conhecidas (acumuladas)"
         ],
-        "hash": "03e62942e9a7f5bdbf8c5fd02f27ccf943c57e726e3f1f3d235683b69133a380"
+        "hash": "eb740a1b53ca86b1bb09bb2e14ab83ecbf64b73285ccc5df7dfd76b52db97716"
       },
       {
         "id": "documentation:docs/architecture/architecture-current.md",
         "type": "document",
         "category": "documentation",
         "path": "docs/architecture/architecture-current.md",
-        "title": "Arquitetura Atual — RDCJ Mockup v0.1",
+        "title": "Baseline Arquitetural Histórico — RDCJ Mockup v0.1",
         "headings": [
-          "Arquitetura Atual — RDCJ Mockup v0.1",
+          "Baseline Arquitetural Histórico — RDCJ Mockup v0.1",
           "1. Escopo e fonte de verdade",
           "2. Contexto funcional atual",
           "3. Topologia atual",
           "4. Estrutura física",
           "4.1 Páginas",
           "4.2 JavaScript efetivo",
-          "4.3 TypeScript paralelo",
+          "4.3 Domínio e contratos (baseline)",
           "4.4 CSS e identidade",
           "5. Fluxo de dados atual",
           "6. Persistência atual",
@@ -421,9 +397,9 @@
           "11. Diagnóstico arquitetural",
           "Forças",
           "Fragilidades críticas",
-          "12. Conclusão do baseline"
+          "12. Conclusão do snapshot v0.1"
         ],
-        "hash": "8647d7bea560f2060a51c73e3d04de353d1f86c7ab9f853e753cb6ae9ddf61ca"
+        "hash": "60b2e9f26f895b0834453653b8ceae35175eee98eaee26c9024cfe6d59284b3d"
       },
       {
         "id": "documentation:docs/architecture/architecture-target.md",
@@ -539,7 +515,7 @@
   },
   "knowledgeIndex": {
     "schemaVersion": "1.0",
-    "generatedAt": "2026-09-29T21:29:40.766Z",
+    "generatedAt": "2026-09-29T21:49:32.534Z",
     "categories": {
       "modules": [
         {
@@ -547,30 +523,22 @@
           "type": "document",
           "category": "modules",
           "path": "README.md",
-          "title": "RDCJ Mockup",
+          "title": "RDCJ 2.1",
           "headings": [
-            "RDCJ Mockup",
-            "Status atual",
+            "RDCJ 2.1",
+            "Estado real do projeto",
             "Executar localmente",
-            "Documentação complementar",
-            "Organização no GitHub",
-            "Estrutura do projeto",
-            "Fonte de verdade em runtime",
-            "Arquitetura de alto nível",
-            "Páginas",
-            "Fluxo da carteira",
-            "Campos de importação",
-            "Classificação da Matriz RDCJ",
-            "Motor de Atuação",
-            "Estados",
-            "Linhas de atuação",
-            "Transições oficiais",
-            "Timers",
-            "Convenções para manutenção",
-            "Limitações conhecidas",
-            "Próximas evoluções registradas"
+            "Arquitetura e runtime atual",
+            "Telas existentes",
+            "Camadas e módulos existentes",
+            "Persistência atual",
+            "Documentação, decisões e governança",
+            "ServiceNow Readiness",
+            "Releases",
+            "Backlog — não implementado",
+            "Testes e validação"
           ],
-          "hash": "9b369e2aaaf0189c201f98155664e0154f7724530e747efcbdccb952094a2f98"
+          "hash": "aec0366e5a88870b2ea18370dda7f77fb9cda3ddd8b1ecc97e7d78e6de824015"
         },
         {
           "id": "module-navigation",
@@ -614,30 +582,22 @@
           "type": "document",
           "category": "features",
           "path": "README.md",
-          "title": "RDCJ Mockup",
+          "title": "RDCJ 2.1",
           "headings": [
-            "RDCJ Mockup",
-            "Status atual",
+            "RDCJ 2.1",
+            "Estado real do projeto",
             "Executar localmente",
-            "Documentação complementar",
-            "Organização no GitHub",
-            "Estrutura do projeto",
-            "Fonte de verdade em runtime",
-            "Arquitetura de alto nível",
-            "Páginas",
-            "Fluxo da carteira",
-            "Campos de importação",
-            "Classificação da Matriz RDCJ",
-            "Motor de Atuação",
-            "Estados",
-            "Linhas de atuação",
-            "Transições oficiais",
-            "Timers",
-            "Convenções para manutenção",
-            "Limitações conhecidas",
-            "Próximas evoluções registradas"
+            "Arquitetura e runtime atual",
+            "Telas existentes",
+            "Camadas e módulos existentes",
+            "Persistência atual",
+            "Documentação, decisões e governança",
+            "ServiceNow Readiness",
+            "Releases",
+            "Backlog — não implementado",
+            "Testes e validação"
           ],
-          "hash": "9b369e2aaaf0189c201f98155664e0154f7724530e747efcbdccb952094a2f98"
+          "hash": "aec0366e5a88870b2ea18370dda7f77fb9cda3ddd8b1ecc97e7d78e6de824015"
         },
         {
           "id": "features:src/memory/decisions-log.md",
@@ -648,7 +608,7 @@
           "headings": [
             "Registro de decisões"
           ],
-          "hash": "e176d3bf519582ca8a15402728875ce0570542ca0ca2fc965ada8c2e6471a383"
+          "hash": "72981c893efb29fbff8e5fc48f39c9bab5071854f5263d13672ca582f149f616"
         },
         {
           "id": "features:src/memory/feedback-log.md",
@@ -669,12 +629,12 @@
           "title": "Memória do Produto — RDCJ",
           "headings": [
             "Memória do Produto — RDCJ",
-            "Decisão oficial",
-            "Fluxo do MVP",
-            "Matriz RDCJ",
-            "Papel do score e dos KPIs"
+            "Visão de produto",
+            "Estado funcional implementado",
+            "Visão Risco × Recuperação — não implementada",
+            "Score e KPIs"
           ],
-          "hash": "c5742d2b8309457c1c25529ffd2ead44d3311fba0423408a0d2c3a6a0ded6859"
+          "hash": "932690631fa6612c94e6fdbc1f116643e0f4a140d508d68078b3699c6f3d8021"
         },
         {
           "id": "feature-matrix",
@@ -735,7 +695,7 @@
           "headings": [
             "Registro de decisões"
           ],
-          "hash": "e176d3bf519582ca8a15402728875ce0570542ca0ca2fc965ada8c2e6471a383"
+          "hash": "72981c893efb29fbff8e5fc48f39c9bab5071854f5263d13672ca582f149f616"
         },
         {
           "id": "decisions:src/memory/feedback-log.md",
@@ -756,12 +716,12 @@
           "title": "Memória do Produto — RDCJ",
           "headings": [
             "Memória do Produto — RDCJ",
-            "Decisão oficial",
-            "Fluxo do MVP",
-            "Matriz RDCJ",
-            "Papel do score e dos KPIs"
+            "Visão de produto",
+            "Estado funcional implementado",
+            "Visão Risco × Recuperação — não implementada",
+            "Score e KPIs"
           ],
-          "hash": "c5742d2b8309457c1c25529ffd2ead44d3311fba0423408a0d2c3a6a0ded6859"
+          "hash": "932690631fa6612c94e6fdbc1f116643e0f4a140d508d68078b3699c6f3d8021"
         }
       ],
       "releases": [
@@ -790,7 +750,7 @@
             "Adicionado",
             "Limitações conhecidas (acumuladas)"
           ],
-          "hash": "03e62942e9a7f5bdbf8c5fd02f27ccf943c57e726e3f1f3d235683b69133a380"
+          "hash": "eb740a1b53ca86b1bb09bb2e14ab83ecbf64b73285ccc5df7dfd76b52db97716"
         },
         {
           "id": "release-v0.1",
@@ -821,7 +781,7 @@
             "FEATURE 03 — IRP (Índice de Recuperação Potencial)",
             "Dependências"
           ],
-          "hash": "4d6c88cf20b0df926270f47c9e210566d13014857fbdbbd9abe79788466b1a8c"
+          "hash": "76c0feb978c8c440e594a1a255f10e750ca72d1925dbd3395a39547dcacce365"
         }
       ],
       "documentation": [
@@ -830,30 +790,22 @@
           "type": "document",
           "category": "documentation",
           "path": "README.md",
-          "title": "RDCJ Mockup",
+          "title": "RDCJ 2.1",
           "headings": [
-            "RDCJ Mockup",
-            "Status atual",
+            "RDCJ 2.1",
+            "Estado real do projeto",
             "Executar localmente",
-            "Documentação complementar",
-            "Organização no GitHub",
-            "Estrutura do projeto",
-            "Fonte de verdade em runtime",
-            "Arquitetura de alto nível",
-            "Páginas",
-            "Fluxo da carteira",
-            "Campos de importação",
-            "Classificação da Matriz RDCJ",
-            "Motor de Atuação",
-            "Estados",
-            "Linhas de atuação",
-            "Transições oficiais",
-            "Timers",
-            "Convenções para manutenção",
-            "Limitações conhecidas",
-            "Próximas evoluções registradas"
+            "Arquitetura e runtime atual",
+            "Telas existentes",
+            "Camadas e módulos existentes",
+            "Persistência atual",
+            "Documentação, decisões e governança",
+            "ServiceNow Readiness",
+            "Releases",
+            "Backlog — não implementado",
+            "Testes e validação"
           ],
-          "hash": "9b369e2aaaf0189c201f98155664e0154f7724530e747efcbdccb952094a2f98"
+          "hash": "aec0366e5a88870b2ea18370dda7f77fb9cda3ddd8b1ecc97e7d78e6de824015"
         },
         {
           "id": "documentation:CHANGELOG.md",
@@ -880,23 +832,23 @@
             "Adicionado",
             "Limitações conhecidas (acumuladas)"
           ],
-          "hash": "03e62942e9a7f5bdbf8c5fd02f27ccf943c57e726e3f1f3d235683b69133a380"
+          "hash": "eb740a1b53ca86b1bb09bb2e14ab83ecbf64b73285ccc5df7dfd76b52db97716"
         },
         {
           "id": "documentation:docs/architecture/architecture-current.md",
           "type": "document",
           "category": "documentation",
           "path": "docs/architecture/architecture-current.md",
-          "title": "Arquitetura Atual — RDCJ Mockup v0.1",
+          "title": "Baseline Arquitetural Histórico — RDCJ Mockup v0.1",
           "headings": [
-            "Arquitetura Atual — RDCJ Mockup v0.1",
+            "Baseline Arquitetural Histórico — RDCJ Mockup v0.1",
             "1. Escopo e fonte de verdade",
             "2. Contexto funcional atual",
             "3. Topologia atual",
             "4. Estrutura física",
             "4.1 Páginas",
             "4.2 JavaScript efetivo",
-            "4.3 TypeScript paralelo",
+            "4.3 Domínio e contratos (baseline)",
             "4.4 CSS e identidade",
             "5. Fluxo de dados atual",
             "6. Persistência atual",
@@ -909,9 +861,9 @@
             "11. Diagnóstico arquitetural",
             "Forças",
             "Fragilidades críticas",
-            "12. Conclusão do baseline"
+            "12. Conclusão do snapshot v0.1"
           ],
-          "hash": "8647d7bea560f2060a51c73e3d04de353d1f86c7ab9f853e753cb6ae9ddf61ca"
+          "hash": "60b2e9f26f895b0834453653b8ceae35175eee98eaee26c9024cfe6d59284b3d"
         },
         {
           "id": "documentation:docs/architecture/architecture-target.md",
@@ -1051,16 +1003,16 @@
           "type": "document",
           "category": "architecture",
           "path": "docs/architecture/architecture-current.md",
-          "title": "Arquitetura Atual — RDCJ Mockup v0.1",
+          "title": "Baseline Arquitetural Histórico — RDCJ Mockup v0.1",
           "headings": [
-            "Arquitetura Atual — RDCJ Mockup v0.1",
+            "Baseline Arquitetural Histórico — RDCJ Mockup v0.1",
             "1. Escopo e fonte de verdade",
             "2. Contexto funcional atual",
             "3. Topologia atual",
             "4. Estrutura física",
             "4.1 Páginas",
             "4.2 JavaScript efetivo",
-            "4.3 TypeScript paralelo",
+            "4.3 Domínio e contratos (baseline)",
             "4.4 CSS e identidade",
             "5. Fluxo de dados atual",
             "6. Persistência atual",
@@ -1073,9 +1025,9 @@
             "11. Diagnóstico arquitetural",
             "Forças",
             "Fragilidades críticas",
-            "12. Conclusão do baseline"
+            "12. Conclusão do snapshot v0.1"
           ],
-          "hash": "8647d7bea560f2060a51c73e3d04de353d1f86c7ab9f853e753cb6ae9ddf61ca"
+          "hash": "60b2e9f26f895b0834453653b8ceae35175eee98eaee26c9024cfe6d59284b3d"
         },
         {
           "id": "architecture:docs/architecture/architecture-target.md",

@@ -1,15 +1,244 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-27T00:00:00.000Z",
+  "generatedAt": "2026-09-29T21:49:32.540Z",
   "categories": {
-    "arquitetura": ["docs/architecture/architecture-current.md", "docs/architecture/architecture-target.md", "docs/architecture/gap-analysis.md"],
-    "produto": ["README.md", "src/memory/product-memory.md", "src/memory/feedback-log.md", "memory/project-memory.json"],
-    "backlog": ["src/memory/backlog.md"],
-    "decisões": ["src/memory/decisions-log.md", "src/memory/product-memory.md"],
-    "releases": ["CHANGELOG.md", "docs/releases/RELEASE-v0.1.md"],
-    "manuais": ["MANUAL-OPERADOR.md", "docs/guides/GUIA-DEMONSTRACAO.md"],
-    "roadmap": ["src/memory/backlog.md", "docs/servicenow/migration-roadmap.md"],
-    "integrações": ["docs/servicenow/SERVICENOW.md"],
-    "serviceNow": ["docs/servicenow/SERVICENOW.md"]
+    "arquitetura": [
+      {
+        "id": "arquitetura:memory/context-snapshot.json",
+        "path": "memory/context-snapshot.json",
+        "title": "context-snapshot.json",
+        "headings": [],
+        "hash": "5f00b6c7b564af7f4a8d933493471c5633eb83e2c3e73b2265682e7cd239e40f",
+        "missing": false
+      }
+    ],
+    "produto": [
+      {
+        "id": "produto:README.md",
+        "path": "README.md",
+        "title": "RDCJ 2.1",
+        "headings": [
+          "RDCJ 2.1",
+          "Estado real do projeto",
+          "Executar localmente",
+          "Arquitetura e runtime atual",
+          "Telas existentes",
+          "Camadas e módulos existentes",
+          "Persistência atual",
+          "Documentação, decisões e governança",
+          "ServiceNow Readiness",
+          "Releases",
+          "Backlog — não implementado",
+          "Testes e validação"
+        ],
+        "hash": "aec0366e5a88870b2ea18370dda7f77fb9cda3ddd8b1ecc97e7d78e6de824015",
+        "missing": false
+      },
+      {
+        "id": "produto:src/memory/decisions-log.md",
+        "path": "src/memory/decisions-log.md",
+        "title": "Registro de decisões",
+        "headings": [
+          "Registro de decisões"
+        ],
+        "hash": "72981c893efb29fbff8e5fc48f39c9bab5071854f5263d13672ca582f149f616",
+        "missing": false
+      },
+      {
+        "id": "produto:src/memory/feedback-log.md",
+        "path": "src/memory/feedback-log.md",
+        "title": "Registro de feedback",
+        "headings": [
+          "Registro de feedback"
+        ],
+        "hash": "7e22b508496760ea480136516016f03c233ee459d08d4363818704d55fd18148",
+        "missing": false
+      },
+      {
+        "id": "produto:src/memory/product-memory.md",
+        "path": "src/memory/product-memory.md",
+        "title": "Memória do Produto — RDCJ",
+        "headings": [
+          "Memória do Produto — RDCJ",
+          "Visão de produto",
+          "Estado funcional implementado",
+          "Visão Risco × Recuperação — não implementada",
+          "Score e KPIs"
+        ],
+        "hash": "932690631fa6612c94e6fdbc1f116643e0f4a140d508d68078b3699c6f3d8021",
+        "missing": false
+      },
+      {
+        "id": "produto:memory/project-memory.json",
+        "path": "memory/project-memory.json",
+        "title": "project-memory.json",
+        "headings": [],
+        "hash": "d4a6d49993fc446727caef2690677128cc33bacdbc4d36aadb01f2ce89eb99be",
+        "missing": false
+      },
+      {
+        "id": "produto:memory/knowledge-index.json",
+        "path": "memory/knowledge-index.json",
+        "title": "knowledge-index.json",
+        "headings": [],
+        "hash": "c6c3f5729584224a20ee558918a4d9609da4f7b92dbdd22469e1d13794c201fc",
+        "missing": false
+      }
+    ],
+    "backlog": [
+      {
+        "id": "backlog:src/memory/backlog.md",
+        "path": "src/memory/backlog.md",
+        "title": "Backlog oficial — RDCJ",
+        "headings": [
+          "Backlog oficial — RDCJ",
+          "EPIC 01 — Importação de carteira",
+          "EPIC 02 — Motor de enquadramento matricial",
+          "EPIC 03 — Matriz RDCJ operacional",
+          "EPIC 04 — Processo 360° matricial",
+          "EPIC 05 — Governança de classificação",
+          "EPIC — Motor de Recuperação RDCJ",
+          "FEATURE 01 — Risco de Perda",
+          "FEATURE 02 — Potencial de Recuperação",
+          "FEATURE 03 — IRP (Índice de Recuperação Potencial)",
+          "Dependências"
+        ],
+        "hash": "76c0feb978c8c440e594a1a255f10e750ca72d1925dbd3395a39547dcacce365",
+        "missing": false
+      }
+    ],
+    "decisoes": [
+      {
+        "id": "decisoes:src/memory/decisions-log.md",
+        "path": "src/memory/decisions-log.md",
+        "title": "Registro de decisões",
+        "headings": [
+          "Registro de decisões"
+        ],
+        "hash": "72981c893efb29fbff8e5fc48f39c9bab5071854f5263d13672ca582f149f616",
+        "missing": false
+      },
+      {
+        "id": "decisoes:src/memory/feedback-log.md",
+        "path": "src/memory/feedback-log.md",
+        "title": "Registro de feedback",
+        "headings": [
+          "Registro de feedback"
+        ],
+        "hash": "7e22b508496760ea480136516016f03c233ee459d08d4363818704d55fd18148",
+        "missing": false
+      },
+      {
+        "id": "decisoes:src/memory/product-memory.md",
+        "path": "src/memory/product-memory.md",
+        "title": "Memória do Produto — RDCJ",
+        "headings": [
+          "Memória do Produto — RDCJ",
+          "Visão de produto",
+          "Estado funcional implementado",
+          "Visão Risco × Recuperação — não implementada",
+          "Score e KPIs"
+        ],
+        "hash": "932690631fa6612c94e6fdbc1f116643e0f4a140d508d68078b3699c6f3d8021",
+        "missing": false
+      }
+    ],
+    "releases": [
+      {
+        "id": "releases:CHANGELOG.md",
+        "path": "CHANGELOG.md",
+        "title": "Changelog — RDCJ Mockup",
+        "headings": [
+          "Changelog — RDCJ Mockup",
+          "2026-09-29 — RDCJ 2.1 Repository hardening",
+          "Adicionado",
+          "Mantido",
+          "2026-09-21 — Persistência de demonstração (Sessão RDCJ)",
+          "Adicionado",
+          "Não alterado",
+          "2026-09-21 — Processo 360° (nova versão)",
+          "Adicionado",
+          "Mantido",
+          "Observação registrada na auditoria de entrega (v0.1)",
+          "2026-09-21 — Kanban RDCJ",
+          "Adicionado",
+          "Não alterado",
+          "2026-09-14 — Base funcional do mockup",
+          "Adicionado",
+          "Limitações conhecidas (acumuladas)"
+        ],
+        "hash": "eb740a1b53ca86b1bb09bb2e14ab83ecbf64b73285ccc5df7dfd76b52db97716",
+        "missing": false
+      }
+    ],
+    "manuais": [
+      {
+        "id": "manuais:MANUAL-OPERADOR.md",
+        "path": "MANUAL-OPERADOR.md",
+        "title": "Manual do Operador — RDCJ 2.1",
+        "headings": [
+          "Manual do Operador — RDCJ 2.1",
+          "Iniciar a aplicação",
+          "Menu e telas",
+          "Carregar a carteira",
+          "Matriz RDCJ",
+          "Dashboard e Carteira",
+          "Caixa de Trabalho e Motor de Atuação",
+          "Kanban RDCJ",
+          "Processo 360°",
+          "Auditoria local",
+          "Backup e restauração",
+          "Limitações atuais"
+        ],
+        "hash": "f50cd4249fb5cd7f170b0880f5cd8b5ff1ba3edd6e5866cb9e378f4389229c9b",
+        "missing": false
+      },
+      {
+        "id": "manuais:docs/guides/GUIA-DEMONSTRACAO.md",
+        "path": "docs/guides/GUIA-DEMONSTRACAO.md",
+        "title": "Guia de Demonstração Executiva — RDCJ (15 minutos)",
+        "headings": [
+          "Guia de Demonstração Executiva — RDCJ (15 minutos)",
+          "Preparação (antes da reunião)",
+          "Roteiro (15 minutos)",
+          "1. Abertura e contexto (0:00 – 1:30)",
+          "2. Dashboard executivo (1:30 – 3:00)",
+          "3. Matriz RDCJ (3:00 – 6:00)",
+          "4. Processo 360° (6:00 – 8:30)",
+          "5. Caixa de Trabalho — o motor por trás do produto (8:30 – 10:30)",
+          "6. Kanban RDCJ — visão de fila operacional (10:30 – 13:00)",
+          "7. Backup e continuidade da demonstração (13:00 – 14:00)",
+          "8. Fechamento (14:00 – 15:00)",
+          "Perguntas frequentes durante a demonstração",
+          "Tempo alternativo (versão curta de 7–8 minutos)"
+        ],
+        "hash": "c558e08c663c6109645dfb9452d0cc21c05033b7d3385221e4cf8695eebee6b6",
+        "missing": false
+      }
+    ],
+    "roadmap": [
+      {
+        "id": "roadmap:src/memory/backlog.md",
+        "path": "src/memory/backlog.md",
+        "title": "Backlog oficial — RDCJ",
+        "headings": [
+          "Backlog oficial — RDCJ",
+          "EPIC 01 — Importação de carteira",
+          "EPIC 02 — Motor de enquadramento matricial",
+          "EPIC 03 — Matriz RDCJ operacional",
+          "EPIC 04 — Processo 360° matricial",
+          "EPIC 05 — Governança de classificação",
+          "EPIC — Motor de Recuperação RDCJ",
+          "FEATURE 01 — Risco de Perda",
+          "FEATURE 02 — Potencial de Recuperação",
+          "FEATURE 03 — IRP (Índice de Recuperação Potencial)",
+          "Dependências"
+        ],
+        "hash": "76c0feb978c8c440e594a1a255f10e750ca72d1925dbd3395a39547dcacce365",
+        "missing": false
+      }
+    ],
+    "integracoes": [],
+    "serviceNow": []
   }
 }

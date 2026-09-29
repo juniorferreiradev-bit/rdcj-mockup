@@ -1,8 +1,8 @@
-# RDCJ 2.1 — Repository Hardening Release
+# RDCJ 2.1 — Matrix Visual Update and Repository Hardening
 
 ## Escopo
 
-Reorganização arquitetural do repositório e consolidação documental para publicação controlada no GitHub.
+Modernização visual da Matriz RDCJ e reorganização arquitetural/documental do repositório para publicação controlada no GitHub.
 
 ## Entregas
 
@@ -13,10 +13,11 @@ Reorganização arquitetural do repositório e consolidação documental para pu
 - Referências HTML/CSS, consumers de Context/Documentation e testes atualizados.
 - ADR-0002 e relatório de estrutura adicionados.
 - Validador local de referências criado em `scripts/validate-repository.mjs`.
+- Matriz modernizada com KPIs, cards e cores suaves associadas a P1–P4; N9 permanece identificável sem alterar classificação, cálculos ou posição dos quadrantes.
 
 ## Não alterado
 
-Nenhuma regra de classificação, cálculo, estado operacional, transição, posição de quadrante ou integração de produto foi redesenhada. A reorganização altera localizações e referências para preservar a execução.
+Nenhuma regra de classificação, cálculo, estado operacional ou transição foi redesenhada. A posição dos quadrantes foi preservada. A Matriz recebeu somente alteração de apresentação visual; Dashboard, Processo 360°, Kanban e Motor RDCJ não foram redesenhados.
 
 ## Impacto
 

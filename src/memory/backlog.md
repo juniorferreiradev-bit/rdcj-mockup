@@ -1,5 +1,7 @@
 # Backlog oficial — RDCJ
 
+Os itens abaixo são evoluções planejadas e não devem ser tratados como funcionalidades implementadas, salvo quando confirmadas pelo código atual.
+
 ## EPIC 01 — Importação de carteira
 - Validar CSV/XLSX, mapeamento persistente, erros por linha e modelo de planilha.
 

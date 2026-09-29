@@ -59,6 +59,8 @@ Antes da reorganização, o repositório continha mais de cem documentos técnic
 
 Os caminhos relativos de página, scripts e estilos foram atualizados. Links de páginas irmãs permanecem relativos porque todas as páginas continuam juntas. A entrada `src/index.html` continua disponível e aponta para `src/ui/pages/matriz.html`. Os arquivos de UI existentes não tiveram algoritmos ou comportamento funcional alterados nesta reorganização.
 
+O branch RDCJ 2.1 também inclui a camada visual moderna da Matriz (`assets/js/matriz-moderna-ui.js` e `assets/css/matriz-moderna.css`): apresentação por peso, com a disposição N1–N9 e o classificador atual preservados. Isso é uma alteração visual explícita da release, não uma consequência do movimento de arquivos.
+
 ## Decisões tomadas
 
 - Manter README, CHANGELOG, manual, contribuição e licença na raiz por convenção de repositório.
@@ -69,4 +71,4 @@ Os caminhos relativos de página, scripts e estilos foram atualizados. Links de 
 
 ## Validação
 
-`node scripts/validate-repository.mjs` verifica referências HTML e CSS locais. As suítes Node em `tests/` verificam contracts, domain, repositories, providers, agents, governance, Kanban 2.0 e ServiceNow readiness.
+`node scripts/validate-repository.mjs` verifica referências HTML, Markdown e CSS locais. As suítes Node em `tests/` verificam contracts, domain, repositories, providers, agents, governance, Kanban 2.0 e ServiceNow readiness.
