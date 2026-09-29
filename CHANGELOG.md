@@ -11,6 +11,8 @@ Registro das entregas RDCJ, em ordem cronológica decrescente. A release de hard
 - Serviço `ServiceNowReadinessHealthService` em `src/services/`.
 - `docs/architecture/PROJECT-STRUCTURE.md`, `docs/decisions/ADR-0002-Reestruturacao-Repositorio.md` e `docs/releases/RELEASE-v2.1.md`.
 - Validador de referências HTML, Markdown e CSS em `scripts/validate-repository.mjs`.
+- Documentation AutoSync: README/manual/release e memória de produto alinhados ao runtime real; índices, fingerprints e snapshots regenerados.
+- Visão-alvo Risco × Recuperação separada do classificador Tempo × Valor atualmente executado.
 
 ### Mantido
 - Nenhum algoritmo, peso, classificação, fluxo operacional ou posição matricial foi intencionalmente modificado.

@@ -1,5 +1,7 @@
 # Architecture Overview — RDCJ 2.0
 
+> Visão das camadas presentes no repositório. A presença de uma camada/módulo não implica integração com o frontend legado, backend de produção ou runtime ServiceNow. O inventário efetivo está em `PROJECT-STRUCTURE.md` e `../../README.md`.
+
 ## Princípios
 
 - preservar o domínio antes da tecnologia;
@@ -14,21 +16,21 @@
 | Camada | Responsabilidade |
 |---|---|
 | Architecture Layer | princípios, decisões, dependências e arquitetura-alvo |
-| Memory Layer | decisões, feedback, memória de produto e histórico persistente |
-| Knowledge Layer | fontes, índices e conhecimento consultável |
-| Context Layer | contexto de projeto, arquitetura e execução |
-| Documentation Layer | documentação derivada, índices, snapshots e health |
+| Memory Layer | modelos, repositório local, decisões, feedback e memória de produto |
+| Knowledge Layer | índice e consultas implementados no módulo Context |
+| Context Layer | snapshot local de projeto/arquitetura e cache |
+| Documentation Layer | leitura de fontes, índice, geração, snapshots e health local |
 | Domain Layer | entidades, value objects, políticas e serviços de negócio |
 | Repository Layer | contratos e adapters de persistência |
-| Provider Layer | LocalStorage, Memory, Context, Documentation e stubs futuros |
-| Agent Framework | agents, registry, orquestração, health e contratos |
-| Governance Layer | templates, matrizes, workflows, approvals e health |
-| Kanban 2.0 | métricas, SLA, WIP, movimentação, auditoria, histórico e alertas |
-| ServiceNow Runtime | contratos, mapeamentos, readiness, segurança e migração futura |
+| Provider Layer | providers locais e stubs; ServiceNow/database não conectados |
+| Agent Framework | sete agents locais, registry, factory, orquestração e health; sem execução remota |
+| Governance Layer | artefatos documentais, templates e health; sem workflow corporativo ativo |
+| Kanban 2.0 | serviços de domínio e testes isolados, sem conexão ao Kanban visual legado |
+| ServiceNow Runtime | contratos, mapeamentos e readiness documental; sem runtime ativo |
 
 ## Fluxo de dependências
 
-A apresentação atual permanece separada das camadas novas. O domínio não depende de ServiceNow. Providers e agents dependem de contratos explícitos; integrações futuras serão feitas por adapters.
+A apresentação atual permanece separada das camadas novas. O domínio não depende de ServiceNow. Providers e agents dependem de contratos explícitos; nenhuma integração remota ou execução mutável foi ativada.
 
 ## Fontes de verdade
 

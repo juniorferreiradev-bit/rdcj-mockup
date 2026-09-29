@@ -1,35 +1,25 @@
-# RDCJ 2.0 — Regime Diferenciado de Cobrança Judicial
+# RDCJ — GitHub Landing
 
 ## Projeto
 
-Plataforma de análise e operação de carteira judicial com Matriz RDCJ, Processo 360°, Kanban governado, memória, agents e readiness ServiceNow.
+Aplicação demonstrativa estática para gestão local de carteira judicial, com Dashboard, Matriz RDCJ, Carteira, Processo 360°, Caixa de Trabalho, Kanban, Radar, Importação e Configuração.
 
-## Visão
+## Visão atual
 
-Tornar explícitos a posição, o motivo, o responsável, o prazo e o resultado de cada processo.
+A classificação efetivamente executada é Tempo da decisão × Valor da ação, gerando N1–N9 e pesos P1–P4. Os dados e fluxos são locais no navegador; não há backend, identidade ou sincronização multiusuário.
 
 ## Arquitetura
 
-Camadas independentes: Architecture, Memory, Knowledge, Context, Documentation, Domain, Repository, Provider, Agent, Governance, Kanban 2.0 e ServiceNow Runtime Readiness.
+Frontend estático em `src/ui/pages/`, `assets/js/` e `assets/css/`; camadas locais de contexto, documentação, domínio, repositories, providers, agents e governance em `src/`. Essas camadas têm código/contratos e testes, mas não formam um backend integrado ao frontend legado.
 
-## Screens
+## Roadmap, separado do estado atual
 
-- Dashboard
-- Matriz RDCJ
-- Carteira de Processos
-- Kanban
-- Processo 360°
-
-As telas atuais permanecem como baseline funcional e visual.
-
-## Roadmap
-
-Contratos → persistência → APIs → segurança → agents governados → sandbox ServiceNow → operação assistida → cutover.
+Risco × Recuperação, IRP, persistência corporativa e integração ServiceNow aparecem no backlog/readiness. Não estão implementados no runtime. ServiceNow está desconectado e sem migração.
 
 ## Tecnologias
 
-HTML, CSS, JavaScript, TypeScript histórico, Node.js para testes locais, localStorage no baseline, contratos JSON e Mermaid para documentação.
+HTML, CSS, JavaScript e módulos CommonJS/Node usados nos serviços/testes. Não há bundler frontend.
 
 ## Status
 
-**Em preparação arquitetural.** Testes locais aprovados; nenhuma migração ou integração ServiceNow executada.
+RDCJ 2.1: repositório organizado e documentação sincronizada. Consulte o README canônico [`../../README.md`](../../README.md), a release e o ServiceNow Readiness para o estado detalhado.

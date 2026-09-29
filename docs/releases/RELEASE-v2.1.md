@@ -14,6 +14,7 @@ Modernização visual da Matriz RDCJ e reorganização arquitetural/documental d
 - ADR-0002 e relatório de estrutura adicionados.
 - Validador local de referências criado em `scripts/validate-repository.mjs`.
 - Matriz modernizada com KPIs, cards e cores suaves associadas a P1–P4; N9 permanece identificável sem alterar classificação, cálculos ou posição dos quadrantes.
+- Documentation AutoSync: README, Manual, backlog/memória e snapshots derivados sincronizados com o código.
 
 ## Não alterado
 
@@ -26,6 +27,8 @@ A entrada permanece em `src/index.html`; a URL direta da Matriz passa a `src/ui/
 ## Validação
 
 Executar `node scripts/validate-repository.mjs` e todas as suítes `tests/**/*.test.js` antes de merge.
+
+A sincronização documental RDCJ Documentation AutoSync também executou o validador e todas as suítes; os snapshots derivados registraram 11 fontes documentais presentes e nenhuma issue.
 
 ## Limitações
 

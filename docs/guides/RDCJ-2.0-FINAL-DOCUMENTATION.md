@@ -1,5 +1,7 @@
 # RDCJ 2.0 — Final Documentation
 
+> **Snapshot histórico da conclusão das Sprints 01–10.** Não substitui o estado atual RDCJ 2.1. Para o inventário implementado e atualizado, consulte [`../../README.md`](../../README.md), `../architecture/PROJECT-STRUCTURE.md` e `../releases/RELEASE-v2.1.md`.
+
 ## Arquitetura
 
 O RDCJ 2.0 é organizado em camadas de arquitetura, memória, conhecimento, contexto, documentação, domínio, repositories, providers, agents e governança. O Kanban 2.0 e o ServiceNow Runtime Readiness ampliam a capacidade operacional sem substituir o baseline.

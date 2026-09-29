@@ -29,6 +29,8 @@ for (const file of [...filesUnder('src', '.html')]) {
 }
 for (const file of [...filesUnder('docs', '.md'), ...filesUnder('.', '.md').filter((file) => !file.includes(`${path.sep}docs${path.sep}`) && !file.includes(`${path.sep}Prompts${path.sep}`) && !file.includes(`${path.sep}.git${path.sep}`) && !file.includes(`${path.sep}.kilo${path.sep}`))]) {
     const markdown = fs.readFileSync(file, 'utf8');
+    const fenceCount = [...markdown.matchAll(/^\s*```/gm)].length;
+    if (fenceCount % 2 !== 0) failures.push(`${path.relative(root, file)} -> Markdown code fence sem fechamento`);
     for (const match of markdown.matchAll(/\]\(([^)]+)\)/g)) {
         const target = match[1].trim().replace(/^<|>$/g, '').split(/[?#]/, 1)[0];
         verify(file, target);

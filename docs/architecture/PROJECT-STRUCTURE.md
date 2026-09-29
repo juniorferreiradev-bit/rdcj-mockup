@@ -13,6 +13,11 @@ Antes da reorganização, o repositório continha mais de cem documentos técnic
 ├── MANUAL-OPERADOR.md
 ├── CONTRIBUTING.md
 ├── LICENSE-INTERNA.md
+├── PROJECT-STRUCTURE.md              # atalho para este relatório
+├── RELEASE-v2.1.md                   # atalho para a release canônica
+├── SERVICENOW.md                     # atalho para readiness ServiceNow
+├── .gitignore
+├── .github/                          # CODEOWNERS e templates
 ├── docs/
 │   ├── architecture/
 │   ├── governance/
@@ -54,6 +59,7 @@ Antes da reorganização, o repositório continha mais de cem documentos técnic
 - Páginas de `src/pages/` foram movidas para `src/ui/pages/`; componente de UI foi movido para `src/ui/components/`.
 - `ServiceNowReadinessHealthService` foi movido para `src/services/`.
 - Os prompts históricos, memória legada e artefatos existentes de governança foram preservados.
+- Documentação AutoSync atualizou a distinção entre runtime implementado e backlog e regenerou snapshots/fingerprints derivados.
 
 ## Impactos e compatibilidade
 

@@ -26,9 +26,11 @@ Acesse `http://localhost:8000/src/index.html`. A Matriz também pode ser aberta 
 
 O frontend servido pelo navegador usa `src/ui/pages/`, `assets/js/` e `assets/css/`. A navegação lateral é definida em `assets/js/navigation.js`. Cada página carrega scripts globais e utiliza a carteira local.
 
-A classificação está em `assets/js/matriz-criticidade.js` e o adaptador de domínio/runtime em `assets/js/matrix-engine.js`. Os quadrantes mantêm a disposição N7–N9 no topo, N4–N6 no meio e N1–N3 na base. Pesos atuais: P1 = N1/N2/N4; P2 = N3/N5/N7; P3 = N6/N8; P4 = N9.
+A classificação está em `assets/js/matriz-criticidade.js` e o adaptador de domínio/runtime em `assets/js/matrix-engine.js`. Os quadrantes mantêm a disposição N7–N9 no topo, N4–N6 no meio e N1–N3 na base. Pesos atuais: P1 = N1/N2/N4; P2 = N3/N5/N7; P3 = N6/N8; P4 = N9. A Matriz usa fundos pastéis por peso (P1 verde, P2 amarelo, P3 laranja, P4 vermelho suave); cores não alteram o classificador.
 
 O Motor de Atuação em `assets/js/motor-atuacao.js` define sete estados e oito transições. `assets/js/kanban.js` apresenta seis raias e 24 colunas; o arraste reorganiza a posição visual e não substitui a transição formal do motor.
+
+Importação Excel depende de XLSX carregado por CDN; o drag-and-drop do Kanban depende de SortableJS via CDN. Essas bibliotecas não estão empacotadas localmente.
 
 ### Telas existentes
 
@@ -79,13 +81,16 @@ Não há sincronização entre usuários ou navegadores, autenticação nem auto
 ## Documentação, decisões e governança
 
 - Estrutura real e movimentos: [`PROJECT-STRUCTURE.md`](PROJECT-STRUCTURE.md) e [`docs/architecture/PROJECT-STRUCTURE.md`](docs/architecture/PROJECT-STRUCTURE.md).
-- Arquitetura em camadas: [`docs/architecture/ARCHITECTURE.md`](docs/architecture/ARCHITECTURE.md) e `docs/architecture/architecture-target.md`.
+- Arquitetura em camadas: [`docs/architecture/ARCHITECTURE.md`](docs/architecture/ARCHITECTURE.md); arquitetura-alvo está identificada separadamente.
 - Decisão da reorganização: [`docs/decisions/ADR-0002-Reestruturacao-Repositorio.md`](docs/decisions/ADR-0002-Reestruturacao-Repositorio.md).
 - Governança: `docs/governance/`, `governance/` e `src/governance/`.
-- Histórico de decisões e feedback: `src/memory/decisions-log.md` e `src/memory/feedback-log.md`.
-- Memória de produto: `src/memory/product-memory.md`; backlog: `src/memory/backlog.md`.
+- Auditoria de consistência documental: [`docs/governance/DOCUMENTATION-AUDIT.md`](docs/governance/DOCUMENTATION-AUDIT.md).
+- Histórico: `src/memory/decisions-log.md`, `src/memory/feedback-log.md` e `src/memory/product-memory.md`.
+- Backlog: `src/memory/backlog.md`; itens planejados estão separados das capacidades atuais.
 - Manual: [`MANUAL-OPERADOR.md`](MANUAL-OPERADOR.md); instalação: `docs/guides/INSTALACAO-RAPIDA.md`.
-- Histórico: [`CHANGELOG.md`](CHANGELOG.md), `docs/releases/RELEASE-v0.1.md`, `docs/releases/RDCJ-2.0-RELEASE.md` e [`RELEASE-v2.1.md`](RELEASE-v2.1.md).
+- Releases: `docs/releases/RELEASE-v0.1.md`, `docs/releases/RDCJ-2.0-RELEASE.md` e [`RELEASE-v2.1.md`](RELEASE-v2.1.md).
+
+Arquivos de entrada na raiz incluem `README.md`, `CHANGELOG.md`, `MANUAL-OPERADOR.md`, `CONTRIBUTING.md`, `LICENSE-INTERNA.md`, `PROJECT-STRUCTURE.md`, `RELEASE-v2.1.md` e `SERVICENOW.md`. `.github/` contém `CODEOWNERS` e templates; prompts ficam em `prompts/`.
 
 ## ServiceNow Readiness
 

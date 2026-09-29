@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-29T21:49:32.540Z",
+  "generatedAt": "2026-09-29T22:00:38.760Z",
   "categories": {
     "arquitetura": [
       {
@@ -8,7 +8,7 @@
         "path": "memory/context-snapshot.json",
         "title": "context-snapshot.json",
         "headings": [],
-        "hash": "5f00b6c7b564af7f4a8d933493471c5633eb83e2c3e73b2265682e7cd239e40f",
+        "hash": "b5a983935edbc05e8f226f9e763524ea8c60b147a057f67c8aa324d4c6ddd765",
         "missing": false
       }
     ],
@@ -31,7 +31,7 @@
           "Backlog — não implementado",
           "Testes e validação"
         ],
-        "hash": "aec0366e5a88870b2ea18370dda7f77fb9cda3ddd8b1ecc97e7d78e6de824015",
+        "hash": "02acdcaf82dd452a66d611762aee82a3a76e7bf850809d6d17eac8902d7071a8",
         "missing": false
       },
       {
@@ -51,7 +51,7 @@
         "headings": [
           "Registro de feedback"
         ],
-        "hash": "7e22b508496760ea480136516016f03c233ee459d08d4363818704d55fd18148",
+        "hash": "507e6283470f1a89f38990fa16fa3413876ce9a7b7698162690797ff0e14d9cf",
         "missing": false
       },
       {
@@ -65,7 +65,7 @@
           "Visão Risco × Recuperação — não implementada",
           "Score e KPIs"
         ],
-        "hash": "932690631fa6612c94e6fdbc1f116643e0f4a140d508d68078b3699c6f3d8021",
+        "hash": "03ba8ac2e6fea8bb4b1e3bb88c32d69a37551b0ef93b0dedb309a67185b28633",
         "missing": false
       },
       {
@@ -81,7 +81,7 @@
         "path": "memory/knowledge-index.json",
         "title": "knowledge-index.json",
         "headings": [],
-        "hash": "c6c3f5729584224a20ee558918a4d9609da4f7b92dbdd22469e1d13794c201fc",
+        "hash": "7a4e04d7e5e1899492600ccb5994d205bb39315f2ee7aeb215983a054cce3671",
         "missing": false
       }
     ],
@@ -89,21 +89,20 @@
       {
         "id": "backlog:src/memory/backlog.md",
         "path": "src/memory/backlog.md",
-        "title": "Backlog oficial — RDCJ",
+        "title": "Backlog RDCJ — estado e evoluções planejadas",
         "headings": [
-          "Backlog oficial — RDCJ",
-          "EPIC 01 — Importação de carteira",
-          "EPIC 02 — Motor de enquadramento matricial",
-          "EPIC 03 — Matriz RDCJ operacional",
-          "EPIC 04 — Processo 360° matricial",
+          "Backlog RDCJ — estado e evoluções planejadas",
+          "Capacidades já implementadas (não são backlog)",
+          "Backlog ativo",
+          "EPIC 01 — Robustez de importação",
+          "EPIC 02 — Evolução do enquadramento",
+          "EPIC 03 — Evolução da Matriz",
+          "EPIC 04 — Processo 360° e evidências",
           "EPIC 05 — Governança de classificação",
-          "EPIC — Motor de Recuperação RDCJ",
-          "FEATURE 01 — Risco de Perda",
-          "FEATURE 02 — Potencial de Recuperação",
-          "FEATURE 03 — IRP (Índice de Recuperação Potencial)",
-          "Dependências"
+          "EPIC — Motor de Recuperação RDCJ (planejado)",
+          "Dependências ainda abertas"
         ],
-        "hash": "76c0feb978c8c440e594a1a255f10e750ca72d1925dbd3395a39547dcacce365",
+        "hash": "25e701e4e732de8a759f1dabd58a6b9f1a51c73ebc995d832ebc17f96fb72add",
         "missing": false
       }
     ],
@@ -125,7 +124,7 @@
         "headings": [
           "Registro de feedback"
         ],
-        "hash": "7e22b508496760ea480136516016f03c233ee459d08d4363818704d55fd18148",
+        "hash": "507e6283470f1a89f38990fa16fa3413876ce9a7b7698162690797ff0e14d9cf",
         "missing": false
       },
       {
@@ -139,7 +138,7 @@
           "Visão Risco × Recuperação — não implementada",
           "Score e KPIs"
         ],
-        "hash": "932690631fa6612c94e6fdbc1f116643e0f4a140d508d68078b3699c6f3d8021",
+        "hash": "03ba8ac2e6fea8bb4b1e3bb88c32d69a37551b0ef93b0dedb309a67185b28633",
         "missing": false
       }
     ],
@@ -167,7 +166,7 @@
           "Adicionado",
           "Limitações conhecidas (acumuladas)"
         ],
-        "hash": "eb740a1b53ca86b1bb09bb2e14ab83ecbf64b73285ccc5df7dfd76b52db97716",
+        "hash": "bca3a5d3ab537fc03c2f7fb9321565a334de2cb857829ebce6283fb6f9219f96",
         "missing": false
       }
     ],
@@ -220,21 +219,20 @@
       {
         "id": "roadmap:src/memory/backlog.md",
         "path": "src/memory/backlog.md",
-        "title": "Backlog oficial — RDCJ",
+        "title": "Backlog RDCJ — estado e evoluções planejadas",
         "headings": [
-          "Backlog oficial — RDCJ",
-          "EPIC 01 — Importação de carteira",
-          "EPIC 02 — Motor de enquadramento matricial",
-          "EPIC 03 — Matriz RDCJ operacional",
-          "EPIC 04 — Processo 360° matricial",
+          "Backlog RDCJ — estado e evoluções planejadas",
+          "Capacidades já implementadas (não são backlog)",
+          "Backlog ativo",
+          "EPIC 01 — Robustez de importação",
+          "EPIC 02 — Evolução do enquadramento",
+          "EPIC 03 — Evolução da Matriz",
+          "EPIC 04 — Processo 360° e evidências",
           "EPIC 05 — Governança de classificação",
-          "EPIC — Motor de Recuperação RDCJ",
-          "FEATURE 01 — Risco de Perda",
-          "FEATURE 02 — Potencial de Recuperação",
-          "FEATURE 03 — IRP (Índice de Recuperação Potencial)",
-          "Dependências"
+          "EPIC — Motor de Recuperação RDCJ (planejado)",
+          "Dependências ainda abertas"
         ],
-        "hash": "76c0feb978c8c440e594a1a255f10e750ca72d1925dbd3395a39547dcacce365",
+        "hash": "25e701e4e732de8a759f1dabd58a6b9f1a51c73ebc995d832ebc17f96fb72add",
         "missing": false
       }
     ],

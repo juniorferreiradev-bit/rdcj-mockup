@@ -13,7 +13,7 @@ O código executável em `assets/js/matriz-criticidade.js` classifica por **Temp
 - Quadrantes: T1 → N1/N2/N3; T2 → N4/N5/N6; T3 → N7/N8/N9.
 - Pesos: P1 = N1/N2/N4; P2 = N3/N5/N7; P3 = N6/N8; P4 = N9.
 
-O fluxo disponível é importar uma planilha, mapear campos, classificar localmente, consultar a Matriz/Carteira e abrir Processo 360°. A experiência Matriz foi modernizada visualmente, sem mudança do algoritmo acima.
+O fluxo disponível é importar uma planilha, mapear campos, classificar localmente, consultar a Matriz/Carteira e abrir Processo 360°. A Matriz usa uma paleta suave de apresentação por peso: P1 `#F4FAF6`/`#D6E8DA`/`#2E6B45`, P2 `#FFFBEF`/`#F1E3B5`/`#8A6D1D`, P3 `#FFF4EC`/`#F4D2B8`/`#A35B1F`, P4 `#FFF1F3`/`#E8B9C0`/`#A12A3A` (fundo/borda/texto). Essa camada visual não participa do algoritmo de classificação.
 
 ## Visão Risco × Recuperação — não implementada
 

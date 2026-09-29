@@ -1,5 +1,7 @@
 # Operating Model
 
+> Modelo de governança documentado. Não representa automação ativa de aprovações nem enforcement de roles na aplicação local.
+
 ## Governança
 
 Mudanças de regra, dados, fluxo, segurança, agentes e integração passam por proposta, análise de risco, aprovação, execução controlada e auditoria.
