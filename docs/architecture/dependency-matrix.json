@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "layers": {
+    "ui": ["src/ui/pages/matriz.html", "src/ui/pages/dashboard.html", "src/ui/pages/processo360.html", "src/ui/pages/kanban.html", "src/ui/pages/trabalho.html"],
+    "services": ["ProcessService", "KanbanService", "ClassificationService", "AuditService", "MemoryDomainService", "ContextDomainService", "DocumentationDomainService"],
+    "repositories": ["ProcessRepository", "KanbanRepository", "AuditRepository", "MemoryRepositoryAdapter", "ContextRepositoryAdapter", "DocumentationRepositoryAdapter"],
+    "storage": ["LocalStorageProcessAdapter", "LocalStorageKanbanAdapter", "LocalStorageAuditAdapter", "MemoryRepository", "ContextRepository", "DocumentationRepository"]
+  },
+  "flows": [
+    { "ui": "Matriz RDCJ", "service": "ProcessService", "repository": "ProcessRepository", "storage": "rdcj-processos" },
+    { "ui": "Processo 360", "service": "ProcessService", "repository": "ProcessRepository", "storage": "rdcj-processos" },
+    { "ui": "Kanban", "service": "KanbanService", "repository": "KanbanRepository", "storage": "rdcj-motor-atuacao" },
+    { "ui": "Motor de Atuação", "service": "KanbanService", "repository": "KanbanRepository", "storage": "rdcj-motor-atuacao" },
+    { "ui": "Auditoria Operacional", "service": "AuditService", "repository": "AuditRepository", "storage": "rdcj-auditoria" },
+    { "ui": "Memory Engine", "service": "MemoryDomainService", "repository": "MemoryRepositoryAdapter", "storage": "MemoryRepository" },
+    { "ui": "Context Engine", "service": "ContextDomainService", "repository": "ContextRepositoryAdapter", "storage": "ContextRepository" },
+    { "ui": "Documentation Engine", "service": "DocumentationDomainService", "repository": "DocumentationRepositoryAdapter", "storage": "DocumentationRepository" }
+  ]
+}

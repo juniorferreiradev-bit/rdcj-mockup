@@ -1,11 +1,11 @@
 {
   "project": { "name": "RDCJ 2.0", "version": "0.1-memory-layer" },
-  "architecture": { "documents": ["architecture-current.md", "architecture-target.md", "gap-analysis.md"] },
+  "architecture": { "documents": ["docs/architecture/architecture-current.md", "docs/architecture/architecture-target.md", "docs/architecture/gap-analysis.md"] },
   "modules": [],
   "features": [],
   "decisions": [],
   "releases": [],
-  "manuals": ["MANUAL-OPERADOR.md", "GUIA-DEMONSTRACAO.md"],
-  "roadmap": ["src/memory/backlog.md", "migration-roadmap.md"],
-  "integrations": ["Servicenow.md"]
+  "manuals": ["MANUAL-OPERADOR.md", "docs/guides/GUIA-DEMONSTRACAO.md"],
+  "roadmap": ["src/memory/backlog.md", "docs/servicenow/migration-roadmap.md"],
+  "integrations": ["docs/servicenow/SERVICENOW.md"]
 }

@@ -2,19 +2,534 @@
   "project": {
     "name": "RDCJ 2.0",
     "version": "0.1-memory-layer",
-    "sources": ["README.md", "CHANGELOG.md", "src/memory/backlog.md", "src/memory/decisions-log.md", "src/memory/feedback-log.md", "src/memory/product-memory.md", "architecture-current.md", "architecture-target.md", "gap-analysis.md", "migration-roadmap.md"]
+    "sources": [
+      "README.md",
+      "CHANGELOG.md",
+      "src/memory/backlog.md",
+      "src/memory/decisions-log.md",
+      "src/memory/feedback-log.md",
+      "src/memory/product-memory.md",
+      "docs/architecture/architecture-current.md",
+      "docs/architecture/architecture-target.md",
+      "docs/architecture/gap-analysis.md",
+      "docs/servicenow/migration-roadmap.md"
+    ]
   },
   "architecture": {
-    "current": "architecture-current.md",
-    "target": "architecture-target.md",
-    "gaps": "gap-analysis.md",
-    "roadmap": "migration-roadmap.md"
+    "current": "docs/architecture/architecture-current.md",
+    "target": "docs/architecture/architecture-target.md",
+    "gaps": "docs/architecture/gap-analysis.md",
+    "roadmap": "docs/servicenow/migration-roadmap.md"
   },
-  "modules": [],
-  "features": [],
-  "decisions": [],
-  "releases": [],
-  "backlog": [],
-  "documentation": [],
-  "memory": [{ "source": "memory/project-memory.json", "version": "0.1-memory-layer" }]
+  "modules": [
+    {
+      "id": "module-navigation",
+      "name": "Navegação",
+      "source": "assets/js/navigation.js",
+      "type": "memory",
+      "category": "modules"
+    },
+    {
+      "id": "module-base",
+      "name": "Gestão da carteira",
+      "source": "assets/js/base-manager.js",
+      "type": "memory",
+      "category": "modules"
+    },
+    {
+      "id": "module-classification",
+      "name": "Classificação matricial",
+      "source": "assets/js/matriz-criticidade.js",
+      "type": "memory",
+      "category": "modules"
+    },
+    {
+      "id": "module-operation",
+      "name": "Motor de Atuação",
+      "source": "assets/js/motor-atuacao.js",
+      "type": "memory",
+      "category": "modules"
+    },
+    {
+      "id": "module-audit",
+      "name": "Auditoria",
+      "source": "assets/js/auditoria.js",
+      "type": "memory",
+      "category": "modules"
+    },
+    {
+      "id": "modules:README.md",
+      "type": "document",
+      "category": "modules",
+      "path": "README.md",
+      "title": "RDCJ Mockup",
+      "headings": [
+        "RDCJ Mockup",
+        "Status atual",
+        "Executar localmente",
+        "Documentação complementar",
+        "Organização no GitHub",
+        "Estrutura do projeto",
+        "Fonte de verdade em runtime",
+        "Arquitetura de alto nível",
+        "Páginas",
+        "Fluxo da carteira",
+        "Campos de importação",
+        "Classificação da Matriz RDCJ",
+        "Motor de Atuação",
+        "Estados",
+        "Linhas de atuação",
+        "Transições oficiais",
+        "Timers",
+        "Convenções para manutenção",
+        "Limitações conhecidas",
+        "Próximas evoluções registradas"
+      ],
+      "hash": "9b369e2aaaf0189c201f98155664e0154f7724530e747efcbdccb952094a2f98"
+    }
+  ],
+  "features": [
+    {
+      "id": "feature-matrix",
+      "name": "Matriz RDCJ",
+      "status": "existing",
+      "source": "src/memory/product-memory.md",
+      "type": "memory",
+      "category": "features"
+    },
+    {
+      "id": "feature-process-360",
+      "name": "Processo 360",
+      "status": "existing",
+      "source": "CHANGELOG.md",
+      "type": "memory",
+      "category": "features"
+    },
+    {
+      "id": "feature-dashboard",
+      "name": "Dashboard",
+      "status": "existing",
+      "source": "README.md",
+      "type": "memory",
+      "category": "features"
+    },
+    {
+      "id": "feature-motor",
+      "name": "Motor de Atuação",
+      "status": "existing",
+      "source": "README.md",
+      "type": "memory",
+      "category": "features"
+    },
+    {
+      "id": "feature-kanban",
+      "name": "Kanban RDCJ",
+      "status": "existing",
+      "source": "CHANGELOG.md",
+      "type": "memory",
+      "category": "features"
+    },
+    {
+      "id": "feature-memory",
+      "name": "Memória Persistente",
+      "status": "in-progress",
+      "source": "docs/architecture/architecture-target.md",
+      "type": "memory",
+      "category": "features"
+    },
+    {
+      "id": "features:README.md",
+      "type": "document",
+      "category": "features",
+      "path": "README.md",
+      "title": "RDCJ Mockup",
+      "headings": [
+        "RDCJ Mockup",
+        "Status atual",
+        "Executar localmente",
+        "Documentação complementar",
+        "Organização no GitHub",
+        "Estrutura do projeto",
+        "Fonte de verdade em runtime",
+        "Arquitetura de alto nível",
+        "Páginas",
+        "Fluxo da carteira",
+        "Campos de importação",
+        "Classificação da Matriz RDCJ",
+        "Motor de Atuação",
+        "Estados",
+        "Linhas de atuação",
+        "Transições oficiais",
+        "Timers",
+        "Convenções para manutenção",
+        "Limitações conhecidas",
+        "Próximas evoluções registradas"
+      ],
+      "hash": "9b369e2aaaf0189c201f98155664e0154f7724530e747efcbdccb952094a2f98"
+    },
+    {
+      "id": "features:src/memory/decisions-log.md",
+      "type": "document",
+      "category": "features",
+      "path": "src/memory/decisions-log.md",
+      "title": "Registro de decisões",
+      "headings": [
+        "Registro de decisões"
+      ],
+      "hash": "e176d3bf519582ca8a15402728875ce0570542ca0ca2fc965ada8c2e6471a383"
+    },
+    {
+      "id": "features:src/memory/feedback-log.md",
+      "type": "document",
+      "category": "features",
+      "path": "src/memory/feedback-log.md",
+      "title": "Registro de feedback",
+      "headings": [
+        "Registro de feedback"
+      ],
+      "hash": "7e22b508496760ea480136516016f03c233ee459d08d4363818704d55fd18148"
+    },
+    {
+      "id": "features:src/memory/product-memory.md",
+      "type": "document",
+      "category": "features",
+      "path": "src/memory/product-memory.md",
+      "title": "Memória do Produto — RDCJ",
+      "headings": [
+        "Memória do Produto — RDCJ",
+        "Decisão oficial",
+        "Fluxo do MVP",
+        "Matriz RDCJ",
+        "Papel do score e dos KPIs"
+      ],
+      "hash": "c5742d2b8309457c1c25529ffd2ead44d3311fba0423408a0d2c3a6a0ded6859"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "decisions:src/memory/decisions-log.md",
+      "type": "document",
+      "category": "decisions",
+      "path": "src/memory/decisions-log.md",
+      "title": "Registro de decisões",
+      "headings": [
+        "Registro de decisões"
+      ],
+      "hash": "e176d3bf519582ca8a15402728875ce0570542ca0ca2fc965ada8c2e6471a383"
+    },
+    {
+      "id": "decisions:src/memory/feedback-log.md",
+      "type": "document",
+      "category": "decisions",
+      "path": "src/memory/feedback-log.md",
+      "title": "Registro de feedback",
+      "headings": [
+        "Registro de feedback"
+      ],
+      "hash": "7e22b508496760ea480136516016f03c233ee459d08d4363818704d55fd18148"
+    },
+    {
+      "id": "decisions:src/memory/product-memory.md",
+      "type": "document",
+      "category": "decisions",
+      "path": "src/memory/product-memory.md",
+      "title": "Memória do Produto — RDCJ",
+      "headings": [
+        "Memória do Produto — RDCJ",
+        "Decisão oficial",
+        "Fluxo do MVP",
+        "Matriz RDCJ",
+        "Papel do score e dos KPIs"
+      ],
+      "hash": "c5742d2b8309457c1c25529ffd2ead44d3311fba0423408a0d2c3a6a0ded6859"
+    }
+  ],
+  "releases": [
+    {
+      "id": "release-v0.1",
+      "version": "v0.1",
+      "status": "baseline",
+      "source": "docs/releases/RELEASE-v0.1.md",
+      "type": "memory",
+      "category": "releases"
+    },
+    {
+      "id": "releases:CHANGELOG.md",
+      "type": "document",
+      "category": "releases",
+      "path": "CHANGELOG.md",
+      "title": "Changelog — RDCJ Mockup",
+      "headings": [
+        "Changelog — RDCJ Mockup",
+        "2026-09-29 — RDCJ 2.1 Repository hardening",
+        "Adicionado",
+        "Mantido",
+        "2026-09-21 — Persistência de demonstração (Sessão RDCJ)",
+        "Adicionado",
+        "Não alterado",
+        "2026-09-21 — Processo 360° (nova versão)",
+        "Adicionado",
+        "Mantido",
+        "Observação registrada na auditoria de entrega (v0.1)",
+        "2026-09-21 — Kanban RDCJ",
+        "Adicionado",
+        "Não alterado",
+        "2026-09-14 — Base funcional do mockup",
+        "Adicionado",
+        "Limitações conhecidas (acumuladas)"
+      ],
+      "hash": "03e62942e9a7f5bdbf8c5fd02f27ccf943c57e726e3f1f3d235683b69133a380"
+    }
+  ],
+  "backlog": [
+    {
+      "id": "backlog:src/memory/backlog.md",
+      "type": "document",
+      "category": "backlog",
+      "path": "src/memory/backlog.md",
+      "title": "Backlog oficial — RDCJ",
+      "headings": [
+        "Backlog oficial — RDCJ",
+        "EPIC 01 — Importação de carteira",
+        "EPIC 02 — Motor de enquadramento matricial",
+        "EPIC 03 — Matriz RDCJ operacional",
+        "EPIC 04 — Processo 360° matricial",
+        "EPIC 05 — Governança de classificação",
+        "EPIC — Motor de Recuperação RDCJ",
+        "FEATURE 01 — Risco de Perda",
+        "FEATURE 02 — Potencial de Recuperação",
+        "FEATURE 03 — IRP (Índice de Recuperação Potencial)",
+        "Dependências"
+      ],
+      "hash": "4d6c88cf20b0df926270f47c9e210566d13014857fbdbbd9abe79788466b1a8c"
+    }
+  ],
+  "documentation": [
+    {
+      "id": "doc-current-architecture",
+      "path": "docs/architecture/architecture-current.md",
+      "status": "active",
+      "type": "memory",
+      "category": "documentation"
+    },
+    {
+      "id": "doc-target-architecture",
+      "path": "docs/architecture/architecture-target.md",
+      "status": "active",
+      "type": "memory",
+      "category": "documentation"
+    },
+    {
+      "id": "doc-gap-analysis",
+      "path": "docs/architecture/gap-analysis.md",
+      "status": "active",
+      "type": "memory",
+      "category": "documentation"
+    },
+    {
+      "id": "doc-migration-roadmap",
+      "path": "docs/servicenow/migration-roadmap.md",
+      "status": "active",
+      "type": "memory",
+      "category": "documentation"
+    },
+    {
+      "id": "documentation:README.md",
+      "type": "document",
+      "category": "documentation",
+      "path": "README.md",
+      "title": "RDCJ Mockup",
+      "headings": [
+        "RDCJ Mockup",
+        "Status atual",
+        "Executar localmente",
+        "Documentação complementar",
+        "Organização no GitHub",
+        "Estrutura do projeto",
+        "Fonte de verdade em runtime",
+        "Arquitetura de alto nível",
+        "Páginas",
+        "Fluxo da carteira",
+        "Campos de importação",
+        "Classificação da Matriz RDCJ",
+        "Motor de Atuação",
+        "Estados",
+        "Linhas de atuação",
+        "Transições oficiais",
+        "Timers",
+        "Convenções para manutenção",
+        "Limitações conhecidas",
+        "Próximas evoluções registradas"
+      ],
+      "hash": "9b369e2aaaf0189c201f98155664e0154f7724530e747efcbdccb952094a2f98"
+    },
+    {
+      "id": "documentation:CHANGELOG.md",
+      "type": "document",
+      "category": "documentation",
+      "path": "CHANGELOG.md",
+      "title": "Changelog — RDCJ Mockup",
+      "headings": [
+        "Changelog — RDCJ Mockup",
+        "2026-09-29 — RDCJ 2.1 Repository hardening",
+        "Adicionado",
+        "Mantido",
+        "2026-09-21 — Persistência de demonstração (Sessão RDCJ)",
+        "Adicionado",
+        "Não alterado",
+        "2026-09-21 — Processo 360° (nova versão)",
+        "Adicionado",
+        "Mantido",
+        "Observação registrada na auditoria de entrega (v0.1)",
+        "2026-09-21 — Kanban RDCJ",
+        "Adicionado",
+        "Não alterado",
+        "2026-09-14 — Base funcional do mockup",
+        "Adicionado",
+        "Limitações conhecidas (acumuladas)"
+      ],
+      "hash": "03e62942e9a7f5bdbf8c5fd02f27ccf943c57e726e3f1f3d235683b69133a380"
+    },
+    {
+      "id": "documentation:docs/architecture/architecture-current.md",
+      "type": "document",
+      "category": "documentation",
+      "path": "docs/architecture/architecture-current.md",
+      "title": "Arquitetura Atual — RDCJ Mockup v0.1",
+      "headings": [
+        "Arquitetura Atual — RDCJ Mockup v0.1",
+        "1. Escopo e fonte de verdade",
+        "2. Contexto funcional atual",
+        "3. Topologia atual",
+        "4. Estrutura física",
+        "4.1 Páginas",
+        "4.2 JavaScript efetivo",
+        "4.3 TypeScript paralelo",
+        "4.4 CSS e identidade",
+        "5. Fluxo de dados atual",
+        "6. Persistência atual",
+        "7. Domínio implementado",
+        "Classificação vigente",
+        "Motor de atuação",
+        "8. Navegação atual",
+        "9. Dependências externas",
+        "10. Memória, documentação e agentes existentes",
+        "11. Diagnóstico arquitetural",
+        "Forças",
+        "Fragilidades críticas",
+        "12. Conclusão do baseline"
+      ],
+      "hash": "8647d7bea560f2060a51c73e3d04de353d1f86c7ab9f853e753cb6ae9ddf61ca"
+    },
+    {
+      "id": "documentation:docs/architecture/architecture-target.md",
+      "type": "document",
+      "category": "documentation",
+      "path": "docs/architecture/architecture-target.md",
+      "title": "Arquitetura-Alvo — RDCJ 2.0",
+      "headings": [
+        "Arquitetura-Alvo — RDCJ 2.0",
+        "1. Princípios",
+        "2. Visão lógica",
+        "3. Contextos de domínio",
+        "3.1 Carteira e ingestão",
+        "3.2 Processo judicial",
+        "3.3 Classificação RDCJ",
+        "3.4 Motor de Atuação",
+        "3.5 Processo 360° e evidências",
+        "3.6 Analytics e projeções",
+        "4. Memória persistente",
+        "5. Documentação viva",
+        "6. Agentes",
+        "Agentes previstos",
+        "Contrato mínimo de execução",
+        "7. Segurança e governança",
+        "8. Compatibilidade ServiceNow",
+        "Mapeamentos a homologar",
+        "9. Frontend-alvo",
+        "10. Dados e eventos alvo",
+        "11. Qualidade e entrega",
+        "12. Critérios de sucesso arquitetural"
+      ],
+      "hash": "768e37e39f31198b83e44ef93855298c176d86e4a4b0d0fa0c3b83faa2afa619"
+    },
+    {
+      "id": "documentation:docs/architecture/gap-analysis.md",
+      "type": "document",
+      "category": "documentation",
+      "path": "docs/architecture/gap-analysis.md",
+      "title": "Gap Analysis — RDCJ Mockup v0.1 → RDCJ 2.0",
+      "headings": [
+        "Gap Analysis — RDCJ Mockup v0.1 → RDCJ 2.0",
+        "1. Método",
+        "2. Resumo executivo dos gaps",
+        "3. Gaps detalhados",
+        "G-01 — Persistência corporativa e concorrência — P0",
+        "G-02 — Identidade, autorização e segregação — P0",
+        "G-03 — Auditoria confiável — P0",
+        "G-04 — Fonte única de regras — P0",
+        "G-05 — Semântica de classificação incompleta — P1",
+        "G-06 — Workflow sem transação — P0",
+        "G-07 — Kanban separado do estado — P1",
+        "G-08 — Importação sem linhagem corporativa — P1",
+        "G-09 — Memória persistente ausente — P1",
+        "G-10 — Agentes não executáveis/governados — P1",
+        "G-11 — Documentação sem rastreabilidade operacional — P1",
+        "G-12 — Frontend acoplado a globais e ordem de scripts — P1",
+        "G-13 — TypeScript não é fonte executável — P1",
+        "G-14 — Ausência de qualidade automatizada — P1",
+        "G-15 — Evidências e documentos não implementados — P1",
+        "G-16 — ServiceNow apenas conceitual — P0",
+        "G-17 — Analytics com escala limitada — P2",
+        "G-18 — Dependências CDN — P2",
+        "4. Matriz de rastreabilidade da migração",
+        "5. Riscos de não tratar os gaps",
+        "6. Estado de prontidão"
+      ],
+      "hash": "712654269c6ee5b7108bd89a43c6a4ad8ad6f3084250866a18993819fa8ea07b"
+    },
+    {
+      "id": "documentation:docs/servicenow/migration-roadmap.md",
+      "type": "document",
+      "category": "documentation",
+      "path": "docs/servicenow/migration-roadmap.md",
+      "title": "Roadmap de Migração — RDCJ Mockup v0.1 → RDCJ 2.0",
+      "headings": [
+        "Roadmap de Migração — RDCJ Mockup v0.1 → RDCJ 2.0",
+        "1. Estratégia",
+        "2. Fases e gates",
+        "Fase 0 — Baseline e congelamento arquitetural",
+        "Fase 1 — Homologação do domínio e das regras",
+        "Fase 2 — Contratos de dados, identidade e segurança",
+        "Fase 3 — Persistência, ingestão e auditoria",
+        "Fase 4 — Motor de classificação e atuação",
+        "Fase 5 — Frontend corporativo e Processo 360°",
+        "Fase 6 — Memória persistente, documentação viva e agentes",
+        "Fase 7 — Integração ServiceNow e operação corporativa",
+        "Fase 8 — Cutover e desativação controlada",
+        "3. Ordem de dependências",
+        "4. Migração dos dados do mockup",
+        "Fontes",
+        "Regras",
+        "5. Critérios de aceite por domínio",
+        "Dados",
+        "Classificação",
+        "Operação",
+        "Segurança",
+        "ServiceNow",
+        "Agentes",
+        "6. Riscos de execução do roadmap",
+        "7. Decisões que precisam ser tomadas antes da implementação",
+        "8. Resultado esperado"
+      ],
+      "hash": "253bb5adf595f5481898f5d959e53cfeb2d459bf0b0d1c5051cf3ebbb9a04b4e"
+    }
+  ],
+  "memory": [
+    {
+      "source": "memory/project-memory.json",
+      "version": "0.1-memory-layer",
+      "updatedAt": "2026-09-27T00:00:00.000Z"
+    }
+  ]
 }

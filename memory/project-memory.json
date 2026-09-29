@@ -9,26 +9,26 @@
     { "id": "feature-dashboard", "name": "Dashboard", "status": "existing", "source": "README.md" },
     { "id": "feature-motor", "name": "Motor de Atuação", "status": "existing", "source": "README.md" },
     { "id": "feature-kanban", "name": "Kanban RDCJ", "status": "existing", "source": "CHANGELOG.md" },
-    { "id": "feature-memory", "name": "Memória Persistente", "status": "in-progress", "source": "architecture-target.md" }
+    { "id": "feature-memory", "name": "Memória Persistente", "status": "in-progress", "source": "docs/architecture/architecture-target.md" }
   ],
   "modules": [
-    { "id": "module-navigation", "name": "Navegação", "source": "src/js/navigation.js" },
-    { "id": "module-base", "name": "Gestão da carteira", "source": "src/js/base-manager.js" },
-    { "id": "module-classification", "name": "Classificação matricial", "source": "src/js/matriz-criticidade.js" },
-    { "id": "module-operation", "name": "Motor de Atuação", "source": "src/js/motor-atuacao.js" },
-    { "id": "module-audit", "name": "Auditoria", "source": "src/js/auditoria.js" }
+    { "id": "module-navigation", "name": "Navegação", "source": "assets/js/navigation.js" },
+    { "id": "module-base", "name": "Gestão da carteira", "source": "assets/js/base-manager.js" },
+    { "id": "module-classification", "name": "Classificação matricial", "source": "assets/js/matriz-criticidade.js" },
+    { "id": "module-operation", "name": "Motor de Atuação", "source": "assets/js/motor-atuacao.js" },
+    { "id": "module-audit", "name": "Auditoria", "source": "assets/js/auditoria.js" }
   ],
   "decisions": [],
   "tasks": [],
   "agents": [],
   "documentation": [
-    { "id": "doc-current-architecture", "path": "architecture-current.md", "status": "active" },
-    { "id": "doc-target-architecture", "path": "architecture-target.md", "status": "active" },
-    { "id": "doc-gap-analysis", "path": "gap-analysis.md", "status": "active" },
-    { "id": "doc-migration-roadmap", "path": "migration-roadmap.md", "status": "active" }
+    { "id": "doc-current-architecture", "path": "docs/architecture/architecture-current.md", "status": "active" },
+    { "id": "doc-target-architecture", "path": "docs/architecture/architecture-target.md", "status": "active" },
+    { "id": "doc-gap-analysis", "path": "docs/architecture/gap-analysis.md", "status": "active" },
+    { "id": "doc-migration-roadmap", "path": "docs/servicenow/migration-roadmap.md", "status": "active" }
   ],
   "releases": [
-    { "id": "release-v0.1", "version": "v0.1", "status": "baseline", "source": "RELEASE-v0.1.md" }
+    { "id": "release-v0.1", "version": "v0.1", "status": "baseline", "source": "docs/releases/RELEASE-v0.1.md" }
   ],
   "audit": []
 }

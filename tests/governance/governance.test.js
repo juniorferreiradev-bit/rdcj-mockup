@@ -1,7 +1,7 @@
 const assert = require('node:assert/strict');
 const { GovernanceHealthService } = require('../../src/governance');
-const matrix = require('../../governance-matrix.json');
-const raci = require('../../governance-raci-matrix.json');
+const matrix = require('../../docs/governance/governance-matrix.json');
+const raci = require('../../docs/governance/governance-raci-matrix.json');
 
 assert.ok(matrix.artifacts.length >= 6, 'governance matrix deve cobrir artefatos principais');
 assert.ok(raci.activities.length >= 6, 'RACI deve cobrir atividades principais');

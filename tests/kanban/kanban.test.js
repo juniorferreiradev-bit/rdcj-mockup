@@ -46,7 +46,7 @@ assert.equal(executive.backlog, 1);
 assert.equal(executive.produtividade.concluidos, 1);
 
 ['dashboard-kanban-contract.json', 'kanban-operational-matrix.json', 'kanban-provider-contract.json', 'kanban-agent-contract.json'].forEach((file) => {
-    const content = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', file), 'utf8'));
+    const content = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'docs', 'servicenow', 'contracts', file), 'utf8'));
     assert.ok(content.version);
 });
 console.log('Kanban 2.0 tests passed: metrics, SLA, WIP, movement, history, audit, alerts, executive metrics e contracts.');
