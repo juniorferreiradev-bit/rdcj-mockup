@@ -4,6 +4,10 @@ Guia de uso tela a tela do mockup do RDCJ, incluindo os passos de backup e resta
 
 > Este manual descreve o comportamento atual do mockup. Não há autenticação: qualquer pessoa com acesso ao navegador vê e opera a mesma base carregada localmente.
 
+> Os caminhos foram reorganizados: páginas em `src/ui/pages/`, JavaScript em `assets/js/` e CSS em `assets/css/`. A entrada local permanece `src/index.html`.
+
+Para iniciar a aplicação localmente, siga [`docs/guides/INSTALACAO-RAPIDA.md`](docs/guides/INSTALACAO-RAPIDA.md) e use `http://localhost:8000/src/index.html`.
+
 ## Visão geral do menu lateral
 
 | Item do menu | Tela | Para que serve |
@@ -35,6 +39,8 @@ Cada processo é automaticamente classificado (quadrante N1–N9 e peso P1–P4)
 2. Use os filtros (quadrante, peso, comarca, advogado, responsável, faixa de valor) para restringir a visão.
 3. Clique em um quadrante para abrir a lista de processos daquele quadrante.
 4. Na lista, clique no número do CNJ para abrir o **Processo 360°**.
+
+Os cards usam a paleta suave por peso: P1 verde, P2 amarelo, P3 laranja e P4 vermelho suave. A cor é apenas sinalização visual; a regra de classificação permanece a definida pelo domínio.
 
 ## 3. Trabalhar na Caixa de Trabalho
 
